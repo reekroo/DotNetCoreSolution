@@ -8,74 +8,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { NewsService } from '../../Services/data.news.service';
-var NewsComponent = /** @class */ (function () {
-    function NewsComponent(dataService) {
-        this.dataService = dataService;
-        this.showError = false;
+var OilComponent = /** @class */ (function () {
+    function OilComponent() {
     }
-    NewsComponent.prototype.ngOnInit = function () {
-        this.getChannels();
-        this.getNews();
-    };
-    NewsComponent.prototype.getDate = function (publishedAt) {
-        return new Date(publishedAt).toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
-    };
-    NewsComponent.prototype.getNews = function () {
-        var _this = this;
-        this.dataService.getNews().subscribe(function (data) {
-            if (data.articles) {
-                _this.news = data.articles;
-            }
-            else {
-                _this.news = [];
-            }
-            _this.error();
-        });
-    };
-    NewsComponent.prototype.getNewsById = function (id) {
-        var _this = this;
-        this.dataService.getNewsById(id).subscribe(function (response) {
-            if (response.hasOwnProperty("articles")) {
-                _this.news = response['articles'];
-            }
-            else {
-                _this.news = [];
-            }
-            _this.error();
-        }, function (err) {
-            _this.news = [];
-            _this.error();
-        });
-    };
-    NewsComponent.prototype.getChannels = function () {
-        var _this = this;
-        this.dataService.getChannels().subscribe(function (data) {
-            if (data.sources) {
-                _this.channels = data.sources;
-            }
-            else {
-                _this.channels = [];
-            }
-        });
-    };
-    NewsComponent.prototype.error = function () {
-        if (this.news.length > 0) {
-            this.showError = false;
-        }
-        else {
-            this.showError = true;
-        }
-    };
-    NewsComponent = __decorate([
+    OilComponent = __decorate([
         Component({
-            templateUrl: './news.html',
-            styleUrls: ['./news.css'],
-            providers: [NewsService]
+            templateUrl: './oil.html',
+            styleUrls: ['./oil.css']
         }),
-        __metadata("design:paramtypes", [NewsService])
-    ], NewsComponent);
-    return NewsComponent;
+        __metadata("design:paramtypes", [])
+    ], OilComponent);
+    return OilComponent;
 }());
-export { NewsComponent };
-//# sourceMappingURL=news.js.map
+export { OilComponent };
+//# sourceMappingURL=oil.js.map

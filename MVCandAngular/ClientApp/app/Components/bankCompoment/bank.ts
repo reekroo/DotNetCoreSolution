@@ -26,12 +26,11 @@ export class BankComponent implements OnInit {
     rates: Rate[];
     monthRates: Rate[];
 
+    showDefaultSection: boolean = true;
     isUpper: boolean = false;
     delta: number = 0.0;
 
     ngOnInit() {
-
-        console.log(this.validCurrncies);
 
         this.getCurrencies();
     }
@@ -93,5 +92,7 @@ export class BankComponent implements OnInit {
 
             this.monthRates = this.rates.filter(x => new Date(x.Date) >= previusMonthData);
         });
+
+        this.showDefaultSection = false;
     }
 }

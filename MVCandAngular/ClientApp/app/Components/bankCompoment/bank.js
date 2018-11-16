@@ -13,22 +13,43 @@ import { combineLatest } from 'rxjs';
 var BankComponent = /** @class */ (function () {
     function BankComponent(dataService) {
         this.dataService = dataService;
+        this.validCurrncies = [
+            323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 290,
+            291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321,
+            286, 232, 191, 184, 170, 145, 143, 130, 119, 74, 72, 68, 27, 23
+        ];
+        this.showDefaultSection = false;
         this.isUpper = false;
         this.delta = 0.0;
     }
     BankComponent.prototype.ngOnInit = function () {
         this.getCurrencies();
+        this.getDefaultRates();
     };
     BankComponent.prototype.getCurrencies = function () {
         var _this = this;
         this.dataService.getCurrencies().subscribe(function (data) {
             if (data) {
-                _this.currencies = data;
+                var found = data.filter(function (r) { return _this.validCurrncies.indexOf(r.Cur_ID) >= 0; });
+                _this.currencies = found;
+                _this.showDefaultSection = false;
             }
             else {
                 _this.currencies = [];
             }
             ;
+        });
+    };
+    BankComponent.prototype.getDefaultRates = function () {
+        var _this = this;
+        var usd$ = this.dataService.getRate(298);
+        var eur$ = this.dataService.getRate(298);
+        var rub$ = this.dataService.getRate(298);
+        combineLatest(usd$, eur$, rub$).subscribe(function (combinedResult) {
+            _this.defaultRates.push(combinedResult[0]);
+            _this.defaultRates.push(combinedResult[1]);
+            _this.defaultRates.push(combinedResult[2]);
+            _this.showDefaultSection = true;
         });
     };
     BankComponent.prototype.getRate = function (id) {

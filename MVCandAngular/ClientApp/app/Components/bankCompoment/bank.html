@@ -12,7 +12,7 @@
 
         </div>
 
-        <div class="col-sm-9 rate" style="padding:0 20px">
+        <div class="col-sm-9 rate">
 
             <div class="row" *ngIf="rate">
                 <h2>Rate <small>({{rate.Date}})</small></h2>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="row" *ngIf="monthRates && monthRates.length > 0">
                 <h2>Dinamic of last month</h2>
                 <div class="panel panel-default">
@@ -54,7 +54,9 @@
                 </div>
             </div>
 
-        </div>
+            <div class="default-rates" *ngIf="showDefaultSection">
+                <default-rates-section></default-rates-section>
+            </div>
 
+        </div>
     </div>
-</div>

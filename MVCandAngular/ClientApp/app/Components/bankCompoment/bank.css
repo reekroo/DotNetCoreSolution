@@ -25,6 +25,10 @@ a {
     padding: 0;
 }
 
+.rate {
+    padding: 0 20px
+}
+
     .currencies aside {
         list-style: none;
         padding: 0;
@@ -69,4 +73,8 @@ a {
 
 .other-class {
     color: #FB6085;
+}
+
+.default-rates{
+    margin: 10px 0 0 0;
 }

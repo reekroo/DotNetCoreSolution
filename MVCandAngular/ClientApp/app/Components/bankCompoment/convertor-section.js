@@ -7,68 +7,69 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component } from '@angular/core';
-import { BankService } from '../../Services/data.bank.service';
-import { combineLatest } from 'rxjs';
-var BankComponent = /** @class */ (function () {
-    function BankComponent(dataService) {
-        this.dataService = dataService;
-        this.isUpper = false;
-        this.delta = 0.0;
+import { Component, Input, HostListener } from '@angular/core';
+import { Rate } from '../../Models/Bank/Rate';
+var ConvertorSectionComponent = /** @class */ (function () {
+    function ConvertorSectionComponent() {
+        this.onlyNumber = true;
     }
-    BankComponent.prototype.ngOnInit = function () {
-        this.getCurrencies();
+    ConvertorSectionComponent.prototype.ngOnChanges = function () {
+        this.x = this.rate.Cur_OfficialRate;
+        this.y = Number(this.rate.Cur_Scale);
     };
-    BankComponent.prototype.getCurrencies = function () {
-        var _this = this;
-        this.dataService.getCurrencies().subscribe(function (data) {
-            if (data) {
-                _this.currencies = data;
-            }
-            else {
-                _this.currencies = [];
-            }
-            ;
-        });
+    ConvertorSectionComponent.prototype.calcNacionalValue = function () {
+        this.x = (this.rate.Cur_OfficialRate * this.y) / Number(this.rate.Cur_Scale);
+        this.x = Number((this.x).toFixed(5));
     };
-    BankComponent.prototype.getRate = function (id) {
-        var _this = this;
-        var date = new Date();
-        var yesterday = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() - 1);
-        var a1$ = this.dataService.getRate(id);
-        var a2$ = this.dataService.getRateByDate(id, yesterday);
-        combineLatest(a1$, a2$).subscribe(function (combinedResult) {
-            _this.rate = combinedResult[0];
-            _this.rate.Date = new Date(_this.rate.Date).toLocaleDateString();
-            _this.delta = _this.rate.Cur_OfficialRate - combinedResult[1].Cur_OfficialRate;
-            _this.delta = Number((_this.delta).toFixed(5));
-            if (_this.delta > 0) {
-                _this.isUpper = true;
-            }
-            else {
-                _this.isUpper = false;
-            }
-        });
-        var end = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() + 1);
-        date.setFullYear(date.getFullYear() - 1);
-        var start = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate());
-        this.dataService.getRateByPeriod(id, start, end).subscribe(function (data) {
-            _this.rates = data;
-            var previusMonthData = new Date();
-            previusMonthData.setMonth(previusMonthData.getMonth() - 1);
-            previusMonthData.setDate(previusMonthData.getDate() - 2);
-            _this.monthRates = _this.rates.filter(function (x) { return new Date(x.Date) >= previusMonthData; });
-        });
+    ConvertorSectionComponent.prototype.calcCurrentValue = function () {
+        this.y = (Number(this.rate.Cur_Scale) * this.x) / this.rate.Cur_OfficialRate;
+        this.y = Number((this.y).toFixed(5));
     };
-    BankComponent = __decorate([
+    ConvertorSectionComponent.prototype.onKeyDown = function (event) {
+        var e = event;
+        if (this.onlyNumber) {
+            if ([46, 8, 9, 27, 13, 110, 190].indexOf(e.keyCode) !== -1 ||
+                // Allow: Ctrl+A
+                (e.keyCode === 65 && (e.ctrlKey || e.metaKey)) ||
+                // Allow: Ctrl+C
+                (e.keyCode === 67 && (e.ctrlKey || e.metaKey)) ||
+                // Allow: Ctrl+V
+                (e.keyCode === 86 && (e.ctrlKey || e.metaKey)) ||
+                // Allow: Ctrl+X
+                (e.keyCode === 88 && (e.ctrlKey || e.metaKey)) ||
+                // Allow: home, end, left, right
+                (e.keyCode >= 35 && e.keyCode <= 39)) {
+                // let it happen, don't do anything
+                return;
+            }
+            // Ensure that it is a number and stop the keypress
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        }
+    };
+    __decorate([
+        Input(),
+        __metadata("design:type", Rate)
+    ], ConvertorSectionComponent.prototype, "rate", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Boolean)
+    ], ConvertorSectionComponent.prototype, "onlyNumber", void 0);
+    __decorate([
+        HostListener('keydown', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [KeyboardEvent]),
+        __metadata("design:returntype", void 0)
+    ], ConvertorSectionComponent.prototype, "onKeyDown", null);
+    ConvertorSectionComponent = __decorate([
         Component({
-            templateUrl: './bank.html',
-            styleUrls: ['./bank.css'],
-            providers: [BankService]
-        }),
-        __metadata("design:paramtypes", [BankService])
-    ], BankComponent);
-    return BankComponent;
+            selector: 'convertor-section',
+            templateUrl: './convertor-section.html',
+            styleUrls: ['./bank.css']
+        })
+    ], ConvertorSectionComponent);
+    return ConvertorSectionComponent;
 }());
-export { BankComponent };
-//# sourceMappingURL=bank.js.map
+export { ConvertorSectionComponent };
+//# sourceMappingURL=convertor-section.js.map

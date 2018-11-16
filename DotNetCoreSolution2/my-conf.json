@@ -1,0 +1,13 @@
+{
+  "color": "blue",
+  "namespace": {
+    "Texts": {
+      "currentText": "Mi na Velecoma"
+
+    },
+    "ConnectionStrings": {
+      "DefaultConnection": "Основная база данных",
+      "UsersContext": "База данных пользователей"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+﻿<h2>Models</h2>
+
+<table class="table table-striped">
+    <tbody>
+        <tr *ngFor="let p of products">
+            <td><a [routerLink]="[p.id]" class="nav-link">{{p?.name}}</a></td>
+        </tr>
+    </tbody>
+</table>

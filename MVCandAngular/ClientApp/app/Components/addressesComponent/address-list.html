@@ -1,0 +1,26 @@
+﻿
+<div class="sub-header">
+    <h2>User Builling Addresses</h2>
+
+    <a [routerLink]="['address','create']" class="btn btn-sm btn-primary">Add</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>address</td>
+            <td>phone</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let address of addresses">
+            <td>{{address?.fullAddress}}</td>
+            <td>{{address?.phone}}</td>
+            <td>
+                <a [routerLink]="['address', 'edit', address.id]" class="btn btn-sm btn-primary">Edit</a>
+                <button (click)="remove(address.id)" class="btn btn-sm btn-danger">Remove</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

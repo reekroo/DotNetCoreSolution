@@ -1,0 +1,14 @@
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\bin\Debug\netcoreapp2.1\DotNetCore_Mapping.deps.json
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\bin\Debug\netcoreapp2.1\DotNetCore_Mapping.runtimeconfig.json
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\bin\Debug\netcoreapp2.1\DotNetCore_Mapping.runtimeconfig.dev.json
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\bin\Debug\netcoreapp2.1\DotNetCore_Mapping.dll
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\bin\Debug\netcoreapp2.1\DotNetCore_Mapping.pdb
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\obj\Debug\netcoreapp2.1\DotNetCore_Mapping.csprojAssemblyReference.cache
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\obj\Debug\netcoreapp2.1\DotNetCore_Mapping.csproj.CoreCompileInputs.cache
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\obj\Debug\netcoreapp2.1\DotNetCore_Mapping.RazorAssemblyInfo.cache
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\obj\Debug\netcoreapp2.1\DotNetCore_Mapping.RazorAssemblyInfo.cs
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\obj\Debug\netcoreapp2.1\DotNetCore_Mapping.AssemblyInfoInputs.cache
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\obj\Debug\netcoreapp2.1\DotNetCore_Mapping.AssemblyInfo.cs
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\obj\Debug\netcoreapp2.1\DotNetCore_Mapping.RazorTargetAssemblyInfo.cache
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\obj\Debug\netcoreapp2.1\DotNetCore_Mapping.dll
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCore_Mapping\obj\Debug\netcoreapp2.1\DotNetCore_Mapping.pdb

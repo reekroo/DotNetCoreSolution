@@ -1,0 +1,16 @@
+﻿
+<div class="container">
+    <div>
+        <user-information [(user)]="user"></user-information>
+    </div>
+
+    <div *ngIf="showAddresses">
+        <address-list [addresses]="userAddresses"></address-list>
+    </div>
+
+
+    <div *ngIf="showCart">
+        <cart-list [(products)]="userProducts"></cart-list>
+    </div>
+
+</div>

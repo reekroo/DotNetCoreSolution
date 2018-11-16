@@ -1,0 +1,10 @@
+﻿<div *ngIf="loaded">
+    <h2>Model {{product.id}}</h2>
+    <div>
+        <p><b>Name:</b> {{product.name}}</p>
+        <p><b>Manufacturer:</b> {{product.company}}</p>
+        <p><b>Price:</b> {{product.price}}</p>
+
+        <p><a (click)="backClicked()" class="nav-link">back</a></p>
+    </div>
+</div>

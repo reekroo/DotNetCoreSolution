@@ -1,0 +1,11 @@
+﻿<div *ngIf="loaded">
+    <h2>Edit User Info</h2>
+
+    <user-form [(user)]="user"></user-form>
+
+    <div class="form-group">
+        <input type="button" value="Save" (click)="save()" class="btn btn-success" />
+    </div>
+</div>
+
+<a (click)="backClicked()" class="nav-link">Back</a>

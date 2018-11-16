@@ -1,0 +1,10 @@
+<configuration>
+  <color>green</color>
+  <namespace>
+    <Texts>
+      <currentText>
+        "Mi na Velecoma Snova"
+      </currentText>
+    </Texts>
+  </namespace>
+</configuration>

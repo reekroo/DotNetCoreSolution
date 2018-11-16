@@ -1,0 +1,14 @@
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\bin\Debug\netcoreapp2.1\DotNetCore_Services.deps.json
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\bin\Debug\netcoreapp2.1\DotNetCore_Services.runtimeconfig.json
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\bin\Debug\netcoreapp2.1\DotNetCore_Services.runtimeconfig.dev.json
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\bin\Debug\netcoreapp2.1\DotNetCore_Services.dll
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\bin\Debug\netcoreapp2.1\DotNetCore_Services.pdb
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\obj\Debug\netcoreapp2.1\DotNetCore_Services.csprojAssemblyReference.cache
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\obj\Debug\netcoreapp2.1\DotNetCore_Services.csproj.CoreCompileInputs.cache
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\obj\Debug\netcoreapp2.1\DotNetCore_Services.RazorAssemblyInfo.cache
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\obj\Debug\netcoreapp2.1\DotNetCore_Services.RazorAssemblyInfo.cs
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\obj\Debug\netcoreapp2.1\DotNetCore_Services.AssemblyInfoInputs.cache
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\obj\Debug\netcoreapp2.1\DotNetCore_Services.AssemblyInfo.cs
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\obj\Debug\netcoreapp2.1\DotNetCore_Services.RazorTargetAssemblyInfo.cache
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\obj\Debug\netcoreapp2.1\DotNetCore_Services.dll
+C:\Users\paveldavidovsky\documents\visual studio 2017\Projects\DotNetCoreSolution\DotNetCoreSolution1\obj\Debug\netcoreapp2.1\DotNetCore_Services.pdb

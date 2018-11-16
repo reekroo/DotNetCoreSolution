@@ -1,0 +1,156 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\app\app.component.ts" />
+    <None Remove="ClientApp\app\app.module.ts" />
+    <None Remove="ClientApp\app\Components\bankCompoment\bank.ts" />
+    <None Remove="ClientApp\app\Components\bankCompoment\convertor-section.ts" />
+    <None Remove="ClientApp\app\Components\bankCompoment\month-rates-table.ts" />
+    <None Remove="ClientApp\app\Components\bankCompoment\rate-section.ts" />
+    <None Remove="ClientApp\app\Components\chartComponent\chart.ts" />
+    <None Remove="ClientApp\app\Components\fullUserComponent\full-user.ts" />
+    <None Remove="ClientApp\app\Components\newsComponent\news.ts" />
+    <None Remove="ClientApp\app\Components\oilComponent\oil.ts" />
+    <None Remove="ClientApp\app\Components\productsComponent\product-create.ts" />
+    <None Remove="ClientApp\app\Components\productsComponent\product-edit.ts" />
+    <None Remove="ClientApp\app\Components\productsComponent\product-form.ts" />
+    <None Remove="ClientApp\app\Components\productsComponent\product-list.ts" />
+    <None Remove="ClientApp\app\Components\shopComponent\product-details.ts" />
+    <None Remove="ClientApp\app\Components\shopComponent\product-list.ts" />
+    <None Remove="ClientApp\app\Components\userComponent\address-create.ts" />
+    <None Remove="ClientApp\app\Components\userComponent\address-edit.ts" />
+    <None Remove="ClientApp\app\Components\userComponent\address-form.ts" />
+    <None Remove="ClientApp\app\Components\userComponent\address-list.ts" />
+    <None Remove="ClientApp\app\Components\userComponent\user-information.ts" />
+    <None Remove="ClientApp\app\data.service.ts" />
+    <None Remove="ClientApp\app\Components\appComponent\app.head.ts" />
+    <None Remove="ClientApp\app\Models\address.ts" />
+    <None Remove="ClientApp\app\Models\Bank\Currency.ts" />
+    <None Remove="ClientApp\app\Models\Bank\MonthRate.ts" />
+    <None Remove="ClientApp\app\Models\Bank\Rate.ts" />
+    <None Remove="ClientApp\app\Models\cart.ts" />
+    <None Remove="ClientApp\app\Models\channel.ts" />
+    <None Remove="ClientApp\app\Models\News.ts" />
+    <None Remove="ClientApp\app\product.ts" />
+    <None Remove="ClientApp\app\Components\shopComponent\data.shop.service.ts" />
+    <None Remove="ClientApp\app\Services\data.bank.service.ts" />
+    <None Remove="ClientApp\app\Services\data.news.service.ts" />
+    <None Remove="ClientApp\app\Services\data.user.address.service.ts" />
+    <None Remove="ClientApp\app\Services\data.user.cart.service.ts" />
+    <None Remove="ClientApp\app\user.ts" />
+    <None Remove="ClientApp\app\Components\userComponent\data.user.service.ts" />
+    <None Remove="ClientApp\app\Components\userComponent\user-cart.ts" />
+    <None Remove="ClientApp\app\Components\userComponent\user-edit.ts" />
+    <None Remove="ClientApp\app\Components\userComponent\user-form.ts" />
+    <None Remove="ClientApp\main.ts" />
+    <None Remove="ClientApp\polyfills.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\Components\appComponent\app.head.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\addressesComponent\address-form.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\addressesComponent\address-list.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\addressesComponent\address-create.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\addressesComponent\address-edit.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\convertor-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\rate-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\month-rates-table.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\bank.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\chartComponent\chart.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\fullUserComponent\full-user.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\newsComponent\news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\oilComponent\oil.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\userComponent\user-information.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Bank\MonthRate.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Bank\Rate.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Bank\Currency.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\channel.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\cart.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\address.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\user.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\productsComponent\product-list.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\productsComponent\product-edit.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\productsComponent\product-create.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\productsComponent\product-form.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\data.bank.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\data.news.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\data.user.cart.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\data.user.address.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\data.products.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\product.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\shopComponent\product-list.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\shopComponent\product-details.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\data.shop.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\data.user.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\cartComponent\cart-product-list.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\userComponent\user-form.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\userComponent\user-edit.ts" />
+    <TypeScriptCompile Include="ClientApp\polyfills.ts" />
+    <TypeScriptCompile Include="ClientApp\main.ts" />
+    <TypeScriptCompile Include="ClientApp\app\app.module.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ClientApp\app\Components\addressesComponent\address-form.js">
+      <DependentUpon>address-form.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Components\userComponent\user-information.js">
+      <DependentUpon>user-information.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Components\userComponent\user-information.js.map">
+      <DependentUpon>user-information.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Models\address - Copy.js.map">
+      <DependentUpon>address.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Models\Bank\Currency - Copy.js.map">
+      <DependentUpon>Currency.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Models\Bank\Currency.js">
+      <DependentUpon>Currency.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Models\Bank\Currency.js.map">
+      <DependentUpon>Currency.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Models\cart.js">
+      <DependentUpon>cart.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Models\cart.js.map">
+      <DependentUpon>cart.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Models\channel.js">
+      <DependentUpon>channel.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Models\product.js">
+      <DependentUpon>product.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Components\shopComponent\product-list.js">
+      <DependentUpon>product-list.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Models\address.js">
+      <DependentUpon>address.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Models\address.js.map">
+      <DependentUpon>address.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Services\data.user.cart.service.js">
+      <DependentUpon>data.user.cart.service.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Services\data.user.address.service.js.map">
+      <DependentUpon>data.user.address.service.js</DependentUpon>
+    </None>
+  </ItemGroup>
+
+</Project>

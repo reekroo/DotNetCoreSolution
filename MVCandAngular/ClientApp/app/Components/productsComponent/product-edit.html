@@ -1,0 +1,11 @@
+﻿<div *ngIf="loaded">
+    <h2>Edit</h2>
+
+    <product-form [(product)]="product"></product-form>
+
+    <div class="form-group">
+        <input type="button" value="Save" (click)="save()" class="btn btn-success" />
+    </div>
+</div>
+
+<a (click)="backClicked()" class="nav-link">Back</a>

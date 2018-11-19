@@ -4,38 +4,30 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 
 using MVCandAngular.Models;
+using MVCandAngular.Repositories.interfaces;
 
 namespace MVCandAngular.Controllers
 {
     [Route("api/products")]
     public class ProductController : Controller
     {
-        private ApplicationContext _db;
+        private IProductRepository _db;
 
-        public ProductController(ApplicationContext context)
+        public ProductController(IProductRepository repo)
         {
-            _db = context;
-
-            if (!_db.Products.Any())
-            {
-                _db.Products.Add(new Product { Name = "iPhone X", Company = "Apple", Price = 79900 });
-                _db.Products.Add(new Product { Name = "Galaxy S8", Company = "Samsung", Price = 49900 });
-                _db.Products.Add(new Product { Name = "Pixel 2", Company = "Google", Price = 52900 });
-
-                _db.SaveChanges();
-            }
+            _db = repo;
         }
 
         [HttpGet]
         public IEnumerable<Product> Get()
         {
-            return _db.Products.ToList();
+            return _db.GetProducts().ToList();
         }
 
         [HttpGet("{id}")]
         public Product Get(int id)
         {
-            Product product = _db.Products.FirstOrDefault(x => x.Id == id);
+            Product product = _db.Get(id);
 
             return product;
         }
@@ -48,9 +40,8 @@ namespace MVCandAngular.Controllers
                 return BadRequest(ModelState);
             }
 
-            _db.Products.Add(product);
-            _db.SaveChanges();
-
+            _db.Create(product);
+            
             return Ok(product);
         }
 
@@ -63,7 +54,6 @@ namespace MVCandAngular.Controllers
             }
 
             _db.Update(product);
-            _db.SaveChanges();
 
             return Ok(product);
         }
@@ -71,15 +61,14 @@ namespace MVCandAngular.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            Product product = _db.Products.FirstOrDefault(x => x.Id == id);
+            Product product = _db.Get(id);
 
             if (product == null)
             {
                 return BadRequest(ModelState);
             }
 
-            _db.Products.Remove(product);
-            _db.SaveChanges();
+            _db.Delete(id);
 
             return Ok(product);
         }
@@ -87,8 +76,12 @@ namespace MVCandAngular.Controllers
         [HttpDelete]
         public IActionResult Delete()
         {
-            _db.Products.RemoveRange(_db.Products);
-            _db.SaveChanges();
+            var products = _db.GetProducts();
+
+            foreach (var product in products)
+            {
+                _db.Delete(product.Id);
+            }
 
             return Ok(new List<Product>());
         }

@@ -31,6 +31,7 @@ import { ChartComponent } from './Components/chartComponent/chart';
 import { MonthRateTableComponent } from './Components/bankCompoment/month-rates-table';
 import { RateSectionComponent } from './Components/bankCompoment/rate-section';
 import { ConvertorSectionComponent } from './Components/bankCompoment/convertor-section';
+import { DefaultRatesComponent } from './Components/bankCompoment/default-rates-section';
 import { OilComponent } from './Components/oilComponent/oil';
 var appRoutes = [
     { path: 'shop', component: ShopProductListComponent },
@@ -61,7 +62,7 @@ var AppModule = /** @class */ (function () {
                 FullUserComponent, UserFormComponent, UserInfoComponent, UserEditComponent,
                 AddressListComponent, AddressFormComponent, AddressCreateComponent, AddressEditComponent,
                 CartProductListComponent,
-                BankComponent, ChartComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent,
+                BankComponent, ChartComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
                 OilComponent
             ],
             bootstrap: [AppComponent]

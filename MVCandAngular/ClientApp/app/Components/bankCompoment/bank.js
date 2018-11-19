@@ -18,13 +18,12 @@ var BankComponent = /** @class */ (function () {
             291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321,
             286, 232, 191, 184, 170, 145, 143, 130, 119, 74, 72, 68, 27, 23
         ];
-        this.showDefaultSection = false;
+        this.showDefaultSection = true;
         this.isUpper = false;
         this.delta = 0.0;
     }
     BankComponent.prototype.ngOnInit = function () {
         this.getCurrencies();
-        this.getDefaultRates();
     };
     BankComponent.prototype.getCurrencies = function () {
         var _this = this;
@@ -32,24 +31,11 @@ var BankComponent = /** @class */ (function () {
             if (data) {
                 var found = data.filter(function (r) { return _this.validCurrncies.indexOf(r.Cur_ID) >= 0; });
                 _this.currencies = found;
-                _this.showDefaultSection = false;
             }
             else {
                 _this.currencies = [];
             }
             ;
-        });
-    };
-    BankComponent.prototype.getDefaultRates = function () {
-        var _this = this;
-        var usd$ = this.dataService.getRate(298);
-        var eur$ = this.dataService.getRate(298);
-        var rub$ = this.dataService.getRate(298);
-        combineLatest(usd$, eur$, rub$).subscribe(function (combinedResult) {
-            _this.defaultRates.push(combinedResult[0]);
-            _this.defaultRates.push(combinedResult[1]);
-            _this.defaultRates.push(combinedResult[2]);
-            _this.showDefaultSection = true;
         });
     };
     BankComponent.prototype.getRate = function (id) {
@@ -80,6 +66,7 @@ var BankComponent = /** @class */ (function () {
             previusMonthData.setDate(previusMonthData.getDate() - 2);
             _this.monthRates = _this.rates.filter(function (x) { return new Date(x.Date) >= previusMonthData; });
         });
+        this.showDefaultSection = false;
     };
     BankComponent = __decorate([
         Component({

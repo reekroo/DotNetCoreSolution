@@ -1,38 +1,32 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 using Microsoft.AspNetCore.Mvc;
 
 using MVCandAngular.Models;
+using MVCandAngular.Repositories.interfaces;
 
 namespace MVCandAngular.Controllers
 {
     [Route("api/address")]
     public class AddressController : Controller
     {
-        private ApplicationContext _db;
+        private IAddressRepository _db;
 
-        public AddressController(ApplicationContext context)
+        public AddressController(IAddressRepository repo)
         {
-            _db = context;
-
-            if (!_db.Address.Any())
-            {
-                _db.Address.Add(new Address { UserId = 1, FullAddress = "address_1", Phone = "123123123" });
-                _db.SaveChanges();
-            }
+            _db = repo;
         }
 
         [HttpGet]
         public List<Address> Get()
         {
-            return _db.Address.ToList();
+            return _db.GetAddresses();
         }
 
         [HttpGet("{id}")]
         public Address Get(int id)
         {
-            return _db.Address.FirstOrDefault(x => x.Id == id);
+            return _db.Get(id);
         }
 
         [HttpPost]
@@ -43,8 +37,7 @@ namespace MVCandAngular.Controllers
                 return BadRequest(ModelState);
             }
 
-            _db.Address.Add(address);
-            _db.SaveChanges();
+            _db.Create(address);
 
             return Ok(address);
         }
@@ -58,7 +51,6 @@ namespace MVCandAngular.Controllers
             }
 
             _db.Update(address);
-            _db.SaveChanges();
 
             return Ok(address);
         }
@@ -66,15 +58,14 @@ namespace MVCandAngular.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var address = _db.Address.FirstOrDefault(x => x.Id == id);
+            var address = _db.Get(id);
 
             if (address == null)
             {
                 return BadRequest(ModelState);
             }
 
-            _db.Address.Remove(address);
-            _db.SaveChanges();
+            _db.Delete(id);
 
             return Ok(address);
         }

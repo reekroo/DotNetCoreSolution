@@ -3,29 +3,26 @@
 using Microsoft.AspNetCore.Mvc;
 
 using MVCandAngular.Models;
+using MVCandAngular.Repositories.interfaces;
 
 namespace MVCandAngular.Controllers
 {
     [Route("api/user")]
     public class UserController : Controller
     {
-        private ApplicationContext _db;
-
-        public UserController(ApplicationContext context)
+        private  IUserRepository _db;
+        
+        public UserController(IUserRepository r)
         {
-            _db = context;
-
-            if (!_db.Users.Any())
-            {
-                _db.Users.Add(new User { FirstName ="First_Name_User1", LastName= "Last_Name_User1" });
-                _db.SaveChanges();
-            }
+            _db = r;
         }
 
         [HttpGet]
         public User Get()
         {
-            return _db.Users.FirstOrDefault();
+            var defUser = _db.GetUsers().FirstOrDefault();
+
+            return defUser;
         }
 
         [HttpPut("{id}")]
@@ -37,7 +34,6 @@ namespace MVCandAngular.Controllers
             }
 
             _db.Update(user);
-            _db.SaveChanges();
 
             return Ok(user);
         }

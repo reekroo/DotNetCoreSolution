@@ -3,6 +3,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 using MVCandAngular.Models;
+using MVCandAngular.Repositories.interfaces;
 
 namespace MVCandAngular.Controllers
 {
@@ -12,34 +13,30 @@ namespace MVCandAngular.Controllers
 
         private const int userId = 1;
 
-        private ApplicationContext _db;
+        private IUserProductsRepository _cartRepo;
+        private IProductRepository _prodRepo;
 
-        public CartController(ApplicationContext context)
+        public CartController(IUserProductsRepository repo, IProductRepository prodRepo)
         {
-            _db = context;
-
-            if (!_db.UserProducts.Any())
-            {
-                _db.UserProducts.Add(new UserProducts { UserId = 1, ProductId = 5 });
-                _db.SaveChanges();
-            }
+            _cartRepo = repo;
+            _prodRepo = prodRepo;
         }
 
         [HttpGet]
         public Cart Get()
         {
-            var productIds = _db.UserProducts.Where(x => x.UserId == userId);
+            var productIds = _cartRepo.GetUserProducts().Where(x => x.UserId == userId);
 
             if(!productIds.Any())
             {
                 return null;
             }
 
-            var a = _db.Products.Where(x => productIds.Any(y => y.ProductId == x.Id)).ToList();
+            var a = _cartRepo.GetUserProducts().Where(x => productIds.Any(y => y.ProductId == x.Id)).ToList();
 
             return new Cart()
             {
-                products = _db.Products.Where(x => productIds.Any(y => y.ProductId == x.Id)).ToList(),
+                products = _prodRepo.GetProducts().Where(x => productIds.Any(y => y.ProductId == x.Id)).ToList(),
                 Id = 1,
                 UserId = userId
             };
@@ -53,24 +50,22 @@ namespace MVCandAngular.Controllers
                 return BadRequest(ModelState);
             }
 
-            _db.UserProducts.Add(new UserProducts() { Id = 1, ProductId = product.Id, UserId = userId});
-            _db.SaveChanges();
-
+            _cartRepo.Create(new UserProducts() { Id = 1, ProductId = product.Id, UserId = userId});
+            
             return Ok(product);
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var userProduct = _db.UserProducts.FirstOrDefault(x => x.UserId == userId && x.ProductId == id);
+            var userProduct = _cartRepo.GetUserProducts().FirstOrDefault(x => x.UserId == userId && x.ProductId == id);
 
             if (userProduct == null)
             {
                 return BadRequest(ModelState);
             }
 
-            _db.UserProducts.Remove(userProduct);
-            _db.SaveChanges();
+            _cartRepo.Delete(userProduct.Id);
 
             return Ok(this.Get());
         }
@@ -78,15 +73,17 @@ namespace MVCandAngular.Controllers
         [HttpDelete]
         public IActionResult Delete()
         {
-            var userProducts = _db.UserProducts.Where(x => x.UserId == userId);
+            var userProducts = _cartRepo.GetUserProducts().Where(x => x.UserId == userId);
 
             if (userProducts == null)
             {
                 return BadRequest(ModelState);
             }
 
-            _db.UserProducts.RemoveRange(userProducts);
-            _db.SaveChanges();
+            foreach (var item in userProducts)
+            {
+                _cartRepo.Delete(item.Id);
+            }
 
             return Ok(this.Get());
         }

@@ -7,31 +7,38 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, Input } from '@angular/core';
-import { Rate } from '../../Models/Bank/Rate';
-var RateSectionComponent = /** @class */ (function () {
-    function RateSectionComponent() {
+import { Component } from '@angular/core';
+import { combineLatest } from 'rxjs';
+import { BankService } from '../../Services/data.bank.service';
+var DefaultRatesComponent = /** @class */ (function () {
+    function DefaultRatesComponent(dataService) {
+        this.dataService = dataService;
     }
-    __decorate([
-        Input(),
-        __metadata("design:type", Rate)
-    ], RateSectionComponent.prototype, "rate", void 0);
-    __decorate([
-        Input(),
-        __metadata("design:type", Number)
-    ], RateSectionComponent.prototype, "delta", void 0);
-    __decorate([
-        Input(),
-        __metadata("design:type", Number)
-    ], RateSectionComponent.prototype, "isUpper", void 0);
-    RateSectionComponent = __decorate([
+    DefaultRatesComponent.prototype.ngOnInit = function () {
+        this.getDefaultRates();
+    };
+    DefaultRatesComponent.prototype.getDefaultRates = function () {
+        var _this = this;
+        var usd$ = this.dataService.getRate(145);
+        var eur$ = this.dataService.getRate(292);
+        var rub$ = this.dataService.getRate(298);
+        combineLatest(usd$, eur$, rub$).subscribe(function (combinedResult) {
+            var arr = [];
+            arr.push(combinedResult[0]);
+            arr.push(combinedResult[1]);
+            arr.push(combinedResult[2]);
+            _this.defaultRates = arr;
+        });
+    };
+    DefaultRatesComponent = __decorate([
         Component({
-            selector: 'rate-section',
-            templateUrl: './rate-section.html',
+            selector: 'default-rates-section',
+            templateUrl: './default-rates-section.html',
             styleUrls: ['./bank.css']
-        })
-    ], RateSectionComponent);
-    return RateSectionComponent;
+        }),
+        __metadata("design:paramtypes", [BankService])
+    ], DefaultRatesComponent);
+    return DefaultRatesComponent;
 }());
-export { RateSectionComponent };
-//# sourceMappingURL=rate-section.js.map
+export { DefaultRatesComponent };
+//# sourceMappingURL=default-rates-section.js.map

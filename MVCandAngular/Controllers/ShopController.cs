@@ -1,41 +1,32 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 using Microsoft.AspNetCore.Mvc;
 
 using MVCandAngular.Models;
+using MVCandAngular.Repositories.interfaces;
 
 namespace MVCandAngular.Controllers
 {
     [Route("api/shop")]
     public class ShopController : Controller
     {
-        private ApplicationContext _db;
+        private IProductRepository _db;
 
-        public ShopController(ApplicationContext context)
+        public ShopController(IProductRepository repo)
         {
-            _db = context;
-
-            if (!_db.Products.Any())
-            {
-                _db.Products.Add(new Product { Name = "iPhone X", Company = "Apple", Price = 79900 });
-                _db.Products.Add(new Product { Name = "Galaxy S8", Company = "Samsung", Price = 49900 });
-                _db.Products.Add(new Product { Name = "Pixel 2", Company = "Google", Price = 52900 });
-
-                _db.SaveChanges();
-            }
+            _db = repo;
         }
-
+        
         [HttpGet]
         public IEnumerable<Product> Get()
         {
-            return _db.Products.ToList();
+            return _db.GetProducts();
         }
 
         [HttpGet("{id}")]
         public Product Get(int id)
         {
-            Product product = _db.Products.FirstOrDefault(x => x.Id == id);
+            Product product = _db.Get(id);
             return product;
         }
 
@@ -47,8 +38,7 @@ namespace MVCandAngular.Controllers
                 return BadRequest(ModelState);
             }
 
-            _db.Products.Add(product);
-            _db.SaveChanges();
+            _db.Create(product);
 
             return Ok(product);
         }

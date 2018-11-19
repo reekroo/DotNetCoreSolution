@@ -10,6 +10,7 @@
     <None Remove="ClientApp\app\app.module.ts" />
     <None Remove="ClientApp\app\Components\bankCompoment\bank.ts" />
     <None Remove="ClientApp\app\Components\bankCompoment\convertor-section.ts" />
+    <None Remove="ClientApp\app\Components\bankCompoment\default-rates-section.ts" />
     <None Remove="ClientApp\app\Components\bankCompoment\month-rates-table.ts" />
     <None Remove="ClientApp\app\Components\bankCompoment\rate-section.ts" />
     <None Remove="ClientApp\app\Components\chartComponent\chart.ts" />
@@ -52,6 +53,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.5" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
@@ -64,6 +66,7 @@
     <TypeScriptCompile Include="ClientApp\app\Components\addressesComponent\address-create.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\addressesComponent\address-edit.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\convertor-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\default-rates-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\rate-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\month-rates-table.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\bank.ts" />

@@ -10,29 +10,33 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './Components/appComponent/app.head';
-import { ProductsFormComponent } from './Components/productsComponent/product-form';
-import { ProductListComponent } from './Components/productsComponent/product-list';
-import { ProductsEditComponent } from './Components/productsComponent/product-edit';
-import { ProductsCreateComponent } from './Components/productsComponent/product-create';
-import { ShopProductListComponent } from './Components/shopComponent/product-list';
-import { ShopProductDetailsComponent } from './Components/shopComponent/product-details';
-import { FullUserComponent } from './Components/fullUserComponent/full-user';
-import { UserInfoComponent } from './Components/userComponent/user-information';
-import { UserFormComponent } from './Components/userComponent/user-form';
-import { UserEditComponent } from './Components/userComponent/user-edit';
-import { AddressListComponent } from './Components/addressesComponent/address-list';
-import { AddressFormComponent } from './Components/addressesComponent/address-form';
-import { AddressCreateComponent } from './Components/addressesComponent/address-create';
-import { AddressEditComponent } from './Components/addressesComponent/address-edit';
-import { CartProductListComponent } from './Components/cartComponent/cart-product-list';
-import { NewsComponent } from './Components/newsComponent/news';
-import { BankComponent } from './Components/bankCompoment/bank';
-import { ChartComponent } from './Components/chartComponent/chart';
-import { MonthRateTableComponent } from './Components/bankCompoment/month-rates-table';
-import { RateSectionComponent } from './Components/bankCompoment/rate-section';
-import { ConvertorSectionComponent } from './Components/bankCompoment/convertor-section';
-import { DefaultRatesComponent } from './Components/bankCompoment/default-rates-section';
-import { OilComponent } from './Components/oilComponent/oil';
+import { ProductsFormComponent } from './Components/Shop/productsComponent/product-form';
+import { ProductListComponent } from './Components/Shop/productsComponent/product-list';
+import { ProductsEditComponent } from './Components/Shop/productsComponent/product-edit';
+import { ProductsCreateComponent } from './Components/Shop/productsComponent/product-create';
+import { ShopProductListComponent } from './Components/Shop/shopComponent/product-list';
+import { ShopProductDetailsComponent } from './Components/Shop/shopComponent/product-details';
+import { FullUserComponent } from './Components/Shop/fullUserComponent/full-user';
+import { UserInfoComponent } from './Components/Shop/userComponent/user-information';
+import { UserFormComponent } from './Components/Shop/userComponent/user-form';
+import { UserEditComponent } from './Components/Shop/userComponent/user-edit';
+import { AddressListComponent } from './Components/Shop/addressesComponent/address-list';
+import { AddressFormComponent } from './Components/Shop/addressesComponent/address-form';
+import { AddressCreateComponent } from './Components/Shop/addressesComponent/address-create';
+import { AddressEditComponent } from './Components/Shop/addressesComponent/address-edit';
+import { CartProductListComponent } from './Components/Shop/cartComponent/cart-product-list';
+import { NewsComponent } from './Components/News/newsComponent/news';
+import { BankComponent } from './Components/Bank/bankCompoment/bank';
+import { ChartComponent } from './Components/Bank/chartComponent/chart';
+import { MonthRateTableComponent } from './Components/Bank/bankCompoment/month-rates-table';
+import { RateSectionComponent } from './Components/Bank/bankCompoment/rate-section';
+import { ConvertorSectionComponent } from './Components/Bank/bankCompoment/convertor-section';
+import { DefaultRatesComponent } from './Components/Bank/bankCompoment/default-rates-section';
+import { MetalComponent } from './Components/Bank/metalComponent/metal';
+import { DefaultMetalRatesComponent } from './Components/Bank/metalComponent/default-metal-section';
+import { MetalRatesComponent } from './Components/Bank/metalComponent/metal-section';
+import { MetalChartComponent } from './Components/Bank/chartComponent/metalChart';
+import { OilComponent } from './Components/Oil/oilComponent/oil';
 var appRoutes = [
     { path: 'shop', component: ShopProductListComponent },
     { path: 'shop/:id', component: ShopProductDetailsComponent },
@@ -44,7 +48,8 @@ var appRoutes = [
     { path: 'user/address/create', component: AddressCreateComponent },
     { path: 'user/address/edit/:id', component: AddressEditComponent },
     { path: 'news', component: NewsComponent },
-    { path: 'bank', component: BankComponent },
+    { path: 'currency', component: BankComponent },
+    { path: 'ingots', component: MetalComponent },
     { path: 'oil', component: OilComponent },
     { path: '**', redirectTo: '/' }
 ];
@@ -63,6 +68,7 @@ var AppModule = /** @class */ (function () {
                 AddressListComponent, AddressFormComponent, AddressCreateComponent, AddressEditComponent,
                 CartProductListComponent,
                 BankComponent, ChartComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
+                MetalComponent, MetalChartComponent, DefaultMetalRatesComponent, MetalRatesComponent,
                 OilComponent
             ],
             bootstrap: [AppComponent]

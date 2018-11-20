@@ -1,7 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Address } from '../Models/address';
+import { Address } from '../Models/Shop/address';
 
 @Injectable()
 

@@ -8,46 +8,53 @@
   <ItemGroup>
     <None Remove="ClientApp\app\app.component.ts" />
     <None Remove="ClientApp\app\app.module.ts" />
-    <None Remove="ClientApp\app\Components\bankCompoment\bank.ts" />
-    <None Remove="ClientApp\app\Components\bankCompoment\convertor-section.ts" />
-    <None Remove="ClientApp\app\Components\bankCompoment\default-rates-section.ts" />
-    <None Remove="ClientApp\app\Components\bankCompoment\month-rates-table.ts" />
-    <None Remove="ClientApp\app\Components\bankCompoment\rate-section.ts" />
-    <None Remove="ClientApp\app\Components\chartComponent\chart.ts" />
-    <None Remove="ClientApp\app\Components\fullUserComponent\full-user.ts" />
-    <None Remove="ClientApp\app\Components\newsComponent\news.ts" />
-    <None Remove="ClientApp\app\Components\oilComponent\oil.ts" />
-    <None Remove="ClientApp\app\Components\productsComponent\product-create.ts" />
-    <None Remove="ClientApp\app\Components\productsComponent\product-edit.ts" />
-    <None Remove="ClientApp\app\Components\productsComponent\product-form.ts" />
-    <None Remove="ClientApp\app\Components\productsComponent\product-list.ts" />
-    <None Remove="ClientApp\app\Components\shopComponent\product-details.ts" />
-    <None Remove="ClientApp\app\Components\shopComponent\product-list.ts" />
-    <None Remove="ClientApp\app\Components\userComponent\address-create.ts" />
-    <None Remove="ClientApp\app\Components\userComponent\address-edit.ts" />
-    <None Remove="ClientApp\app\Components\userComponent\address-form.ts" />
-    <None Remove="ClientApp\app\Components\userComponent\address-list.ts" />
-    <None Remove="ClientApp\app\Components\userComponent\user-information.ts" />
+    <None Remove="ClientApp\app\Components\Bank\bankCompoment\bank.ts" />
+    <None Remove="ClientApp\app\Components\Bank\bankCompoment\convertor-section.ts" />
+    <None Remove="ClientApp\app\Components\Bank\bankCompoment\default-rates-section.ts" />
+    <None Remove="ClientApp\app\Components\Bank\bankCompoment\month-rates-table.ts" />
+    <None Remove="ClientApp\app\Components\Bank\bankCompoment\rate-section.ts" />
+    <None Remove="ClientApp\app\Components\Bank\chartComponent\chart.ts" />
+    <None Remove="ClientApp\app\Components\Bank\chartComponent\metalChart.ts" />
+    <None Remove="ClientApp\app\Components\Bank\metalComponent\default-metal-section.ts" />
+    <None Remove="ClientApp\app\Components\Bank\metalComponent\metal-section.ts" />
+    <None Remove="ClientApp\app\Components\Bank\metalComponent\Metal.ts" />
+    <None Remove="ClientApp\app\Components\Shop\fullUserComponent\full-user.ts" />
+    <None Remove="ClientApp\app\Components\News\newsComponent\news.ts" />
+    <None Remove="ClientApp\app\Components\Oil\oilComponent\oil.ts" />
+    <None Remove="ClientApp\app\Components\Shop\productsComponent\product-create.ts" />
+    <None Remove="ClientApp\app\Components\Shop\productsComponent\product-edit.ts" />
+    <None Remove="ClientApp\app\Components\Shop\productsComponent\product-form.ts" />
+    <None Remove="ClientApp\app\Components\Shop\productsComponent\product-list.ts" />
+    <None Remove="ClientApp\app\Components\Shop\shopComponent\product-details.ts" />
+    <None Remove="ClientApp\app\Components\Shop\shopComponent\product-list.ts" />
+    <None Remove="ClientApp\app\Components\Shop\userComponent\address-create.ts" />
+    <None Remove="ClientApp\app\Components\Shop\userComponent\address-edit.ts" />
+    <None Remove="ClientApp\app\Components\Shop\userComponent\address-form.ts" />
+    <None Remove="ClientApp\app\Components\Shop\userComponent\address-list.ts" />
+    <None Remove="ClientApp\app\Components\Shop\userComponent\user-information.ts" />
     <None Remove="ClientApp\app\data.service.ts" />
     <None Remove="ClientApp\app\Components\appComponent\app.head.ts" />
     <None Remove="ClientApp\app\Models\address.ts" />
     <None Remove="ClientApp\app\Models\Bank\Currency.ts" />
+    <None Remove="ClientApp\app\Models\Bank\Ingot.ts" />
+    <None Remove="ClientApp\app\Models\Bank\Meta;.ts" />
     <None Remove="ClientApp\app\Models\Bank\MonthRate.ts" />
     <None Remove="ClientApp\app\Models\Bank\Rate.ts" />
     <None Remove="ClientApp\app\Models\cart.ts" />
     <None Remove="ClientApp\app\Models\channel.ts" />
     <None Remove="ClientApp\app\Models\News.ts" />
     <None Remove="ClientApp\app\product.ts" />
-    <None Remove="ClientApp\app\Components\shopComponent\data.shop.service.ts" />
+    <None Remove="ClientApp\app\Components\Shop\shopComponent\data.shop.service.ts" />
+    <None Remove="ClientApp\app\Services\data.bank.ingots.service.ts" />
     <None Remove="ClientApp\app\Services\data.bank.service.ts" />
     <None Remove="ClientApp\app\Services\data.news.service.ts" />
     <None Remove="ClientApp\app\Services\data.user.address.service.ts" />
     <None Remove="ClientApp\app\Services\data.user.cart.service.ts" />
     <None Remove="ClientApp\app\user.ts" />
-    <None Remove="ClientApp\app\Components\userComponent\data.user.service.ts" />
-    <None Remove="ClientApp\app\Components\userComponent\user-cart.ts" />
-    <None Remove="ClientApp\app\Components\userComponent\user-edit.ts" />
-    <None Remove="ClientApp\app\Components\userComponent\user-form.ts" />
+    <None Remove="ClientApp\app\Components\Shop\userComponent\data.user.service.ts" />
+    <None Remove="ClientApp\app\Components\Shop\userComponent\user-cart.ts" />
+    <None Remove="ClientApp\app\Components\Shop\userComponent\user-edit.ts" />
+    <None Remove="ClientApp\app\Components\Shop\userComponent\user-form.ts" />
     <None Remove="ClientApp\main.ts" />
     <None Remove="ClientApp\polyfills.ts" />
   </ItemGroup>
@@ -61,62 +68,66 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\Components\appComponent\app.head.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\addressesComponent\address-form.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\addressesComponent\address-list.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\addressesComponent\address-create.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\addressesComponent\address-edit.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\convertor-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\default-rates-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\rate-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\month-rates-table.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\bankCompoment\bank.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\chartComponent\chart.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\fullUserComponent\full-user.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\newsComponent\news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\oilComponent\oil.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\userComponent\user-information.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Bank\chartComponent\metalChart.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Bank\metalComponent\default-metal-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Bank\metalComponent\metal.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Bank\metalComponent\metal-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\addressesComponent\address-form.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\addressesComponent\address-list.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\addressesComponent\address-create.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\addressesComponent\address-edit.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Bank\bankCompoment\convertor-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Bank\bankCompoment\default-rates-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Bank\bankCompoment\rate-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Bank\bankCompoment\month-rates-table.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Bank\bankCompoment\bank.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Bank\chartComponent\chart.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\fullUserComponent\full-user.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\News\newsComponent\news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Oil\oilComponent\oil.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\userComponent\user-information.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Bank\Ingot.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Bank\Metal.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Bank\MonthRate.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Bank\Rate.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Bank\Currency.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\channel.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\cart.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\address.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\user.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\productsComponent\product-list.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\productsComponent\product-edit.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\productsComponent\product-create.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\productsComponent\product-form.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\News\channel.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\News\news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Shop\cart.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Shop\address.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Shop\user.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\productsComponent\product-list.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\productsComponent\product-edit.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\productsComponent\product-create.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\productsComponent\product-form.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\data.bank.ingots.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.bank.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.news.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.user.cart.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.user.address.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.products.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\product.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\shopComponent\product-list.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\shopComponent\product-details.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Shop\product.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\shopComponent\product-list.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\shopComponent\product-details.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.shop.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.user.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\cartComponent\cart-product-list.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\userComponent\user-form.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\userComponent\user-edit.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\cartComponent\cart-product-list.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\userComponent\user-form.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Shop\userComponent\user-edit.ts" />
     <TypeScriptCompile Include="ClientApp\polyfills.ts" />
     <TypeScriptCompile Include="ClientApp\main.ts" />
     <TypeScriptCompile Include="ClientApp\app\app.module.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ClientApp\app\Components\addressesComponent\address-form.js">
+    <None Update="ClientApp\app\Components\Bank\metalComponent\default-metal-section.js.map">
+      <DependentUpon>default-metal-section.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Components\Shop\addressesComponent\address-form.js">
       <DependentUpon>address-form.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Components\userComponent\user-information.js">
+    <None Update="ClientApp\app\Components\Shop\userComponent\user-information.js">
       <DependentUpon>user-information.ts</DependentUpon>
-    </None>
-    <None Update="ClientApp\app\Components\userComponent\user-information.js.map">
-      <DependentUpon>user-information.js</DependentUpon>
-    </None>
-    <None Update="ClientApp\app\Models\address - Copy.js.map">
-      <DependentUpon>address.js</DependentUpon>
     </None>
     <None Update="ClientApp\app\Models\Bank\Currency - Copy.js.map">
       <DependentUpon>Currency.js</DependentUpon>
@@ -127,26 +138,20 @@
     <None Update="ClientApp\app\Models\Bank\Currency.js.map">
       <DependentUpon>Currency.js</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Models\cart.js">
+    <None Update="ClientApp\app\Models\Shop\cart.js">
       <DependentUpon>cart.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Models\cart.js.map">
-      <DependentUpon>cart.js</DependentUpon>
-    </None>
-    <None Update="ClientApp\app\Models\channel.js">
+    <None Update="ClientApp\app\Models\News\channel.js">
       <DependentUpon>channel.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Models\product.js">
+    <None Update="ClientApp\app\Models\Shop\product.js">
       <DependentUpon>product.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Components\shopComponent\product-list.js">
+    <None Update="ClientApp\app\Components\Shop\shopComponent\product-list.js">
       <DependentUpon>product-list.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Models\address.js">
+    <None Update="ClientApp\app\Models\Shop\address.js">
       <DependentUpon>address.ts</DependentUpon>
-    </None>
-    <None Update="ClientApp\app\Models\address.js.map">
-      <DependentUpon>address.js</DependentUpon>
     </None>
     <None Update="ClientApp\app\Services\data.user.cart.service.js">
       <DependentUpon>data.user.cart.service.ts</DependentUpon>

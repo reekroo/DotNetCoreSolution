@@ -6,7 +6,7 @@ import { Rate } from '../../../Models/Bank/Rate';
 @Component({
     selector: 'rate-section',
     templateUrl: './rate-section.html',
-    styleUrls: ['./bank.css']
+    styleUrls: ['./currency.css']
 })
 
 export class RateSectionComponent {

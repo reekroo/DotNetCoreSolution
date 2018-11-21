@@ -9,10 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component, Input } from '@angular/core';
 import { Chart } from 'chart.js';
-var MetalChartComponent = /** @class */ (function () {
-    function MetalChartComponent() {
+var ChartComponent = /** @class */ (function () {
+    function ChartComponent() {
     }
-    MetalChartComponent.prototype.ngOnChanges = function () {
+    ChartComponent.prototype.ngOnChanges = function () {
         this.chart = new Chart('canvas', {
             type: 'line',
             data: this.inputData,
@@ -30,14 +30,14 @@ var MetalChartComponent = /** @class */ (function () {
     __decorate([
         Input(),
         __metadata("design:type", Object)
-    ], MetalChartComponent.prototype, "inputData", void 0);
-    MetalChartComponent = __decorate([
+    ], ChartComponent.prototype, "inputData", void 0);
+    ChartComponent = __decorate([
         Component({
-            selector: 'metal-chart-form',
+            selector: 'chart-form',
             templateUrl: './chart.html'
         })
-    ], MetalChartComponent);
-    return MetalChartComponent;
+    ], ChartComponent);
+    return ChartComponent;
 }());
-export { MetalChartComponent };
-//# sourceMappingURL=metalChart.js.map
+export { ChartComponent };
+//# sourceMappingURL=chart.js.map

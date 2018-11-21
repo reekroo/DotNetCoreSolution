@@ -3,11 +3,11 @@
 import { Chart } from 'chart.js';
 
 @Component({
-    selector: 'metal-chart-form',
+    selector: 'chart-form',
     templateUrl: './chart.html'
 })
 
-export class MetalChartComponent {
+export class ChartComponent {
 
     chart: Chart;
 

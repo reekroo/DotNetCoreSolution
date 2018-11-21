@@ -5,7 +5,7 @@ import { MonthRate } from '../../../Models/Bank/MonthRate';
 
 @Component({
     templateUrl: './month-rates-table.html',
-    styleUrls: ['./bank.css'],
+    styleUrls: ['./currency.css'],
     selector: 'month-rates-table'
 })
 

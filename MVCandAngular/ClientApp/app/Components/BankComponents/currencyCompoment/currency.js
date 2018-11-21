@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { BankService } from '../../../Services/data.bank.service';
 import { combineLatest } from 'rxjs';
-var BankComponent = /** @class */ (function () {
-    function BankComponent(dataService) {
+var CurrencyComponent = /** @class */ (function () {
+    function CurrencyComponent(dataService) {
         this.dataService = dataService;
         this.validCurrncies = [
             323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 290,
@@ -22,10 +22,10 @@ var BankComponent = /** @class */ (function () {
         this.isUpper = false;
         this.delta = 0.0;
     }
-    BankComponent.prototype.ngOnInit = function () {
+    CurrencyComponent.prototype.ngOnInit = function () {
         this.getCurrencies();
     };
-    BankComponent.prototype.getCurrencies = function () {
+    CurrencyComponent.prototype.getCurrencies = function () {
         var _this = this;
         this.dataService.getCurrencies().subscribe(function (data) {
             if (data) {
@@ -38,7 +38,7 @@ var BankComponent = /** @class */ (function () {
             ;
         });
     };
-    BankComponent.prototype.getRate = function (id) {
+    CurrencyComponent.prototype.getRate = function (id) {
         var _this = this;
         var date = new Date();
         var yesterday = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() - 1);
@@ -61,6 +61,7 @@ var BankComponent = /** @class */ (function () {
         var start = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate());
         this.dataService.getRateByPeriod(id, start, end).subscribe(function (data) {
             _this.rates = data;
+            _this.chartData = _this.addaptToChartData(_this.rates);
             var previusMonthData = new Date();
             previusMonthData.setMonth(previusMonthData.getMonth() - 1);
             previusMonthData.setDate(previusMonthData.getDate() - 2);
@@ -68,15 +69,42 @@ var BankComponent = /** @class */ (function () {
         });
         this.showDefaultSection = false;
     };
-    BankComponent = __decorate([
+    CurrencyComponent.prototype.addaptToChartData = function (array) {
+        if (!array) {
+            return;
+        }
+        array = array.sort(function (a, b) {
+            var c = new Date(a.Date);
+            var d = new Date(b.Date);
+            return c < d ? -1 : c > d ? 1 : 0;
+        });
+        var labels = [];
+        var data = [];
+        for (var i = 0; i < array.length; i++) {
+            labels.push(new Date(array[i].Date).toLocaleDateString());
+            data.push(array[i].Cur_OfficialRate);
+        }
+        var result = {
+            labels: labels,
+            datasets: [{
+                    label: 'rate',
+                    data: data,
+                    backgroundColor: ['rgba(255, 99, 132, 0.2)'],
+                    borderColor: ['rgba(255,99,132,1)'],
+                    borderWidth: 1
+                }]
+        };
+        return result;
+    };
+    CurrencyComponent = __decorate([
         Component({
-            templateUrl: './bank.html',
-            styleUrls: ['./bank.css'],
+            templateUrl: './currency.html',
+            styleUrls: ['./currency.css'],
             providers: [BankService]
         }),
         __metadata("design:paramtypes", [BankService])
-    ], BankComponent);
-    return BankComponent;
+    ], CurrencyComponent);
+    return CurrencyComponent;
 }());
-export { BankComponent };
-//# sourceMappingURL=bank.js.map
+export { CurrencyComponent };
+//# sourceMappingURL=currency.js.map

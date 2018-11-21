@@ -20,23 +20,26 @@ var RefinancingComponent = /** @class */ (function () {
     RefinancingComponent.prototype.getTodayRate = function () {
         var _this = this;
         this.dataService.getRefinancingRate(new Date()).subscribe(function (data) {
-            _this.refinancingRate = data;
-            console.log(_this.refinancingRate);
+            _this.refinancingRate = data[0];
+            _this.refinancingRate.Date = new Date(_this.refinancingRate.Date).toLocaleDateString();
         });
     };
     RefinancingComponent.prototype.getRates = function () {
         var _this = this;
-        this.dataService.getRefinancingRate(new Date()).subscribe(function (data) {
+        this.dataService.getDunamicRefinancingRate().subscribe(function (data) {
             _this.refinancingRates = data;
             _this.chartData = _this.addaptToChartData(data);
-            console.log(_this.refinancingRates);
-            console.log(_this.chartData);
         });
     };
     RefinancingComponent.prototype.addaptToChartData = function (array) {
         if (!array) {
             return;
         }
+        array = array.sort(function (a, b) {
+            var c = new Date(a.Date);
+            var d = new Date(b.Date);
+            return c < d ? -1 : c > d ? 1 : 0;
+        });
         var labels = [];
         var data = [];
         for (var i = 0; i < array.length; i++) {
@@ -47,6 +50,7 @@ var RefinancingComponent = /** @class */ (function () {
             labels: labels,
             datasets: [
                 {
+                    label: 'refinancing rate',
                     data: data,
                     backgroundColor: ['rgba(54, 162, 235, 0.2)'],
                     borderColor: ['rgba(54, 162, 235, 1)'],

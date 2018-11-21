@@ -25,6 +25,7 @@ export class BankComponent implements OnInit {
     rate: Rate;
     rates: Rate[];
     monthRates: Rate[];
+    chartData: Object;
 
     showDefaultSection: boolean = true;
     isUpper: boolean = false;
@@ -85,7 +86,9 @@ export class BankComponent implements OnInit {
         this.dataService.getRateByPeriod(id, start, end).subscribe((data: any) => {
 
             this.rates = data as Rate[];
-            
+
+            this.chartData = this.addaptToChartData(this.rates);
+
             let previusMonthData = new Date();
             previusMonthData.setMonth(previusMonthData.getMonth() - 1);
             previusMonthData.setDate(previusMonthData.getDate() - 2);
@@ -94,5 +97,42 @@ export class BankComponent implements OnInit {
         });
 
         this.showDefaultSection = false;
+    }
+
+
+    private addaptToChartData(array: Rate[]) {
+
+        if (!array) {
+
+            return;
+        }
+
+        array = array.sort(function (a, b) {
+            var c = new Date(a.Date);
+            var d = new Date(b.Date);
+            return c < d ? -1 : c > d ? 1 : 0;
+        }) as Rate[];
+
+        var labels = [];
+        var data = [];
+
+        for (var i = 0; i < array.length; i++) {
+
+            labels.push(new Date(array[i].Date).toLocaleDateString());
+            data.push(array[i].Cur_OfficialRate);
+        }
+
+        let result = {
+            labels: labels,
+            datasets: [{
+                label: 'rate',
+                data: data,
+                backgroundColor: ['rgba(255, 99, 132, 0.2)'],
+                borderColor: ['rgba(255,99,132,1)'],
+                borderWidth: 1
+            }]
+        }
+
+        return result;
     }
 }

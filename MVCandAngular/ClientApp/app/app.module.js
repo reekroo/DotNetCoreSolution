@@ -36,6 +36,9 @@ import { MetalComponent } from './Components/Bank/metalComponent/metal';
 import { DefaultMetalRatesComponent } from './Components/Bank/metalComponent/default-metal-section';
 import { MetalRatesComponent } from './Components/Bank/metalComponent/metal-section';
 import { MetalChartComponent } from './Components/Bank/chartComponent/metalChart';
+import { RefinancingComponent } from './Components/Bank/refinancingComponent/refinancing-rate';
+import { RefinancingRateComponent } from './Components/Bank/refinancingComponent/refinancing-rate-section';
+import { RefinancingRatesComponent } from './Components/Bank/refinancingComponent/refinancing-rates-section';
 import { OilComponent } from './Components/Oil/oilComponent/oil';
 var appRoutes = [
     { path: 'shop', component: ShopProductListComponent },
@@ -48,8 +51,9 @@ var appRoutes = [
     { path: 'user/address/create', component: AddressCreateComponent },
     { path: 'user/address/edit/:id', component: AddressEditComponent },
     { path: 'news', component: NewsComponent },
-    { path: 'currency', component: BankComponent },
-    { path: 'ingots', component: MetalComponent },
+    { path: 'bank/currencies', component: BankComponent },
+    { path: 'bank/ingots', component: MetalComponent },
+    { path: 'bank/refinancing-rates', component: RefinancingComponent },
     { path: 'oil', component: OilComponent },
     { path: '**', redirectTo: '/' }
 ];
@@ -69,6 +73,7 @@ var AppModule = /** @class */ (function () {
                 CartProductListComponent,
                 BankComponent, ChartComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
                 MetalComponent, MetalChartComponent, DefaultMetalRatesComponent, MetalRatesComponent,
+                RefinancingComponent, RefinancingRateComponent, RefinancingRatesComponent,
                 OilComponent
             ],
             bootstrap: [AppComponent]

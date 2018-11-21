@@ -18,6 +18,9 @@
     <None Remove="ClientApp\app\Components\Bank\metalComponent\default-metal-section.ts" />
     <None Remove="ClientApp\app\Components\Bank\metalComponent\metal-section.ts" />
     <None Remove="ClientApp\app\Components\Bank\metalComponent\Metal.ts" />
+    <None Remove="ClientApp\app\Components\Bank\refinancingComponent\refinancing-rate-section.ts" />
+    <None Remove="ClientApp\app\Components\Bank\refinancingComponent\refinancing-rate.ts" />
+    <None Remove="ClientApp\app\Components\Bank\refinancingComponent\refinancing-rates-section.ts" />
     <None Remove="ClientApp\app\Components\Shop\fullUserComponent\full-user.ts" />
     <None Remove="ClientApp\app\Components\News\newsComponent\news.ts" />
     <None Remove="ClientApp\app\Components\Oil\oilComponent\oil.ts" />
@@ -40,12 +43,14 @@
     <None Remove="ClientApp\app\Models\Bank\Meta;.ts" />
     <None Remove="ClientApp\app\Models\Bank\MonthRate.ts" />
     <None Remove="ClientApp\app\Models\Bank\Rate.ts" />
+    <None Remove="ClientApp\app\Models\Bank\RefinancingRate.ts" />
     <None Remove="ClientApp\app\Models\cart.ts" />
     <None Remove="ClientApp\app\Models\channel.ts" />
     <None Remove="ClientApp\app\Models\News.ts" />
     <None Remove="ClientApp\app\product.ts" />
     <None Remove="ClientApp\app\Components\Shop\shopComponent\data.shop.service.ts" />
     <None Remove="ClientApp\app\Services\data.bank.ingots.service.ts" />
+    <None Remove="ClientApp\app\Services\data.bank.refinancing.service.ts" />
     <None Remove="ClientApp\app\Services\data.bank.service.ts" />
     <None Remove="ClientApp\app\Services\data.news.service.ts" />
     <None Remove="ClientApp\app\Services\data.user.address.service.ts" />
@@ -72,6 +77,9 @@
     <TypeScriptCompile Include="ClientApp\app\Components\Bank\metalComponent\default-metal-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\Bank\metalComponent\metal.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\Bank\metalComponent\metal-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Bank\refinancingComponent\refinancing-rates-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Bank\refinancingComponent\refinancing-rate-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\Bank\refinancingComponent\refinancing-rate.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\Shop\addressesComponent\address-form.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\Shop\addressesComponent\address-list.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\Shop\addressesComponent\address-create.ts" />
@@ -86,6 +94,7 @@
     <TypeScriptCompile Include="ClientApp\app\Components\News\newsComponent\news.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\Oil\oilComponent\oil.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\Shop\userComponent\user-information.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Models\Bank\RefinancingRate.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Bank\Ingot.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Bank\Metal.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Bank\MonthRate.ts" />
@@ -100,6 +109,7 @@
     <TypeScriptCompile Include="ClientApp\app\Components\Shop\productsComponent\product-edit.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\Shop\productsComponent\product-create.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\Shop\productsComponent\product-form.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\data.bank.refinancing.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.bank.ingots.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.bank.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.news.service.ts" />
@@ -123,6 +133,9 @@
     <None Update="ClientApp\app\Components\Bank\metalComponent\default-metal-section.js.map">
       <DependentUpon>default-metal-section.js</DependentUpon>
     </None>
+    <None Update="ClientApp\app\Components\Bank\refinancingComponent\refinancing-rate-section.js.map">
+      <DependentUpon>refinancing-rate-section.js</DependentUpon>
+    </None>
     <None Update="ClientApp\app\Components\Shop\addressesComponent\address-form.js">
       <DependentUpon>address-form.ts</DependentUpon>
     </None>
@@ -137,6 +150,9 @@
     </None>
     <None Update="ClientApp\app\Models\Bank\Currency.js.map">
       <DependentUpon>Currency.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Models\Bank\RefinancingRate.js">
+      <DependentUpon>RefinancingRate.ts</DependentUpon>
     </None>
     <None Update="ClientApp\app\Models\Shop\cart.js">
       <DependentUpon>cart.ts</DependentUpon>

@@ -29,7 +29,6 @@ import { CartProductListComponent } from './Components/Shop/cartComponent/cart-p
 import { NewsComponent } from './Components/News/newsComponent/news';
 
 import { BankComponent } from './Components/Bank/bankCompoment/bank';
-import { ChartComponent } from './Components/Bank/chartComponent/chart';
 import { MonthRateTableComponent } from './Components/Bank/bankCompoment/month-rates-table';
 import { RateSectionComponent } from './Components/Bank/bankCompoment/rate-section';
 import { ConvertorSectionComponent } from './Components/Bank/bankCompoment/convertor-section';
@@ -37,7 +36,10 @@ import { DefaultRatesComponent } from './Components/Bank/bankCompoment/default-r
 import { MetalComponent } from './Components/Bank/metalComponent/metal';
 import { DefaultMetalRatesComponent } from './Components/Bank/metalComponent/default-metal-section';
 import { MetalRatesComponent } from './Components/Bank/metalComponent/metal-section';
-import { MetalChartComponent } from './Components/Bank/chartComponent/metalChart';
+import { MetalChartComponent } from './Components/Bank/chartComponent/chart';
+import { RefinancingComponent } from './Components/Bank/refinancingComponent/refinancing-rate';
+import { RefinancingRateComponent } from './Components/Bank/refinancingComponent/refinancing-rate-section';
+import { RefinancingRatesComponent } from './Components/Bank/refinancingComponent/refinancing-rates-section';
 
 import { OilComponent } from './Components/Oil/oilComponent/oil'
 
@@ -55,10 +57,12 @@ const appRoutes: Routes = [
     { path: 'user/address/create', component: AddressCreateComponent },
     { path: 'user/address/edit/:id', component: AddressEditComponent },
 
-    { path: 'news', component: NewsComponent },    
-    { path: 'currencies', component: BankComponent },
-    { path: 'ingots', component: MetalComponent },
+    { path: 'news', component: NewsComponent },
     { path: 'oil', component: OilComponent },
+
+    { path: 'bank/currencies', component: BankComponent },
+    { path: 'bank/ingots', component: MetalComponent },
+    { path: 'bank/refinancing-rates', component: RefinancingComponent },
 
     { path: '**', redirectTo: '/' }
 ];
@@ -73,8 +77,9 @@ const appRoutes: Routes = [
         FullUserComponent, UserFormComponent, UserInfoComponent, UserEditComponent,
         AddressListComponent, AddressFormComponent, AddressCreateComponent, AddressEditComponent,
         CartProductListComponent,
-        BankComponent, ChartComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
+        BankComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
         MetalComponent, MetalChartComponent, DefaultMetalRatesComponent, MetalRatesComponent,
+        RefinancingComponent, RefinancingRateComponent, RefinancingRatesComponent,
         OilComponent
     ],
     bootstrap: [AppComponent]

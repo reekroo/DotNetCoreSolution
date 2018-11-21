@@ -1,0 +1,37 @@
+﻿<div class="bank-container container-fluid">
+
+    <div class="row metal" *ngIf="refinancingRate">
+
+        <div class="col-sm-12">
+            <h2>Current rate</h2>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <refinancing-rate-section [refinancingRate]="refinancingRate"></refinancing-rate-section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row metal" *ngIf="refinancingRates && refinancingRates.length > 0">
+
+        <div div class="col-sm-8">
+            <h2>Statistic</h2>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <metal-chart-form [inputData]="chartData"></metal-chart-form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <refinancing-rates-section [refinancingRates]="refinancingRates"></refinancing-rates-section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

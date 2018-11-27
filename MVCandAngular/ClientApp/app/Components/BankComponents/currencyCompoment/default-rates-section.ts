@@ -7,8 +7,7 @@ import { Rate } from '../../../Models/Bank/Rate';
 
 @Component({
     selector: 'default-rates-section',
-    templateUrl: './default-rates-section.html',
-    styleUrls: ['./currency.css']
+    templateUrl: './default-rates-section.html'
 })
 
 export class DefaultRatesComponent implements OnInit {

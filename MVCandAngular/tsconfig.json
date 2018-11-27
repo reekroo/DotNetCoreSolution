@@ -1,4 +1,5 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
     "noImplicitAny": true,
     "noEmitOnError": true,
@@ -19,6 +20,10 @@
   "exclude": [
     "node_modules",
     "wwwroot",
+    "obj",
     "bin"
-  ]
+  ],
+  "typeAcquisition": {
+    "enable": true
+  }
 }

@@ -5,8 +5,7 @@ import { Rate } from '../../../Models/Bank/Rate';
 
 @Component({
     selector: 'convertor-section',
-    templateUrl: './convertor-section.html',
-    styleUrls: ['./currency.css']
+    templateUrl: './convertor-section.html'
 })
 
 export class ConvertorSectionComponent {

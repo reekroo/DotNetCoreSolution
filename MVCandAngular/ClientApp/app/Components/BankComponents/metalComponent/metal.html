@@ -1,9 +1,8 @@
 ﻿<div class="bank-container container-fluid">
 
-    <div class="row">
+    <div class="row metal-navigation">
         <div class='navbar-collapse collapse'>
             <ul class='nav navbar-nav'>
-
                 <li *ngFor="let metal of metals">
                     <a><span id="{{metal.Id}}" (click)="getRate(metal.Id)">{{metal.NameEng}}</span></a>
                 </li>
@@ -11,31 +10,27 @@
         </div>
     </div>
 
-    <div class="row metal">
-        
-        <div class="col-sm-12"  *ngIf="ingotsRate && ingotsRate.length > 0">
+    <div class="row" *ngIf="ingotsRate && ingotsRate.length > 0">
+        <div class="col-sm-12">
             <h2>Current rate</h2>
-            
             <div class="panel panel-default">
                 <div class="panel-body">
                     <metal-section [metalRates]="ingotsRate"></metal-section>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div div class="col-sm-12" *ngIf="chartData && ingotsRate && ingotsRate.length > 0">
+    <div class="row" *ngIf="chartData && ingotsRate && ingotsRate.length > 0">
+        <div div class="col-sm-12">
             <h2>Last years statistic for {{ingotsRate[0].Nominal}} g</h2>
-
             <div class="panel panel-default">
                 <div class="panel-body">
                     <chart-form [inputData]="chartData"></chart-form>
                 </div>
             </div>
         </div>
-
-        <div class="col-sm-12" *ngIf="showDefault">
-            
-            <default-metal-section></default-metal-section>
-        </div>
     </div>
+
+    <default-metal-section *ngIf="showDefault"></default-metal-section>
 </div>

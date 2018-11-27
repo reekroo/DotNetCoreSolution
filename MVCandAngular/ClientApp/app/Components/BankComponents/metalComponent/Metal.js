@@ -102,7 +102,7 @@ var MetalComponent = /** @class */ (function () {
     MetalComponent = __decorate([
         Component({
             templateUrl: './metal.html',
-            styleUrls: ['./metal.css'],
+            styles: [require('./metal.less')],
             providers: [MetalBankService]
         }),
         __metadata("design:paramtypes", [MetalBankService])

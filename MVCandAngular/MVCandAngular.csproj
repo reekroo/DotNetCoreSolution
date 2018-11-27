@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +11,7 @@
     <None Remove="ClientApp\app\Components\BankComponents\currencyCompoment\convertor-section.ts" />
     <None Remove="ClientApp\app\Components\BankComponents\currencyCompoment\currency.ts" />
     <None Remove="ClientApp\app\Components\BankComponents\currencyCompoment\default-rates-section.ts" />
-    <None Remove="ClientApp\app\Components\BankComponents\currencyCompoment\month-rates-table.ts" />
+    <None Remove="ClientApp\app\Components\BankComponents\currencyCompoment\month-rates-table-section.ts" />
     <None Remove="ClientApp\app\Components\BankComponents\currencyCompoment\rate-section.ts" />
     <None Remove="ClientApp\app\Components\BankComponents\chartComponent\chart.ts" />
     <None Remove="ClientApp\app\Components\BankComponents\metalComponent\default-metal-section.ts" />
@@ -86,7 +86,7 @@
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\currencyCompoment\convertor-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\currencyCompoment\default-rates-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\currencyCompoment\rate-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\currencyCompoment\month-rates-table.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\currencyCompoment\month-rates-table-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\currencyCompoment\currency.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\fullUserComponent\full-user.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\newsComponent\news.ts" />
@@ -140,14 +140,8 @@
     <None Update="ClientApp\app\Components\ShopComponents\userComponent\user-information.js">
       <DependentUpon>user-information.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Models\Bank\Currency - Copy.js.map">
-      <DependentUpon>currency.js</DependentUpon>
-    </None>
     <None Update="ClientApp\app\Models\Bank\currency.js">
       <DependentUpon>currency.ts</DependentUpon>
-    </None>
-    <None Update="ClientApp\app\Models\Bank\currency.js.map">
-      <DependentUpon>currency.js</DependentUpon>
     </None>
     <None Update="ClientApp\app\Models\Bank\RefinancingRate.js">
       <DependentUpon>refinancingRate.ts</DependentUpon>

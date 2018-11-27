@@ -9,7 +9,7 @@ import { Ingot } from '../../../Models/Bank/Ingot';
 
 @Component({
     templateUrl: './metal.html',
-    styleUrls: ['./metal.css'],
+    styles: [require('./metal.less')],
     providers: [MetalBankService]
 })
 

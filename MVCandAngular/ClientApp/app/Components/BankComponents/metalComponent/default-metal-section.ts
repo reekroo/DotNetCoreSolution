@@ -7,8 +7,8 @@ import { Ingot } from '../../../Models/Bank/Ingot';
 
 @Component({
     selector: 'default-metal-section',
-    templateUrl: './default-metal-section.html',
-    styleUrls: ['./default-metal-section.css']
+    styles: [require('./default-metal-section.less')],
+    templateUrl: './default-metal-section.html'
 })
 
 export class DefaultMetalRatesComponent implements OnInit {

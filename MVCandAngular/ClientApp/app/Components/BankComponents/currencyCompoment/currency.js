@@ -99,7 +99,7 @@ var CurrencyComponent = /** @class */ (function () {
     CurrencyComponent = __decorate([
         Component({
             templateUrl: './currency.html',
-            styleUrls: ['./currency.css'],
+            styles: [require('./currency.less')],
             providers: [BankService]
         }),
         __metadata("design:paramtypes", [BankService])

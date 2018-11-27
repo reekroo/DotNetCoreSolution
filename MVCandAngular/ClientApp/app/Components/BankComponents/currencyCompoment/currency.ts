@@ -9,7 +9,7 @@ import { combineLatest } from 'rxjs';
 
 @Component({
     templateUrl: './currency.html',
-    styleUrls: ['./currency.css'],
+    styles: [require('./currency.less')],
     providers: [BankService]
 })
 

@@ -2,11 +2,10 @@
 
 @Component({
     templateUrl: './oil.html',
-    styleUrls: ['./oil.css']
+    styles: [require('./oil.less')],
 })
 
 export class OilComponent {
 
-    constructor() {
-    }
+    constructor() { }
 }

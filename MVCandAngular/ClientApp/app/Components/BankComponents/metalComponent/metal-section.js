@@ -18,8 +18,7 @@ var MetalRatesComponent = /** @class */ (function () {
     MetalRatesComponent = __decorate([
         Component({
             selector: 'metal-section',
-            templateUrl: './metal-section.html',
-            styleUrls: ['./metal-section.css']
+            templateUrl: './metal-section.html'
         })
     ], MetalRatesComponent);
     return MetalRatesComponent;

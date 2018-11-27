@@ -10,6 +10,12 @@
         public BanksRubles?: number,
         public EntitiesDollars?: number,
         public EntitiesRubles?: number,
-        public Name?: string
+        public Name?: string,
+        public Nominal?: number
     ) { }
+
+    public getOneGramRate() {
+
+        return (this.EntitiesRubles);
+    }
 }

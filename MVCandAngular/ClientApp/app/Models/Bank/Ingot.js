@@ -1,5 +1,5 @@
 var Ingot = /** @class */ (function () {
-    function Ingot(Date, MetalId, NoCertificateDollars, NoCertificateRubles, CertificateDollars, CertificateRubles, BanksDollars, BanksRubles, EntitiesDollars, EntitiesRubles, Name) {
+    function Ingot(Date, MetalId, NoCertificateDollars, NoCertificateRubles, CertificateDollars, CertificateRubles, BanksDollars, BanksRubles, EntitiesDollars, EntitiesRubles, Name, Nominal) {
         this.Date = Date;
         this.MetalId = MetalId;
         this.NoCertificateDollars = NoCertificateDollars;
@@ -11,7 +11,11 @@ var Ingot = /** @class */ (function () {
         this.EntitiesDollars = EntitiesDollars;
         this.EntitiesRubles = EntitiesRubles;
         this.Name = Name;
+        this.Nominal = Nominal;
     }
+    Ingot.prototype.getOneGramRate = function () {
+        return (this.EntitiesRubles);
+    };
     return Ingot;
 }());
 export { Ingot };

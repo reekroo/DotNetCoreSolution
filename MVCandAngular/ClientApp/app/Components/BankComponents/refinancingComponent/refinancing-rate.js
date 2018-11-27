@@ -63,7 +63,6 @@ var RefinancingComponent = /** @class */ (function () {
     RefinancingComponent = __decorate([
         Component({
             templateUrl: './refinancing-rate.html',
-            styleUrls: ['./refinancing-rate.css'],
             providers: [RefinancingRateBankService]
         }),
         __metadata("design:paramtypes", [RefinancingRateBankService])

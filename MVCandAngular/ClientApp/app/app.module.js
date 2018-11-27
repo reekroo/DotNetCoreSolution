@@ -27,7 +27,7 @@ import { AddressEditComponent } from './Components/ShopComponents/addressesCompo
 import { CartProductListComponent } from './Components/ShopComponents/cartComponent/cart-product-list';
 import { NewsComponent } from './Components/NewsComponents/newsComponent/news';
 import { CurrencyComponent } from './Components/BankComponents/currencyCompoment/currency';
-import { MonthRateTableComponent } from './Components/BankComponents/currencyCompoment/month-rates-table';
+import { MonthRateTableComponent } from './Components/BankComponents/currencyCompoment/month-rates-table-section';
 import { RateSectionComponent } from './Components/BankComponents/currencyCompoment/rate-section';
 import { ConvertorSectionComponent } from './Components/BankComponents/currencyCompoment/convertor-section';
 import { DefaultRatesComponent } from './Components/BankComponents/currencyCompoment/default-rates-section';

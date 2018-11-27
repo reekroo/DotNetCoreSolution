@@ -28,7 +28,7 @@ var RateSectionComponent = /** @class */ (function () {
         Component({
             selector: 'rate-section',
             templateUrl: './rate-section.html',
-            styleUrls: ['./bank.css']
+            styles: [require('./rate-section.less')]
         })
     ], RateSectionComponent);
     return RateSectionComponent;

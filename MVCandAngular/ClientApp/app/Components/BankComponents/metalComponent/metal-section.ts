@@ -4,8 +4,7 @@ import { Ingot } from '../../../Models/Bank/Ingot';
 
 @Component({
     selector: 'metal-section',
-    templateUrl: './metal-section.html',
-    styleUrls: ['./metal-section.css']
+    templateUrl: './metal-section.html'
 })
 
 export class MetalRatesComponent {

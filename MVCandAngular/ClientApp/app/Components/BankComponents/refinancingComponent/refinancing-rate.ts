@@ -7,7 +7,6 @@ import { RefinancingRate } from '../../../Models/Bank/RefinancingRate';
 
 @Component({
     templateUrl: './refinancing-rate.html',
-    styleUrls: ['./refinancing-rate.css'],
     providers: [RefinancingRateBankService]
 })
 

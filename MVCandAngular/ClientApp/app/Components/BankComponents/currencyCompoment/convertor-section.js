@@ -65,8 +65,7 @@ var ConvertorSectionComponent = /** @class */ (function () {
     ConvertorSectionComponent = __decorate([
         Component({
             selector: 'convertor-section',
-            templateUrl: './convertor-section.html',
-            styleUrls: ['./bank.css']
+            templateUrl: './convertor-section.html'
         })
     ], ConvertorSectionComponent);
     return ConvertorSectionComponent;

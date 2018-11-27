@@ -14,7 +14,7 @@ var OilComponent = /** @class */ (function () {
     OilComponent = __decorate([
         Component({
             templateUrl: './oil.html',
-            styleUrls: ['./oil.css']
+            styles: [require('./oil.less')],
         }),
         __metadata("design:paramtypes", [])
     ], OilComponent);

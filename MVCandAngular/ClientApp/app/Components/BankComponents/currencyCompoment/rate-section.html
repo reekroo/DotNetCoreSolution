@@ -4,7 +4,7 @@
     <h2>
         {{rate.Cur_OfficialRate}}
         <small>
-            <span [className]="delta == 0.0 ? '' : isUpper ? 'glyphicon glyphicon-arrow-up upper-class' : 'glyphicon glyphicon-arrow-down other-class'"></span>
+            <span [className]="delta == 0.0 ? '' : isUpper ? 'glyphicon glyphicon-arrow-up upper-class' : 'glyphicon glyphicon-arrow-down lower-class'"></span>
             <span [className]="delta == 0.0 ? '' : isUpper ? 'upper-class' : 'other-class'"> {{delta}} </span>
         </small>
     </h2>

@@ -13,19 +13,40 @@ var ChartComponent = /** @class */ (function () {
     function ChartComponent() {
     }
     ChartComponent.prototype.ngOnChanges = function () {
+        var data = this.inputData;
+        if (!this.chart) {
+            this.createChart(data);
+        }
+        else {
+            this.removeData(this.chart);
+            this.addData(this.chart, data);
+        }
+    };
+    ChartComponent.prototype.createChart = function (data) {
         this.chart = new Chart('canvas', {
             type: 'line',
-            data: this.inputData,
+            data: data,
             options: {
                 scales: {
                     yAxes: [{
                             ticks: {
-                                beginAtZero: true
+                                beginAtZero: false
                             }
                         }]
                 }
             }
         });
+    };
+    ChartComponent.prototype.addData = function (chart, data) {
+        chart.data = data;
+        chart.update();
+    };
+    ChartComponent.prototype.removeData = function (chart) {
+        chart.data.labels.pop();
+        chart.data.datasets.forEach(function (dataset) {
+            dataset.data.pop();
+        });
+        chart.update();
     };
     __decorate([
         Input(),

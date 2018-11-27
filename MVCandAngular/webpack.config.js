@@ -34,6 +34,10 @@ module.exports = {
                 test: /\.css$/,
                 include: path.resolve(__dirname, 'ClientApp/app'),
                 loader: 'raw-loader'
+            }, {
+                test: /\.less$/,
+                exclude: /node_modules/,
+                loader: 'raw-loader!less-loader'
             }
         ]
     },

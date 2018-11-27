@@ -37,8 +37,8 @@ var DefaultMetalRatesComponent = /** @class */ (function () {
     DefaultMetalRatesComponent = __decorate([
         Component({
             selector: 'default-metal-section',
-            templateUrl: './default-metal-section.html',
-            styleUrls: ['./default-metal-section.css']
+            styles: [require('./default-metal-section.less')],
+            templateUrl: './default-metal-section.html'
         }),
         __metadata("design:paramtypes", [MetalBankService])
     ], DefaultMetalRatesComponent);

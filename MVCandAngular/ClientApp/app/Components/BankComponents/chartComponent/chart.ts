@@ -10,15 +10,15 @@ import { Chart } from 'chart.js';
 export class ChartComponent {
 
     chart: Chart;
-
+    
     @Input() inputData: Object;
 
     ngOnChanges() {
         
         let data = this.inputData as Chart.ChartData;
-        
+                
         if (!this.chart) {
-
+            
             this.createChart(data);
         } else {
 
@@ -26,7 +26,7 @@ export class ChartComponent {
             this.addData(this.chart, data);
         }
     }
-
+    
     private createChart(data: Chart.ChartData) {
 
         this.chart = new Chart('canvas', {

@@ -27,6 +27,19 @@ namespace MVCandAngular
             services.AddTransient<IProductRepository, ProductRepository>(provider => new ProductRepository(connectionString));
             services.AddTransient<IUserProductsRepository, UserProductsRepository>(provider => new UserProductsRepository(connectionString));
             services.AddTransient<IAddressRepository, AddressRepository>(provider => new AddressRepository(connectionString));
+            
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials();
+                    });
+            });
 
             services.AddMvc();
         }
@@ -39,12 +52,13 @@ namespace MVCandAngular
 
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
-                    HotModuleReplacement = false
+                    HotModuleReplacement = true
                 });
             }
 
             app.UseStaticFiles();
-            app.UseMvc();
+
+            app.UseCors("AllowAll");
 
             app.UseMvc(routes =>
             {

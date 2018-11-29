@@ -1,0 +1,15 @@
+﻿
+<section *ngFor="let n of news">
+    <article>
+        <header>
+            <h1>
+                <a href="{{n.url}}" target="_blank">{{n.title}}</a>
+            </h1>
+        </header>
+
+        <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" />
+
+        <p>{{n.description}}</p>
+
+    </article>
+</section>

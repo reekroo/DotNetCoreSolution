@@ -26,7 +26,7 @@ var MetalBankService = /** @class */ (function () {
         return this.http.get(this.priceUrl + '?onDate=' + date);
     };
     MetalBankService.prototype.getPrice = function (id, date) {
-        var d = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() - 1);
+        var d = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate());
         return this.http.get(this.priceUrl + id + '?onDate=' + d);
     };
     MetalBankService = __decorate([

@@ -1,0 +1,1 @@
+{"version":3,"file":"news-section.js","sourceRoot":"","sources":["news-section.ts"],"names":[],"mappings":";;;;;;;;;AAAA,OAAO,EAAE,SAAS,EAAE,KAAK,EAAE,MAAM,eAAe,CAAC;AASjD;IAAA;IAGA,CAAC;IADY;QAAR,KAAK,EAAE;;sDAAc;IAFb,oBAAoB;QALhC,SAAS,CAAC;YACP,QAAQ,EAAE,cAAc;YACxB,WAAW,EAAE,qBAAqB;SACrC,CAAC;OAEW,oBAAoB,CAGhC;IAAD,2BAAC;CAAA,AAHD,IAGC;SAHY,oBAAoB"}

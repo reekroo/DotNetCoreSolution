@@ -6,6 +6,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './Components/appComponent/app.head';
 
+import { ScrollingModule } from '@angular/cdk/scrolling';
+
 import { ProductsFormComponent } from './Components/ShopComponents/productsComponent/product-form';
 import { ProductListComponent } from './Components/ShopComponents/productsComponent/product-list';
 import { ProductsEditComponent } from './Components/ShopComponents/productsComponent/product-edit';
@@ -27,6 +29,9 @@ import { AddressEditComponent } from './Components/ShopComponents/addressesCompo
 import { CartProductListComponent } from './Components/ShopComponents/cartComponent/cart-product-list';
 
 import { NewsComponent } from './Components/NewsComponents/newsComponent/news';
+import { OnlinerNewsComponent } from './Components/NewsComponents/newsComponent/onlinerNews';
+import { NewsSectionComponent } from './Components/NewsComponents/newsComponent/news-section';
+
 
 import { CurrencyComponent } from './Components/BankComponents/currencyCompoment/currency';
 import { MonthRateTableComponent } from './Components/BankComponents/currencyCompoment/month-rates-table-section';
@@ -58,6 +63,7 @@ const appRoutes: Routes = [
     { path: 'user/address/edit/:id', component: AddressEditComponent },
 
     { path: 'news', component: NewsComponent },
+    { path: 'news/onliner', component: OnlinerNewsComponent },
     { path: 'oil', component: OilComponent },
 
     { path: 'bank/currencies', component: CurrencyComponent },
@@ -68,7 +74,13 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpClientModule,
+        RouterModule.forRoot(appRoutes),
+        ScrollingModule
+    ],
     declarations: [
         AppComponent,
 
@@ -78,13 +90,14 @@ const appRoutes: Routes = [
         AddressListComponent, AddressFormComponent, AddressCreateComponent, AddressEditComponent,
         CartProductListComponent,
 
-        NewsComponent,
+        NewsComponent, OnlinerNewsComponent, NewsSectionComponent,
         ChartComponent,
         CurrencyComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
         MetalComponent, DefaultMetalRatesComponent, MetalRatesComponent,
         RefinancingComponent, RefinancingRateComponent, RefinancingRatesComponent,
         OilComponent
     ],
+    providers: [],
     bootstrap: [AppComponent]
 })
 

@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './Components/appComponent/app.head';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ProductsFormComponent } from './Components/ShopComponents/productsComponent/product-form';
 import { ProductListComponent } from './Components/ShopComponents/productsComponent/product-list';
 import { ProductsEditComponent } from './Components/ShopComponents/productsComponent/product-edit';
@@ -26,6 +27,8 @@ import { AddressCreateComponent } from './Components/ShopComponents/addressesCom
 import { AddressEditComponent } from './Components/ShopComponents/addressesComponent/address-edit';
 import { CartProductListComponent } from './Components/ShopComponents/cartComponent/cart-product-list';
 import { NewsComponent } from './Components/NewsComponents/newsComponent/news';
+import { OnlinerNewsComponent } from './Components/NewsComponents/newsComponent/onlinerNews';
+import { NewsSectionComponent } from './Components/NewsComponents/newsComponent/news-section';
 import { CurrencyComponent } from './Components/BankComponents/currencyCompoment/currency';
 import { MonthRateTableComponent } from './Components/BankComponents/currencyCompoment/month-rates-table-section';
 import { RateSectionComponent } from './Components/BankComponents/currencyCompoment/rate-section';
@@ -50,6 +53,7 @@ var appRoutes = [
     { path: 'user/address/create', component: AddressCreateComponent },
     { path: 'user/address/edit/:id', component: AddressEditComponent },
     { path: 'news', component: NewsComponent },
+    { path: 'news/onliner', component: OnlinerNewsComponent },
     { path: 'oil', component: OilComponent },
     { path: 'bank/currencies', component: CurrencyComponent },
     { path: 'bank/ingots', component: MetalComponent },
@@ -61,7 +65,13 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = __decorate([
         NgModule({
-            imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(appRoutes)],
+            imports: [
+                BrowserModule,
+                FormsModule,
+                HttpClientModule,
+                RouterModule.forRoot(appRoutes),
+                ScrollingModule
+            ],
             declarations: [
                 AppComponent,
                 ProductListComponent, ProductsEditComponent, ProductsFormComponent, ProductsCreateComponent,
@@ -69,13 +79,14 @@ var AppModule = /** @class */ (function () {
                 FullUserComponent, UserFormComponent, UserInfoComponent, UserEditComponent,
                 AddressListComponent, AddressFormComponent, AddressCreateComponent, AddressEditComponent,
                 CartProductListComponent,
-                NewsComponent,
+                NewsComponent, OnlinerNewsComponent, NewsSectionComponent,
                 ChartComponent,
                 CurrencyComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
                 MetalComponent, DefaultMetalRatesComponent, MetalRatesComponent,
                 RefinancingComponent, RefinancingRateComponent, RefinancingRatesComponent,
                 OilComponent
             ],
+            providers: [],
             bootstrap: [AppComponent]
         })
     ], AppModule);

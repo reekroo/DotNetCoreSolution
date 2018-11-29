@@ -8,8 +8,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { BankService } from '../../../Services/data.bank.service';
 import { combineLatest } from 'rxjs';
+import { BankService } from '../../../Services/data.bank.service';
 var CurrencyComponent = /** @class */ (function () {
     function CurrencyComponent(dataService) {
         this.dataService = dataService;
@@ -58,7 +58,7 @@ var CurrencyComponent = /** @class */ (function () {
         });
         var end = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() + 1);
         date.setFullYear(date.getFullYear() - 1);
-        var start = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate());
+        var start = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() + 1);
         this.dataService.getRateByPeriod(id, start, end).subscribe(function (data) {
             _this.rates = data;
             _this.chartData = _this.addaptToChartData(_this.rates);

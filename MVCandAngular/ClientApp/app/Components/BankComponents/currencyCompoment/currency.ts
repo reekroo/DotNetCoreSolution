@@ -1,10 +1,10 @@
 ﻿import { Component, OnInit } from '@angular/core';
+import { combineLatest } from 'rxjs';
 
 import { BankService } from '../../../Services/data.bank.service';
 
 import { Currency } from '../../../Models/Bank/Currency';
 import { Rate } from '../../../Models/Bank/Rate';
-import { combineLatest } from 'rxjs';
 
 
 @Component({
@@ -30,6 +30,7 @@ export class CurrencyComponent implements OnInit {
     showDefaultSection: boolean = true;
     isUpper: boolean = false;
     delta: number = 0.0;
+
 
     ngOnInit() {
 
@@ -81,7 +82,7 @@ export class CurrencyComponent implements OnInit {
 
         let end = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() + 1);
         date.setFullYear(date.getFullYear() - 1);
-        let start = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate());
+        let start = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() + 1);
                 
         this.dataService.getRateByPeriod(id, start, end).subscribe((data: any) => {
 

@@ -18,7 +18,8 @@ var RefinancingRatesComponent = /** @class */ (function () {
     RefinancingRatesComponent = __decorate([
         Component({
             selector: 'refinancing-rates-section',
-            templateUrl: './refinancing-rates-section.html'
+            templateUrl: './refinancing-rates-section.html',
+            styles: [require('./refinancing-rates-section.less')],
         })
     ], RefinancingRatesComponent);
     return RefinancingRatesComponent;

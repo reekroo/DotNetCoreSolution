@@ -27,7 +27,7 @@ export class MetalBankService {
 
     getPrice(id: number, date: Date) {
         
-        let d = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() - 1);
+        let d = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate());
 
         return this.http.get(this.priceUrl + id + '?onDate=' + d);
     }

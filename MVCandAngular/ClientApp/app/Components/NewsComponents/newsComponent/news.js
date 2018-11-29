@@ -70,7 +70,7 @@ var NewsComponent = /** @class */ (function () {
     NewsComponent = __decorate([
         Component({
             templateUrl: './news.html',
-            styleUrls: ['./news.css'],
+            styles: [require('./news.less')],
             providers: [NewsService]
         }),
         __metadata("design:paramtypes", [NewsService])

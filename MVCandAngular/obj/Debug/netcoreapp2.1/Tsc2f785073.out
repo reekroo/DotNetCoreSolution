@@ -56,6 +56,10 @@ D:\My\DotNetCore\MVCandAngular\ClientApp\app\Models\News\channel.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Models\News\channel.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsComponent\news.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsComponent\news.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.news.onliner.service.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.news.onliner.service.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsComponent\onlinerNews.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsComponent\onlinerNews.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.bank.service.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.bank.service.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Models\Bank\Currency.js
@@ -106,3 +110,5 @@ D:\My\DotNetCore\MVCandAngular\ClientApp\main.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\main.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\polyfills.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\polyfills.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Models\News\onlinerNews.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Models\News\onlinerNews.js.map

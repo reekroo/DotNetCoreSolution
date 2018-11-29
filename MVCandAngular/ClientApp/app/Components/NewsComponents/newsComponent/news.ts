@@ -7,7 +7,7 @@ import { Channel } from '../../../Models/News/channel';
 
 @Component({
     templateUrl: './news.html',
-    styleUrls: ['./news.css'],
+    styles: [require('./news.less')],
     providers: [NewsService]
 })
 
@@ -17,7 +17,7 @@ export class NewsComponent implements OnInit {
     channels: Channel[];
 
     showError: boolean = false;
-    
+
     constructor(private dataService: NewsService) {
     }
 

@@ -2,9 +2,11 @@
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Xml;
 using System.Xml.Linq;
+
 using Microsoft.AspNetCore.Mvc;
+
+using MVCandAngular.Models;
 
 namespace MVCandAngular.Controllers
 {
@@ -36,7 +38,31 @@ namespace MVCandAngular.Controllers
             return new JsonResult(GetRssNodes("https://realt.onliner.by/feed"));
         }
 
+        [HttpGet("top")]
+        public JsonResult GetTopTut()
+        {
+            return new JsonResult(GetRssNodes("https://news.tut.by/rss/all.rss"));
+        }
+
         private IEnumerable<News> GetRssNodes(string rssLink)
+        {                        
+            var nodes = GetRss(rssLink).Elements().Elements().Elements().Where(e => e.Name.LocalName == "item");
+
+            var result = nodes.Select(x => new News()
+            {
+                Title = x.Elements().First(e => e.Name.LocalName == "title").Value,
+                Url = x.Elements().First(e => e.Name.LocalName == "link").Value,
+                UrlToImage = x.Elements().Any(e => e.Name.LocalName == "thumbnail")
+                                ? x.Elements().First(e => e.Name.LocalName == "thumbnail").FirstAttribute.Value     //onliner
+                                : x.Elements().First(e => e.Name.LocalName == "enclosure").FirstAttribute.Value,    //tut
+                Description = x.Elements().First(e => e.Name.LocalName == "description").Value,
+                PublishedAt = x.Elements().First(e => e.Name.LocalName == "pubDate").Value,
+            });
+
+            return result;
+        }
+
+        private XDocument GetRss(string rssLink)
         {
             byte[] data;
 
@@ -46,44 +72,10 @@ namespace MVCandAngular.Controllers
             }
 
             string str = Encoding.GetEncoding("UTF-8").GetString(data);
-            
+
             XDocument rssXmlDoc = XDocument.Parse(str);
-                        
-            var nodes = rssXmlDoc.Elements().Elements().Elements().Where(e => e.Name.LocalName == "item");
 
-            //var result = new List<News>();
-
-            //foreach (XElement node in nodes)
-            //{
-            //    result.Add(new News()
-            //    {
-            //        Title = node.Elements().First(e => e.Name.LocalName == "title").Value,
-            //        Url = node.Elements().First(e => e.Name.LocalName == "link").Value,
-            //        UrlToImage = node.Elements().First(e => e.Name.LocalName == "thumbnail").FirstAttribute.Value,
-            //        Description = node.Elements().First(e => e.Name.LocalName == "description").Value,
-            //        PublishedAt = node.Elements().First(e => e.Name.LocalName == "pubDate").Value,
-            //    });
-            //}
-
-            var result = nodes.Select(x => new News(){
-                Title = x.Elements().First(e => e.Name.LocalName == "title").Value,
-                Url = x.Elements().First(e => e.Name.LocalName == "link").Value,
-                UrlToImage = x.Elements().First(e => e.Name.LocalName == "thumbnail").FirstAttribute.Value,
-                Description = x.Elements().First(e => e.Name.LocalName == "description").Value,
-                PublishedAt = x.Elements().First(e => e.Name.LocalName == "pubDate").Value,
-            });
-
-            return result;
+            return rssXmlDoc;
         }
-    }
-
-    public class News
-    {
-        public string Author { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Url { get; set; }
-        public string UrlToImage { get; set; }
-        public string PublishedAt { get; set; }
     }
 }

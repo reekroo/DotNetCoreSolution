@@ -56,10 +56,14 @@ var CurrencyComponent = /** @class */ (function () {
                 _this.isUpper = false;
             }
         });
-        var end = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() + 1);
+        var end = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate());
         date.setFullYear(date.getFullYear() - 1);
-        var start = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() + 1);
+        var start = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate());
         this.dataService.getRateByPeriod(id, start, end).subscribe(function (data) {
+            //console.log("https://www.nbrb.by/API/ExRates/Rates/Dynamics/" + id + "?startDate=" + start + "&endDate=" + end);
+            //console.log(data);
+            // +
+            // today rate
             _this.rates = data;
             _this.chartData = _this.addaptToChartData(_this.rates);
             var previusMonthData = new Date();

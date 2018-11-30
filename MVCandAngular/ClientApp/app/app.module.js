@@ -27,7 +27,8 @@ import { AddressCreateComponent } from './Components/ShopComponents/addressesCom
 import { AddressEditComponent } from './Components/ShopComponents/addressesComponent/address-edit';
 import { CartProductListComponent } from './Components/ShopComponents/cartComponent/cart-product-list';
 import { NewsComponent } from './Components/NewsComponents/newsComponent/news';
-import { OnlinerNewsComponent } from './Components/NewsComponents/newsComponent/onlinerNews';
+import { OnlinerNewsComponent } from './Components/NewsComponents/newsComponent/onliner-news';
+import { TutNewsComponent } from './Components/NewsComponents/newsComponent/tut-news';
 import { NewsSectionComponent } from './Components/NewsComponents/newsComponent/news-section';
 import { CurrencyComponent } from './Components/BankComponents/currencyCompoment/currency';
 import { MonthRateTableComponent } from './Components/BankComponents/currencyCompoment/month-rates-table-section';
@@ -54,10 +55,11 @@ var appRoutes = [
     { path: 'user/address/edit/:id', component: AddressEditComponent },
     { path: 'news', component: NewsComponent },
     { path: 'news/onliner', component: OnlinerNewsComponent },
-    { path: 'oil', component: OilComponent },
+    { path: 'news/tut', component: TutNewsComponent },
     { path: 'bank/currencies', component: CurrencyComponent },
     { path: 'bank/ingots', component: MetalComponent },
     { path: 'bank/refinancing-rates', component: RefinancingComponent },
+    { path: 'oil', component: OilComponent },
     { path: '**', redirectTo: '/' }
 ];
 var AppModule = /** @class */ (function () {
@@ -79,7 +81,7 @@ var AppModule = /** @class */ (function () {
                 FullUserComponent, UserFormComponent, UserInfoComponent, UserEditComponent,
                 AddressListComponent, AddressFormComponent, AddressCreateComponent, AddressEditComponent,
                 CartProductListComponent,
-                NewsComponent, OnlinerNewsComponent, NewsSectionComponent,
+                NewsComponent, OnlinerNewsComponent, TutNewsComponent, NewsSectionComponent,
                 ChartComponent,
                 CurrencyComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
                 MetalComponent, DefaultMetalRatesComponent, MetalRatesComponent,

@@ -58,8 +58,14 @@ D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsCompo
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsComponent\news.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.news.onliner.service.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.news.onliner.service.js.map
-D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsComponent\onlinerNews.js
-D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsComponent\onlinerNews.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsComponent\onliner-news.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsComponent\onliner-news.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.news.tut.service.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.news.tut.service.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsComponent\tut-news.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsComponent\tut-news.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsComponent\news-section.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\newsComponent\news-section.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.bank.service.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.bank.service.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Models\Bank\Currency.js
@@ -110,5 +116,3 @@ D:\My\DotNetCore\MVCandAngular\ClientApp\main.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\main.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\polyfills.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\polyfills.js.map
-D:\My\DotNetCore\MVCandAngular\ClientApp\app\Models\News\onlinerNews.js
-D:\My\DotNetCore\MVCandAngular\ClientApp\app\Models\News\onlinerNews.js.map

@@ -23,13 +23,13 @@ var OnlinerNewsComponent = /** @class */ (function () {
         var auto$ = this.dataService.getAutoNews();
         var realt$ = this.dataService.getRealtNews();
         people$.subscribe(function (data) { _this.peopleNews = data; });
-        tech$.subscribe(function (data) { _this.peopleNews = data; });
-        auto$.subscribe(function (data) { _this.peopleNews = data; });
-        realt$.subscribe(function (data) { _this.peopleNews = data; });
+        tech$.subscribe(function (data) { _this.techNews = data; });
+        auto$.subscribe(function (data) { _this.autoNews = data; });
+        realt$.subscribe(function (data) { _this.realtNews = data; });
     };
     OnlinerNewsComponent = __decorate([
         Component({
-            templateUrl: './onlinerNews.html',
+            templateUrl: './onliner-news.html',
             providers: [OnlinerNewsService]
         }),
         __metadata("design:paramtypes", [OnlinerNewsService])
@@ -37,4 +37,4 @@ var OnlinerNewsComponent = /** @class */ (function () {
     return OnlinerNewsComponent;
 }());
 export { OnlinerNewsComponent };
-//# sourceMappingURL=onlinerNews.js.map
+//# sourceMappingURL=onliner-news.js.map

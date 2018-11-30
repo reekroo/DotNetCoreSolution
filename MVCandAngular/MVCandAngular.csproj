@@ -20,7 +20,9 @@
     <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate-section.ts" />
     <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate.ts" />
     <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rates-section.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\newsComponent\onlinerNews.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\newsComponent\news-section.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\newsComponent\onliner-news.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\newsComponent\tut-news.ts" />
     <None Remove="ClientApp\app\Components\ShopComponents\fullUserComponent\full-user.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\newsComponent\news.ts" />
     <None Remove="ClientApp\app\Components\OilComponents\oilComponent\oil.ts" />
@@ -47,7 +49,6 @@
     <None Remove="ClientApp\app\Models\cart.ts" />
     <None Remove="ClientApp\app\Models\channel.ts" />
     <None Remove="ClientApp\app\Models\News.ts" />
-    <None Remove="ClientApp\app\Models\News\onlinerNews.ts" />
     <None Remove="ClientApp\app\product.ts" />
     <None Remove="ClientApp\app\Components\ShopComponents\shopComponent\data.shop.service.ts" />
     <None Remove="ClientApp\app\Services\data.bank.ingots.service.ts" />
@@ -55,6 +56,7 @@
     <None Remove="ClientApp\app\Services\data.bank.service.ts" />
     <None Remove="ClientApp\app\Services\data.news.onliner.service.ts" />
     <None Remove="ClientApp\app\Services\data.news.service.ts" />
+    <None Remove="ClientApp\app\Services\data.news.tut.service.ts" />
     <None Remove="ClientApp\app\Services\data.user.address.service.ts" />
     <None Remove="ClientApp\app\Services\data.user.cart.service.ts" />
     <None Remove="ClientApp\app\user.ts" />
@@ -82,7 +84,9 @@
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rates-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\newsComponent\onlinerNews.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\newsComponent\news-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\newsComponent\tut-news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\newsComponent\onliner-news.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\addressesComponent\address-form.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\addressesComponent\address-list.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\addressesComponent\address-create.ts" />
@@ -103,7 +107,6 @@
     <TypeScriptCompile Include="ClientApp\app\Models\Bank\rate.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Bank\currency.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\News\channel.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\News\onlinerNews.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\News\news.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Shop\cart.ts" />
     <TypeScriptCompile Include="ClientApp\app\Models\Shop\address.ts" />
@@ -112,6 +115,7 @@
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\productsComponent\product-edit.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\productsComponent\product-create.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\productsComponent\product-form.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\data.news.tut.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.news.onliner.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.bank.refinancing.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.bank.ingots.service.ts" />
@@ -152,12 +156,6 @@
     <None Update="ClientApp\app\Models\Bank\RefinancingRate.js">
       <DependentUpon>refinancingRate.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Models\News\onlinerNews.js">
-      <DependentUpon>onlinerNews.ts</DependentUpon>
-    </None>
-    <None Update="ClientApp\app\Models\News\onlinerNews.js.map">
-      <DependentUpon>onlinerNews.js</DependentUpon>
-    </None>
     <None Update="ClientApp\app\Models\Shop\cart.js">
       <DependentUpon>cart.ts</DependentUpon>
     </None>
@@ -172,6 +170,9 @@
     </None>
     <None Update="ClientApp\app\Models\Shop\address.js">
       <DependentUpon>address.ts</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\Services\data - Copy.news.onliner.service.js.map">
+      <DependentUpon>data.news.onliner.service.js</DependentUpon>
     </None>
     <None Update="ClientApp\app\Services\data.news.onliner.service.js">
       <DependentUpon>data.news.onliner.service.ts</DependentUpon>

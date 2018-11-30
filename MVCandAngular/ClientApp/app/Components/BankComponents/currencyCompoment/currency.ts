@@ -80,11 +80,16 @@ export class CurrencyComponent implements OnInit {
             }
         });
 
-        let end = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() + 1);
+        let end = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate());
         date.setFullYear(date.getFullYear() - 1);
-        let start = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() + 1);
-                
+        let start = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate());
+        
         this.dataService.getRateByPeriod(id, start, end).subscribe((data: any) => {
+
+            //console.log("https://www.nbrb.by/API/ExRates/Rates/Dynamics/" + id + "?startDate=" + start + "&endDate=" + end);
+            //console.log(data);
+            // +
+            // today rate
 
             this.rates = data as Rate[];
 

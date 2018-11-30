@@ -5,7 +5,7 @@ import { OnlinerNewsService } from '../../../Services/data.news.onliner.service'
 import { News } from '../../../Models/News/news';
 
 @Component({
-    templateUrl: './onlinerNews.html',
+    templateUrl: './onliner-news.html',
     providers: [OnlinerNewsService]
 })
 

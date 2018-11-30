@@ -7,22 +7,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, Input } from '@angular/core';
-var NewsSectionComponent = /** @class */ (function () {
-    function NewsSectionComponent() {
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+var TutNewsService = /** @class */ (function () {
+    function TutNewsService(http) {
+        this.http = http;
+        this.url = "/api/news";
     }
-    __decorate([
-        Input(),
-        __metadata("design:type", Array)
-    ], NewsSectionComponent.prototype, "news", void 0);
-    NewsSectionComponent = __decorate([
-        Component({
-            selector: 'news-section',
-            templateUrl: './news-section.html',
-            styles: [require('./news-section.less')]
-        })
-    ], NewsSectionComponent);
-    return NewsSectionComponent;
+    TutNewsService.prototype.getNews = function () {
+        return this.http.get(this.url + '/top');
+    };
+    ;
+    TutNewsService = __decorate([
+        Injectable(),
+        __metadata("design:paramtypes", [HttpClient])
+    ], TutNewsService);
+    return TutNewsService;
 }());
-export { NewsSectionComponent };
-//# sourceMappingURL=news-section.js.map
+export { TutNewsService };
+//# sourceMappingURL=data.news.tut.service.js.map

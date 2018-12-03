@@ -9,20 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-var TutNewsService = /** @class */ (function () {
-    function TutNewsService(http) {
+var BelsatNewsService = /** @class */ (function () {
+    function BelsatNewsService(http) {
         this.http = http;
         this.url = "/api/news";
     }
-    TutNewsService.prototype.getNews = function () {
-        return this.http.get(this.url + '/tut');
+    BelsatNewsService.prototype.getNews = function () {
+        return this.http.get(this.url + '/belsat');
     };
     ;
-    TutNewsService = __decorate([
+    BelsatNewsService = __decorate([
         Injectable(),
         __metadata("design:paramtypes", [HttpClient])
-    ], TutNewsService);
-    return TutNewsService;
+    ], BelsatNewsService);
+    return BelsatNewsService;
 }());
-export { TutNewsService };
-//# sourceMappingURL=data.news.tut.service.js.map
+export { BelsatNewsService };
+//# sourceMappingURL=data.news.belsat.service.js.map

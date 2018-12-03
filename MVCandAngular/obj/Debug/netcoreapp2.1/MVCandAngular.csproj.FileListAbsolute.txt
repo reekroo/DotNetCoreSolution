@@ -23,3 +23,4 @@ D:\My\DotNetCore\MVCandAngular\obj\Debug\netcoreapp2.1\MVCandAngular.Views.pdb
 D:\My\DotNetCore\MVCandAngular\obj\Debug\netcoreapp2.1\MVCandAngular.dll
 D:\My\DotNetCore\MVCandAngular\obj\Debug\netcoreapp2.1\MVCandAngular.pdb
 D:\My\DotNetCore\MVCandAngular\obj\Debug\netcoreapp2.1\MVCandAngular.csproj.CopyComplete
+D:\My\DotNetCore\MVCandAngular\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

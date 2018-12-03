@@ -38,24 +38,46 @@ namespace MVCandAngular.Controllers
             return new JsonResult(GetRssNodes("https://realt.onliner.by/feed"));
         }
 
-        [HttpGet("top")]
+        [HttpGet("tut")]
         public JsonResult GetTopTut()
         {
             return new JsonResult(GetRssNodes("https://news.tut.by/rss/all.rss"));
         }
 
+        [HttpGet("belaruspartisan")]
+        public JsonResult GetTopBelarusPartisan()
+        {
+            return new JsonResult(GetRssNodes("https://belaruspartisan.by/rss/all/"));
+        }
+
+        [HttpGet("nashaniva")]
+        public JsonResult GetTopNashaNiva()
+        {
+            return new JsonResult(GetRssNodes("https://nn.by/?c=rss-top&lang=ru"));
+        }
+        
+        [HttpGet("belsat")]
+        public JsonResult GetTopBelsat()
+        {
+            return new JsonResult(GetRssNodes("https://belsat.eu/ru/feed/"));
+        }
+
         private IEnumerable<News> GetRssNodes(string rssLink)
         {                        
             var nodes = GetRss(rssLink).Elements().Elements().Elements().Where(e => e.Name.LocalName == "item");
-
+            
             var result = nodes.Select(x => new News()
             {
                 Title = x.Elements().First(e => e.Name.LocalName == "title").Value,
                 Url = x.Elements().First(e => e.Name.LocalName == "link").Value,
                 UrlToImage = x.Elements().Any(e => e.Name.LocalName == "thumbnail")
                                 ? x.Elements().First(e => e.Name.LocalName == "thumbnail").FirstAttribute.Value     //onliner
-                                : x.Elements().First(e => e.Name.LocalName == "enclosure").FirstAttribute.Value,    //tut
-                Description = x.Elements().First(e => e.Name.LocalName == "description").Value,
+                                : x.Elements().Any(e => e.Name.LocalName == "enclosure")
+                                    ? x.Elements().First(e => e.Name.LocalName == "enclosure").FirstAttribute.Value    //tut
+                                    : string.Empty,
+                Description = x.Elements().Any(e => e.Name.LocalName == "description")
+                                ? x.Elements().First(e => e.Name.LocalName == "description").Value
+                                : string.Empty,
                 PublishedAt = x.Elements().First(e => e.Name.LocalName == "pubDate").Value,
             });
 

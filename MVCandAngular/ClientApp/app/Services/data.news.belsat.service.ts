@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 
-export class TutNewsService {
+export class BelsatNewsService {
 
     private url = "/api/news";
 
@@ -11,7 +11,7 @@ export class TutNewsService {
 
     getNews() {
 
-        return this.http.get(this.url + '/tut');
+        return this.http.get(this.url + '/belsat');
     };
 
 }

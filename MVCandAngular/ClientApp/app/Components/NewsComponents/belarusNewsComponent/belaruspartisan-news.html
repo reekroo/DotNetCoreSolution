@@ -2,7 +2,7 @@
 
     <div class="row">
         <div class="col-sm-12 news">
-            <h2>Top TUT News</h2>
+            <h2>Top Belarus Partisan News</h2>
 
             <section *ngFor="let n of news">
                 <article>
@@ -11,8 +11,6 @@
                             <a href="{{n.url}}" target="_blank">{{n.title}}</a>
                         </h1>
                     </header>
-
-                    <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" />
 
                     <p>{{n.description}}</p>
 

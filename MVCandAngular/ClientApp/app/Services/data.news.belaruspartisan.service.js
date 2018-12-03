@@ -9,20 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-var TutNewsService = /** @class */ (function () {
-    function TutNewsService(http) {
+var BelarusPartisanNewsService = /** @class */ (function () {
+    function BelarusPartisanNewsService(http) {
         this.http = http;
         this.url = "/api/news";
     }
-    TutNewsService.prototype.getNews = function () {
-        return this.http.get(this.url + '/tut');
+    BelarusPartisanNewsService.prototype.getNews = function () {
+        return this.http.get(this.url + '/belaruspartisan');
     };
     ;
-    TutNewsService = __decorate([
+    BelarusPartisanNewsService = __decorate([
         Injectable(),
         __metadata("design:paramtypes", [HttpClient])
-    ], TutNewsService);
-    return TutNewsService;
+    ], BelarusPartisanNewsService);
+    return BelarusPartisanNewsService;
 }());
-export { TutNewsService };
-//# sourceMappingURL=data.news.tut.service.js.map
+export { BelarusPartisanNewsService };
+//# sourceMappingURL=data.news.belaruspartisan.service.js.map

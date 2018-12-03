@@ -1,0 +1,26 @@
+﻿<div class="news-container container">
+
+    <div class="row">
+        <div class="col-sm-12 news">
+            <h2>Top Belsat News</h2>
+
+            <section *ngFor="let n of news">
+                <article>
+                    <header>
+                        <h1>
+                            <a href="{{n.url}}" target="_blank">{{n.title}}</a>
+                        </h1>
+                    </header>
+
+                    <p>{{n.description}}</p>
+
+                    <footer>
+                        <div>{{getDate(n.publishedAt)}}</div>
+                    </footer>
+                </article>
+            </section>
+
+        </div>
+    </div>
+
+</div>

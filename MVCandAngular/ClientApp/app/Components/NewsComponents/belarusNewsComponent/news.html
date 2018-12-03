@@ -1,0 +1,113 @@
+﻿<div class="news-container container-fluid">
+
+    <div class="row">
+
+        <div class="col-sm-12">
+            <h2>Belarus Partisan</h2>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <section *ngFor="let n of belarusPartisanNews">
+                        <article>
+                            <header>
+                                <h4>
+                                    <a href="{{n.url}}" target="_blank">{{n.title}}</a>
+                                </h4>
+                            </header>
+
+                            <p>{{n.description}}</p>
+
+                            <footer>
+                                <div>{{getDate(n.publishedAt)}}</div>
+                            </footer>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-6">
+            <h2>TUT</h2>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <section *ngFor="let n of tutNews">
+                        <article>
+                            <header>
+                                <h4>
+                                    <a href="{{n.url}}" target="_blank">{{n.title}}</a>
+                                </h4>
+                            </header>
+
+                            <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" />
+
+                            <p>{{n.description}}</p>
+
+                            <footer>
+                                <div>{{getDate(n.publishedAt)}}</div>
+                            </footer>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <h2>Onliner</h2>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <section *ngFor="let n of onlinerNews">
+                        <article>
+                            <header>
+                                <h4>
+                                    <a href="{{n.url}}" target="_blank">{{n.title}}</a>
+                                </h4>
+                            </header>
+
+                            <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" />
+
+                            <p>{{n.description}}</p>
+
+                            <footer>
+                                <div>{{getDate(n.publishedAt)}}</div>
+                            </footer>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-12">
+            <h2>Nasha Niva</h2>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <section *ngFor="let n of nashaNivaNews">
+                        <article>
+                            <header>
+                                <h4>
+                                    <a href="{{n.url}}" target="_blank">{{n.title}}</a>
+                                </h4>
+                            </header>
+
+                            <footer>
+                                <div>{{getDate(n.publishedAt)}}</div>
+                            </footer>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

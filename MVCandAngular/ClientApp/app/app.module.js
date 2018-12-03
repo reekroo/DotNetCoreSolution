@@ -26,10 +26,14 @@ import { AddressFormComponent } from './Components/ShopComponents/addressesCompo
 import { AddressCreateComponent } from './Components/ShopComponents/addressesComponent/address-create';
 import { AddressEditComponent } from './Components/ShopComponents/addressesComponent/address-edit';
 import { CartProductListComponent } from './Components/ShopComponents/cartComponent/cart-product-list';
-import { NewsComponent } from './Components/NewsComponents/newsComponent/news';
-import { OnlinerNewsComponent } from './Components/NewsComponents/newsComponent/onliner-news';
-import { TutNewsComponent } from './Components/NewsComponents/newsComponent/tut-news';
-import { NewsSectionComponent } from './Components/NewsComponents/newsComponent/news-section';
+import { NewsComponent } from './Components/NewsComponents/worldNewsComponent/news';
+import { BelNewsComponent } from './Components/NewsComponents/belarusNewsComponent/news';
+import { OnlinerNewsComponent } from './Components/NewsComponents/belarusNewsComponent/onliner-news';
+import { TutNewsComponent } from './Components/NewsComponents/belarusNewsComponent/tut-news';
+import { BelarusPartisanNewsComponent } from './Components/NewsComponents/belarusNewsComponent/belaruspartisan-news';
+import { NashaNivaNewsComponent } from './Components/NewsComponents/belarusNewsComponent/nashaniva-news';
+import { BelsatNewsComponent } from './Components/NewsComponents/belarusNewsComponent/belsat-news';
+import { NewsSectionComponent } from './Components/NewsComponents/belarusNewsComponent/news-section';
 import { CurrencyComponent } from './Components/BankComponents/currencyCompoment/currency';
 import { MonthRateTableComponent } from './Components/BankComponents/currencyCompoment/month-rates-table-section';
 import { RateSectionComponent } from './Components/BankComponents/currencyCompoment/rate-section';
@@ -53,9 +57,13 @@ var appRoutes = [
     { path: 'user/edit/:id', component: UserEditComponent },
     { path: 'user/address/create', component: AddressCreateComponent },
     { path: 'user/address/edit/:id', component: AddressEditComponent },
-    { path: 'news', component: NewsComponent },
+    { path: 'news/world', component: NewsComponent },
+    { path: 'news/belarus', component: BelNewsComponent },
     { path: 'news/onliner', component: OnlinerNewsComponent },
     { path: 'news/tut', component: TutNewsComponent },
+    { path: 'news/belarus-partisan', component: BelarusPartisanNewsComponent },
+    { path: 'news/nasha-niva', component: NashaNivaNewsComponent },
+    { path: 'news/belsat', component: BelsatNewsComponent },
     { path: 'bank/currencies', component: CurrencyComponent },
     { path: 'bank/ingots', component: MetalComponent },
     { path: 'bank/refinancing-rates', component: RefinancingComponent },
@@ -81,7 +89,7 @@ var AppModule = /** @class */ (function () {
                 FullUserComponent, UserFormComponent, UserInfoComponent, UserEditComponent,
                 AddressListComponent, AddressFormComponent, AddressCreateComponent, AddressEditComponent,
                 CartProductListComponent,
-                NewsComponent, OnlinerNewsComponent, TutNewsComponent, NewsSectionComponent,
+                NewsComponent, BelNewsComponent, OnlinerNewsComponent, TutNewsComponent, BelarusPartisanNewsComponent, NashaNivaNewsComponent, BelsatNewsComponent, NewsSectionComponent,
                 ChartComponent,
                 CurrencyComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
                 MetalComponent, DefaultMetalRatesComponent, MetalRatesComponent,

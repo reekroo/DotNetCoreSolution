@@ -1,34 +1,18 @@
 ﻿
-<style>
-    .horizontal-scroll-wrapper {
-        overflow-x: scroll;
-        overflow-y: hidden;
-        white-space: nowrap;
-        width: auto;
-    }
+<section *ngFor="let n of news">
+    <article>
+        <header *ngIf="n.title">
+            <h4>
+                <a href="{{n.url}}" target="_blank">{{n.title}}</a>
+            </h4>
+        </header>
+        
+        <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail"  *ngIf="n.urlToImage" style="width: 100%"/>
 
-        .horizontal-scroll-wrapper section {
-            display: inline-block;
-            max-width: 600px;
-            white-space: normal;
-            margin: 10px;
-            vertical-align: top;
-        }
-</style>
+        <p *ngIf="n.description">{{n.description}}</p>
 
-<div class="horizontal-scroll-wrapper">
-    <section *ngFor="let n of news">
-        <article>
-            <header>
-                <h1>
-                    <a href="{{n.url}}" target="_blank">{{n.title}}</a>
-                </h1>
-            </header>
-
-            <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" />
-
-            <p>{{n.description}}</p>
-
-        </article>
-    </section>
-</div>
+        <footer *ngIf="n.publishedAt">
+            <div>{{getDate(n.publishedAt)}}</div>
+        </footer>
+    </article>
+</section>

@@ -8,29 +8,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component } from '@angular/core';
-import { BelsatNewsService } from '../../../Services/data.news.belsat.service';
-var BelsatNewsComponent = /** @class */ (function () {
-    function BelsatNewsComponent(dataService) {
+import { SvobodaNewsService } from '../../../Services/data.news.svoboda.service';
+var SvobodaNewsComponent = /** @class */ (function () {
+    function SvobodaNewsComponent(dataService) {
         this.dataService = dataService;
+        this.title = "Radio Svoboda";
     }
-    BelsatNewsComponent.prototype.ngOnInit = function () {
+    SvobodaNewsComponent.prototype.ngOnInit = function () {
         this.getAllNews();
     };
-    BelsatNewsComponent.prototype.getAllNews = function () {
+    SvobodaNewsComponent.prototype.getAllNews = function () {
         var _this = this;
         this.dataService.getNews().subscribe(function (data) { _this.news = data; });
     };
-    BelsatNewsComponent.prototype.getDate = function (publishedAt) {
+    SvobodaNewsComponent.prototype.getDate = function (publishedAt) {
         return new Date(publishedAt).toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
     };
-    BelsatNewsComponent = __decorate([
+    SvobodaNewsComponent = __decorate([
         Component({
-            templateUrl: './belsat-news.html',
-            providers: [BelsatNewsService]
+            templateUrl: './news-line-section.html',
+            styles: [require('./news-line-section.less')],
+            providers: [SvobodaNewsService]
         }),
-        __metadata("design:paramtypes", [BelsatNewsService])
-    ], BelsatNewsComponent);
-    return BelsatNewsComponent;
+        __metadata("design:paramtypes", [SvobodaNewsService])
+    ], SvobodaNewsComponent);
+    return SvobodaNewsComponent;
 }());
-export { BelsatNewsComponent };
-//# sourceMappingURL=belsat-news.js.map
+export { SvobodaNewsComponent };
+//# sourceMappingURL=svoboda-news.js.map

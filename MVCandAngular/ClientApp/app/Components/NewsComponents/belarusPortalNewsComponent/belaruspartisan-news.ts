@@ -5,13 +5,15 @@ import { BelarusPartisanNewsService } from '../../../Services/data.news.belarusp
 import { News } from '../../../Models/News/news';
 
 @Component({
-    templateUrl: './belaruspartisan-news.html',
+    templateUrl: './news-clip-board-section.html',
+    styles: [require('./news-clip-board-section.less')],
     providers: [BelarusPartisanNewsService]
 })
 
 export class BelarusPartisanNewsComponent implements OnInit {
 
     news: News[];
+    title = "Belarus Partisan";
 
     constructor(private dataService: BelarusPartisanNewsService) {
     }

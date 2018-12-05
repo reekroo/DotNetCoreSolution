@@ -5,13 +5,15 @@ import { TutNewsService } from '../../../Services/data.news.tut.service';
 import { News } from '../../../Models/News/news';
 
 @Component({
-    templateUrl: './tut-news.html',
+    templateUrl: './news-line-section.html',
+    styles: [require('./news-line-section.less')],
     providers: [TutNewsService]
 })
 
 export class TutNewsComponent implements OnInit {
 
     news: News[];
+    title = "TUT";
 
     constructor(private dataService: TutNewsService) {
     }
@@ -30,5 +32,4 @@ export class TutNewsComponent implements OnInit {
 
         return new Date(publishedAt).toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
     }
-    
 }

@@ -30,11 +30,12 @@ import { CartProductListComponent } from './Components/ShopComponents/cartCompon
 
 import { NewsComponent } from './Components/NewsComponents/worldNewsComponent/news';
 import { BelNewsComponent } from './Components/NewsComponents/belarusNewsComponent/news';
-import { OnlinerNewsComponent } from './Components/NewsComponents/belarusNewsComponent/onliner-news';
-import { TutNewsComponent } from './Components/NewsComponents/belarusNewsComponent/tut-news';
-import { BelarusPartisanNewsComponent } from './Components/NewsComponents/belarusNewsComponent/belaruspartisan-news';
-import { NashaNivaNewsComponent } from './Components/NewsComponents/belarusNewsComponent/nashaniva-news';
-import { BelsatNewsComponent } from './Components/NewsComponents/belarusNewsComponent/belsat-news';
+import { OnlinerNewsComponent } from './Components/NewsComponents//belarusPortalNewsComponent/onliner-news';
+import { TutNewsComponent } from './Components/NewsComponents/belarusPortalNewsComponent/tut-news';
+import { BelarusPartisanNewsComponent } from './Components/NewsComponents/belarusPortalNewsComponent/belaruspartisan-news';
+import { NashaNivaNewsComponent } from './Components/NewsComponents/belarusPortalNewsComponent/nashaniva-news';
+import { BelsatNewsComponent } from './Components/NewsComponents/belarusPortalNewsComponent/belsat-news';
+import { SvobodaNewsComponent } from './Components/NewsComponents/belarusPortalNewsComponent/svoboda-news';
 import { NewsSectionComponent } from './Components/NewsComponents/belarusNewsComponent/news-section';
 
 import { CurrencyComponent } from './Components/BankComponents/currencyCompoment/currency';
@@ -73,6 +74,7 @@ const appRoutes: Routes = [
     { path: 'news/belarus-partisan', component: BelarusPartisanNewsComponent },
     { path: 'news/nasha-niva', component: NashaNivaNewsComponent },
     { path: 'news/belsat', component: BelsatNewsComponent },
+    { path: 'news/svoboda', component: SvobodaNewsComponent },
 
     { path: 'bank/currencies', component: CurrencyComponent },
     { path: 'bank/ingots', component: MetalComponent },
@@ -100,7 +102,8 @@ const appRoutes: Routes = [
         AddressListComponent, AddressFormComponent, AddressCreateComponent, AddressEditComponent,
         CartProductListComponent,
 
-        NewsComponent, BelNewsComponent, OnlinerNewsComponent, TutNewsComponent, BelarusPartisanNewsComponent, NashaNivaNewsComponent, BelsatNewsComponent, NewsSectionComponent,
+        NewsComponent, BelNewsComponent,
+        OnlinerNewsComponent, TutNewsComponent, BelarusPartisanNewsComponent, NashaNivaNewsComponent, BelsatNewsComponent, SvobodaNewsComponent, NewsSectionComponent,
         ChartComponent,
         CurrencyComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
         MetalComponent, DefaultMetalRatesComponent, MetalRatesComponent,

@@ -1,19 +1,21 @@
 ﻿import { Component, OnInit } from '@angular/core';
 
-import { BelsatNewsService } from '../../../Services/data.news.belsat.service';
+import { SvobodaNewsService } from '../../../Services/data.news.svoboda.service';
 
 import { News } from '../../../Models/News/news';
 
 @Component({
-    templateUrl: './belsat-news.html',
-    providers: [BelsatNewsService]
+    templateUrl: './news-line-section.html',
+    styles: [require('./news-line-section.less')],
+    providers: [SvobodaNewsService]
 })
 
-export class BelsatNewsComponent implements OnInit {
+export class SvobodaNewsComponent implements OnInit {
 
     news: News[];
+    title = "Radio Svoboda";
 
-    constructor(private dataService: BelsatNewsService) {
+    constructor(private dataService: SvobodaNewsService) {
     }
 
     ngOnInit() {

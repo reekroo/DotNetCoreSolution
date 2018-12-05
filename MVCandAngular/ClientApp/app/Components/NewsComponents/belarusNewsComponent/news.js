@@ -9,26 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { combineLatest } from 'rxjs';
+import { BelsatNewsService } from '../../../Services/data.news.belsat.service';
 import { OnlinerNewsService } from '../../../Services/data.news.onliner.service';
 import { TutNewsService } from '../../../Services/data.news.tut.service';
-import { BelarusPartisanNewsService } from '../../../Services/data.news.belaruspartisan.service';
+import { SvobodaNewsService } from '../../../Services/data.news.svoboda.service';
 import { NashaNivaNewsService } from '../../../Services/data.news.nashaniva.service';
+import { BelarusPartisanNewsService } from '../../../Services/data.news.belaruspartisan.service';
 var BelNewsComponent = /** @class */ (function () {
-    function BelNewsComponent(onliner, tut, belarusPartisan, nashaNiva) {
+    function BelNewsComponent(onliner, tut, belarusPartisan, nashaNiva, belsat, svoboda) {
         this.onliner = onliner;
         this.tut = tut;
         this.belarusPartisan = belarusPartisan;
         this.nashaNiva = nashaNiva;
-        this.showError = false;
+        this.belsat = belsat;
+        this.svoboda = svoboda;
     }
     BelNewsComponent.prototype.ngOnInit = function () {
         this.getNews();
     };
-    BelNewsComponent.prototype.getDate = function (publishedAt) {
-        return new Date(publishedAt).toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
-    };
     BelNewsComponent.prototype.getNews = function () {
         var _this = this;
+        this.belsat.getNews().subscribe(function (data) { _this.belsatNews = data.slice(0, 4); });
         var auto$ = this.onliner.getAutoNews();
         var people$ = this.onliner.getPeopleNews();
         var realt$ = this.onliner.getRealtNews();
@@ -45,25 +46,22 @@ var BelNewsComponent = /** @class */ (function () {
             arr.push(combinedResult[3][1]);
             _this.onlinerNews = arr;
         });
-        this.tut.getNews().subscribe(function (data) {
-            _this.tutNews = data.slice(0, 8);
-        });
-        this.belarusPartisan.getNews().subscribe(function (data) {
-            _this.belarusPartisanNews = data.slice(0, 8);
-        });
-        this.nashaNiva.getNews().subscribe(function (data) {
-            _this.nashaNivaNews = data.slice(0, 8);
-        });
+        this.tut.getNews().subscribe(function (data) { _this.tutNews = data.slice(0, 8); });
+        this.svoboda.getNews().subscribe(function (data) { _this.svobodaNews = data.slice(0, 8); });
+        this.nashaNiva.getNews().subscribe(function (data) { _this.nashaNivaNews = data.slice(0, 8); });
+        this.belarusPartisan.getNews().subscribe(function (data) { _this.belarusPartisanNews = data.slice(0, 6); });
     };
     BelNewsComponent = __decorate([
         Component({
             templateUrl: './news.html',
-            providers: [OnlinerNewsService, TutNewsService, BelarusPartisanNewsService, NashaNivaNewsService]
+            providers: [OnlinerNewsService, TutNewsService, BelarusPartisanNewsService, NashaNivaNewsService, BelsatNewsService, SvobodaNewsService]
         }),
         __metadata("design:paramtypes", [OnlinerNewsService,
             TutNewsService,
             BelarusPartisanNewsService,
-            NashaNivaNewsService])
+            NashaNivaNewsService,
+            BelsatNewsService,
+            SvobodaNewsService])
     ], BelNewsComponent);
     return BelNewsComponent;
 }());

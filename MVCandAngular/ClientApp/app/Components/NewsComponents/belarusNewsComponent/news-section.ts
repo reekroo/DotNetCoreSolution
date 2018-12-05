@@ -4,11 +4,16 @@ import { News } from '../../../Models/News/news';
 
 @Component({
     selector: 'news-section',
-    templateUrl: './news-section.html',
-    styles: [require('./news-section.less')]
+    templateUrl: './news-section.html'
 })
 
-export class NewsSectionComponent  {
-    
-    @Input() news: News[];        
+export class NewsSectionComponent {
+
+    @Input() news: News[];
+
+    getDate(publishedAt: string) {
+
+        return new Date(publishedAt).toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+    }
+
 }

@@ -12,6 +12,7 @@ import { BelarusPartisanNewsService } from '../../../Services/data.news.belarusp
 var BelarusPartisanNewsComponent = /** @class */ (function () {
     function BelarusPartisanNewsComponent(dataService) {
         this.dataService = dataService;
+        this.title = "Belarus Partisan";
     }
     BelarusPartisanNewsComponent.prototype.ngOnInit = function () {
         this.getAllNews();
@@ -25,7 +26,8 @@ var BelarusPartisanNewsComponent = /** @class */ (function () {
     };
     BelarusPartisanNewsComponent = __decorate([
         Component({
-            templateUrl: './belaruspartisan-news.html',
+            templateUrl: './news-clip-board-section.html',
+            styles: [require('./news-clip-board-section.less')],
             providers: [BelarusPartisanNewsService]
         }),
         __metadata("design:paramtypes", [BelarusPartisanNewsService])

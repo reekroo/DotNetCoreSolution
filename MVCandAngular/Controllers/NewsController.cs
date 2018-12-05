@@ -62,6 +62,12 @@ namespace MVCandAngular.Controllers
             return new JsonResult(GetRssNodes("https://belsat.eu/ru/feed/"));
         }
 
+        [HttpGet("svoboda")]
+        public JsonResult GetTopSvoboda()
+        {
+            return new JsonResult(GetRssNodes("https://www.svoboda.org/api/z-pqpiev-qpp"));
+        }
+
         private IEnumerable<News> GetRssNodes(string rssLink)
         {                        
             var nodes = GetRss(rssLink).Elements().Elements().Elements().Where(e => e.Name.LocalName == "item");
@@ -76,11 +82,11 @@ namespace MVCandAngular.Controllers
                                     ? x.Elements().First(e => e.Name.LocalName == "enclosure").FirstAttribute.Value    //tut
                                     : string.Empty,
                 Description = x.Elements().Any(e => e.Name.LocalName == "description")
-                                ? x.Elements().First(e => e.Name.LocalName == "description").Value
+                                ? ParseHtmlString(x.Elements().First(e => e.Name.LocalName == "description").Value)
                                 : string.Empty,
                 PublishedAt = x.Elements().First(e => e.Name.LocalName == "pubDate").Value,
             });
-
+            
             return result;
         }
 
@@ -98,6 +104,30 @@ namespace MVCandAngular.Controllers
             XDocument rssXmlDoc = XDocument.Parse(str);
 
             return rssXmlDoc;
+        }
+
+        private string ParseHtmlString(string htmlString)
+        {
+            var result = string.Empty;
+
+            var htmlDoc = new HtmlAgilityPack.HtmlDocument();
+            htmlDoc.LoadHtml(htmlString);
+
+            if (htmlDoc.DocumentNode == null)
+            {
+                return result;
+            }
+
+            if (htmlDoc.DocumentNode.SelectSingleNode("//p[2]") != null) //onliner
+            {
+                result = htmlDoc.DocumentNode.SelectSingleNode("//p[2]").InnerText;
+            }
+            else if (htmlDoc.DocumentNode.InnerText != null) // tut
+            {
+                result = htmlDoc.DocumentNode.InnerText;
+            }
+
+            return result;
         }
     }
 }

@@ -21,7 +21,13 @@
     <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate-section.ts" />
     <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate.ts" />
     <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rates-section.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\belarusNewsComponent\belsat-news.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\belarusNewsComponent\news-section.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belaruspartisan-news.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belsat-news.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\nashaniva-news.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\svoboda-news.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\tut-news.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\belarusNewsComponent\news.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\worldNewsComponent\belaruspartisan-news.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\worldNewsComponent\nashaniva-news.ts" />
@@ -64,6 +70,7 @@
     <None Remove="ClientApp\app\Services\data.news.nashaniva.service.ts" />
     <None Remove="ClientApp\app\Services\data.news.onliner.service.ts" />
     <None Remove="ClientApp\app\Services\data.news.service.ts" />
+    <None Remove="ClientApp\app\Services\data.news.svoboda.service.ts" />
     <None Remove="ClientApp\app\Services\data.news.tut.service.ts" />
     <None Remove="ClientApp\app\Services\data.user.address.service.ts" />
     <None Remove="ClientApp\app\Services\data.user.cart.service.ts" />
@@ -78,6 +85,7 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="1.50.5" />
+    <PackageReference Include="HtmlAgilityPack.NetCore" Version="1.5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
@@ -92,13 +100,14 @@
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rates-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\belsat-news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\nashaniva-news.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\news-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\belaruspartisan-news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belaruspartisan-news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belsat-news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\nashaniva-news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\svoboda-news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\tut-news.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\tut-news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\onliner-news.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\addressesComponent\address-form.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\addressesComponent\address-list.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\addressesComponent\address-create.ts" />
@@ -127,6 +136,7 @@
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\productsComponent\product-edit.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\productsComponent\product-create.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\productsComponent\product-form.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\data.news.svoboda.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.news.belsat.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.news.nashaniva.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\Services\data.news.belaruspartisan.service.ts" />
@@ -158,9 +168,6 @@
     </None>
     <None Update="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate-section.js.map">
       <DependentUpon>refinancing-rate-section.js</DependentUpon>
-    </None>
-    <None Update="ClientApp\app\Components\NewsComponents\belarusNewsComponent\belsat-news.js.map">
-      <DependentUpon>belsat-news.js</DependentUpon>
     </None>
     <None Update="ClientApp\app\Components\ShopComponents\addressesComponent\address-form.js">
       <DependentUpon>address-form.ts</DependentUpon>

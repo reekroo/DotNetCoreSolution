@@ -1,20 +1,21 @@
 ﻿import { Component, OnInit } from '@angular/core';
 
-import { NashaNivaNewsService } from '../../../Services/data.news.nashaniva.service';
+import { BelsatNewsService } from '../../../Services/data.news.belsat.service';
 
 import { News } from '../../../Models/News/news';
 
 @Component({
-    templateUrl: './nashaniva-news.html',
-    styles: [require('./nashaniva-news.less')],
-    providers: [NashaNivaNewsService]
+    templateUrl: './news-clip-board-section.html',
+    styles: [require('./news-clip-board-section.less')],
+    providers: [BelsatNewsService]
 })
 
-export class NashaNivaNewsComponent implements OnInit {
+export class BelsatNewsComponent implements OnInit {
 
     news: News[];
+    title = "Belsat";
 
-    constructor(private dataService: NashaNivaNewsService) {
+    constructor(private dataService: BelsatNewsService) {
     }
 
     ngOnInit() {

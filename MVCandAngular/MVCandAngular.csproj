@@ -21,10 +21,13 @@
     <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate-section.ts" />
     <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate.ts" />
     <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rates-section.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\base\base-news.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\belarusNewsComponent\news-section.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\belarusNewsComponent\specific-news-section.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belaruspartisan-news.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belsat-news.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\nashaniva-news.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news-section.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\svoboda-news.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\tut-news.ts" />
@@ -100,10 +103,13 @@
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rates-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\base\base-news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\specific-news-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\news-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belaruspartisan-news.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belsat-news.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\nashaniva-news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\svoboda-news.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\tut-news.ts" />

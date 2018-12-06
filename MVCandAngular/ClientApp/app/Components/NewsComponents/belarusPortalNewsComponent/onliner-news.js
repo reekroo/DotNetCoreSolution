@@ -12,6 +12,10 @@ import { OnlinerNewsService } from '../../../Services/data.news.onliner.service'
 var OnlinerNewsComponent = /** @class */ (function () {
     function OnlinerNewsComponent(dataService) {
         this.dataService = dataService;
+        this.peopleNews = [];
+        this.techNews = [];
+        this.autoNews = [];
+        this.realtNews = [];
     }
     OnlinerNewsComponent.prototype.ngOnInit = function () {
         this.getAllNews();
@@ -22,10 +26,30 @@ var OnlinerNewsComponent = /** @class */ (function () {
         var tech$ = this.dataService.getTechNews();
         var auto$ = this.dataService.getAutoNews();
         var realt$ = this.dataService.getRealtNews();
-        people$.subscribe(function (data) { _this.peopleNews = data; });
-        tech$.subscribe(function (data) { _this.techNews = data; });
-        auto$.subscribe(function (data) { _this.autoNews = data; });
-        realt$.subscribe(function (data) { _this.realtNews = data; });
+        people$.subscribe(function (data) {
+            var k = 4;
+            for (var i = 0; i < data.length; i += k) {
+                _this.peopleNews.push({ items: data.slice(i, i + k) });
+            }
+        });
+        tech$.subscribe(function (data) {
+            var k = 4;
+            for (var i = 0; i < data.length; i += k) {
+                _this.techNews.push({ items: data.slice(i, i + k) });
+            }
+        });
+        auto$.subscribe(function (data) {
+            var k = 4;
+            for (var i = 0; i < data.length; i += k) {
+                _this.autoNews.push({ items: data.slice(i, i + k) });
+            }
+        });
+        realt$.subscribe(function (data) {
+            var k = 4;
+            for (var i = 0; i < data.length; i += k) {
+                _this.realtNews.push({ items: data.slice(i, i + k) });
+            }
+        });
     };
     OnlinerNewsComponent = __decorate([
         Component({

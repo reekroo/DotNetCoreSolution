@@ -1,3 +1,16 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,10 +22,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { NashaNivaNewsService } from '../../../Services/data.news.nashaniva.service';
-var NashaNivaNewsComponent = /** @class */ (function () {
+import { BaseNewsComponent } from '../base/base-news';
+var NashaNivaNewsComponent = /** @class */ (function (_super) {
+    __extends(NashaNivaNewsComponent, _super);
     function NashaNivaNewsComponent(dataService) {
-        this.dataService = dataService;
-        this.title = "Nasha Niva";
+        var _this = _super.call(this) || this;
+        _this.dataService = dataService;
+        _this.title = "Nasha Niva";
+        return _this;
     }
     NashaNivaNewsComponent.prototype.ngOnInit = function () {
         this.getAllNews();
@@ -21,18 +38,15 @@ var NashaNivaNewsComponent = /** @class */ (function () {
         var _this = this;
         this.dataService.getNews().subscribe(function (data) { _this.news = data; });
     };
-    NashaNivaNewsComponent.prototype.getDate = function (publishedAt) {
-        return new Date(publishedAt).toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
-    };
     NashaNivaNewsComponent = __decorate([
         Component({
-            templateUrl: './news-clip-board-section.html',
-            styles: [require('./news-clip-board-section.less')],
+            templateUrl: './news-line-section.html',
+            styles: [require('./news-line-section.less')],
             providers: [NashaNivaNewsService]
         }),
         __metadata("design:paramtypes", [NashaNivaNewsService])
     ], NashaNivaNewsComponent);
     return NashaNivaNewsComponent;
-}());
+}(BaseNewsComponent));
 export { NashaNivaNewsComponent };
 //# sourceMappingURL=nashaniva-news.js.map

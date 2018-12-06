@@ -1,4 +1,4 @@
-﻿<div class="news-container container-fluid">
+﻿<div class="news-container container">
 
     <div class="row">
         <div class="col-sm-12">
@@ -7,22 +7,29 @@
     </div>
 
     <div class="row">
-        <section class="col-sm-3" *ngFor="let item of news">
+        <section class="news-section" *ngFor="let n of news">
             <article>
-                <header *ngIf="item.title">
+                <header *ngIf="n.title">
                     <h4>
-                        <a href="{{item.url}}" target="_blank">{{item.title}}</a>
+                        <a href="{{n.url}}" target="_blank">{{n.title}}</a>
                     </h4>
                 </header>
 
-                <img src="{{item.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" *ngIf="item.urlToImage" style="width: 100%" />
+                <div class="clearfix">
 
-                <p *ngIf="item.description">{{item.description}}</p>
+                    <img src="{{n.urlToImage}}" alt="(no image)"
+                         class="img-fluid img-thumbnail"
+                         [ngClass]="n.urlToImage ? 'col-sm-2' : ''"
+                         *ngIf="n.urlToImage" />
 
-            <footer *ngIf="item.publishedAt">
-                <div>{{getDate(item.publishedAt)}}</div>
-            </footer>
-        </article>
+                    <p [ngClass]="n.urlToImage ? 'col-sm-10' : ''" *ngIf="n.description">{{n.description}}</p>
+
+                </div>
+
+                <footer *ngIf="n.publishedAt">
+                    <div>{{getDate(n.publishedAt)}}</div>
+                </footer>
+            </article>
         </section>
-</div>
+    </div>
 </div>

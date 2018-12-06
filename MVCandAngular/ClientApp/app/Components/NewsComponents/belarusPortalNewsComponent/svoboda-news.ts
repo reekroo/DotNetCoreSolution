@@ -3,19 +3,21 @@
 import { SvobodaNewsService } from '../../../Services/data.news.svoboda.service';
 
 import { News } from '../../../Models/News/news';
+import { BaseNewsComponent } from '../base/base-news';
 
 @Component({
-    templateUrl: './news-line-section.html',
-    styles: [require('./news-line-section.less')],
+    templateUrl: './news-clip-board-section.html',
+    styles: [require('./news-clip-board-section.less')],
     providers: [SvobodaNewsService]
 })
 
-export class SvobodaNewsComponent implements OnInit {
+export class SvobodaNewsComponent extends BaseNewsComponent implements OnInit {
 
-    news: News[];
+    news: { items: News[]; }[] = [];
     title = "Radio Svoboda";
 
     constructor(private dataService: SvobodaNewsService) {
+        super();
     }
 
     ngOnInit() {
@@ -25,12 +27,14 @@ export class SvobodaNewsComponent implements OnInit {
     
     private getAllNews() {
 
-        this.dataService.getNews().subscribe((data: News[]) => { this.news = data; });
-    }
-    
-    getDate(publishedAt: string) {
+        this.dataService.getNews().subscribe((data: News[]) => {
 
-        return new Date(publishedAt).toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+            let k = 4;
+
+            for (let i = 0; i < data.length; i += k) {
+
+                this.news.push({ items: data.slice(i, i + k) });
+            }
+        });
     }
-    
 }

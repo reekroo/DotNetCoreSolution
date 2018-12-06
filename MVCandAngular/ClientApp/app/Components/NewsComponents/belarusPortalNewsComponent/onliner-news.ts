@@ -10,12 +10,12 @@ import { News } from '../../../Models/News/news';
 })
 
 export class OnlinerNewsComponent implements OnInit {
-
-    peopleNews: News[];
-    techNews: News[];
-    autoNews: News[];
-    realtNews: News[];
-
+    
+    peopleNews: { items: News[]; } [] = [];
+    techNews: { items: News[]; } [] = [];
+    autoNews: { items: News[]; }[] = [];
+    realtNews: { items: News[]; }[] = [];
+    
     constructor(private dataService: OnlinerNewsService) {
     }
 
@@ -31,10 +31,44 @@ export class OnlinerNewsComponent implements OnInit {
         let auto$ = this.dataService.getAutoNews();
         let realt$ = this.dataService.getRealtNews();
 
-        people$.subscribe((data: News[]) => { this.peopleNews = data; });
-        tech$.subscribe((data: News[]) => { this.techNews = data; });
-        auto$.subscribe((data: News[]) => { this.autoNews = data; });
-        realt$.subscribe((data: News[]) => { this.realtNews = data; });
+        people$.subscribe((data: News[]) => {
+
+            let k = 4;
+
+            for (let i = 0; i < data.length; i += k) {
+
+                this.peopleNews.push({ items: data.slice(i, i + k) });
+            }
+        });
+
+        tech$.subscribe((data: News[]) => {
+
+            let k = 4;
+
+            for (let i = 0; i < data.length; i += k) {
+
+                this.techNews.push({ items: data.slice(i, i + k) });
+            }
+        });
+
+        auto$.subscribe((data: News[]) => {
+
+            let k = 4;
+
+            for (let i = 0; i < data.length; i += k) {
+
+                this.autoNews.push({ items: data.slice(i, i + k) });
+            }
+        });
+
+        realt$.subscribe((data: News[]) => {
+
+            let k = 4;
+
+            for (let i = 0; i < data.length; i += k) {
+
+                this.realtNews.push({ items: data.slice(i, i + k) });
+            }
+        });
     }
-    
 }

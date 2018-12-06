@@ -1,50 +1,15 @@
-﻿<div class="news-container container-fluid">
+﻿<style>
+    .line{
+        margin: 10px 0;
+        border-bottom: 1px solid #ddd;
+    }
+</style>
 
-    <div class="row">
-        <div class="col-sm-12 news">
-            <h2>Peolpe</h2>
+<div class="news-container container-fluid">
 
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <news-section [news]="peopleNews"></news-section>
-                </div>
-            </div>
-        </div>
-    </div>
+    <onliner-news-section [news]="peopleNews" title="Peolpe"></onliner-news-section>
+    <onliner-news-section [news]="techNews" title="Tech"></onliner-news-section>
+    <onliner-news-section [news]="autoNews" title="Auto"></onliner-news-section>
+    <onliner-news-section [news]="realtNews" title="Realt"></onliner-news-section>
 
-    <div class="row">
-        <div class="col-sm-12 news">
-            <h2>tech</h2>
-
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <news-section [news]="techNews"></news-section>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12 news">
-            <h2>auto</h2>
-
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <news-section [news]="autoNews"></news-section>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12 news">
-            <h2>realt</h2>
-
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <news-section [news]="realtNews"></news-section>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>

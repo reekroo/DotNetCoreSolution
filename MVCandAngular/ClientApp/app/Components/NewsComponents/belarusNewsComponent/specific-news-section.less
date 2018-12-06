@@ -1,0 +1,23 @@
+﻿
+.clearfix {
+    &:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+
+.news-section {
+    margin: 0 0 5px 0;
+    border-bottom: 1px solid #ddd;
+
+    > article {
+        margin: 0 0 5px 0;
+    }
+
+    &:last-child {
+        border-bottom: none;
+        padding: 0;
+    }
+}
+

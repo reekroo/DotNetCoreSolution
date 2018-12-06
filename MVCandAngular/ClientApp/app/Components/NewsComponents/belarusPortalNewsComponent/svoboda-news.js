@@ -1,3 +1,16 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,30 +22,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { SvobodaNewsService } from '../../../Services/data.news.svoboda.service';
-var SvobodaNewsComponent = /** @class */ (function () {
+import { BaseNewsComponent } from '../base/base-news';
+var SvobodaNewsComponent = /** @class */ (function (_super) {
+    __extends(SvobodaNewsComponent, _super);
     function SvobodaNewsComponent(dataService) {
-        this.dataService = dataService;
-        this.title = "Radio Svoboda";
+        var _this = _super.call(this) || this;
+        _this.dataService = dataService;
+        _this.news = [];
+        _this.title = "Radio Svoboda";
+        return _this;
     }
     SvobodaNewsComponent.prototype.ngOnInit = function () {
         this.getAllNews();
     };
     SvobodaNewsComponent.prototype.getAllNews = function () {
         var _this = this;
-        this.dataService.getNews().subscribe(function (data) { _this.news = data; });
-    };
-    SvobodaNewsComponent.prototype.getDate = function (publishedAt) {
-        return new Date(publishedAt).toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+        this.dataService.getNews().subscribe(function (data) {
+            var k = 4;
+            for (var i = 0; i < data.length; i += k) {
+                _this.news.push({ items: data.slice(i, i + k) });
+            }
+        });
     };
     SvobodaNewsComponent = __decorate([
         Component({
-            templateUrl: './news-line-section.html',
-            styles: [require('./news-line-section.less')],
+            templateUrl: './news-clip-board-section.html',
+            styles: [require('./news-clip-board-section.less')],
             providers: [SvobodaNewsService]
         }),
         __metadata("design:paramtypes", [SvobodaNewsService])
     ], SvobodaNewsComponent);
     return SvobodaNewsComponent;
-}());
+}(BaseNewsComponent));
 export { SvobodaNewsComponent };
 //# sourceMappingURL=svoboda-news.js.map

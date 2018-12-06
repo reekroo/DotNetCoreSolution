@@ -28,13 +28,15 @@ import { AddressEditComponent } from './Components/ShopComponents/addressesCompo
 import { CartProductListComponent } from './Components/ShopComponents/cartComponent/cart-product-list';
 import { NewsComponent } from './Components/NewsComponents/worldNewsComponent/news';
 import { BelNewsComponent } from './Components/NewsComponents/belarusNewsComponent/news';
+import { NewsSectionComponent } from './Components/NewsComponents/belarusNewsComponent/news-section';
+import { SpecificNewsSectionComponent } from './Components/NewsComponents/belarusNewsComponent/specific-news-section';
 import { OnlinerNewsComponent } from './Components/NewsComponents//belarusPortalNewsComponent/onliner-news';
+import { OnlinerNewsSectionComponent } from './Components/NewsComponents//belarusPortalNewsComponent/onliner-news-section';
 import { TutNewsComponent } from './Components/NewsComponents/belarusPortalNewsComponent/tut-news';
 import { BelarusPartisanNewsComponent } from './Components/NewsComponents/belarusPortalNewsComponent/belaruspartisan-news';
 import { NashaNivaNewsComponent } from './Components/NewsComponents/belarusPortalNewsComponent/nashaniva-news';
 import { BelsatNewsComponent } from './Components/NewsComponents/belarusPortalNewsComponent/belsat-news';
 import { SvobodaNewsComponent } from './Components/NewsComponents/belarusPortalNewsComponent/svoboda-news';
-import { NewsSectionComponent } from './Components/NewsComponents/belarusNewsComponent/news-section';
 import { CurrencyComponent } from './Components/BankComponents/currencyCompoment/currency';
 import { MonthRateTableComponent } from './Components/BankComponents/currencyCompoment/month-rates-table-section';
 import { RateSectionComponent } from './Components/BankComponents/currencyCompoment/rate-section';
@@ -92,11 +94,12 @@ var AppModule = /** @class */ (function () {
                 AddressListComponent, AddressFormComponent, AddressCreateComponent, AddressEditComponent,
                 CartProductListComponent,
                 NewsComponent, BelNewsComponent,
-                OnlinerNewsComponent, TutNewsComponent, BelarusPartisanNewsComponent, NashaNivaNewsComponent, BelsatNewsComponent, SvobodaNewsComponent, NewsSectionComponent,
-                ChartComponent,
+                OnlinerNewsComponent, TutNewsComponent, BelarusPartisanNewsComponent, NashaNivaNewsComponent, BelsatNewsComponent, SvobodaNewsComponent,
+                NewsSectionComponent, SpecificNewsSectionComponent, OnlinerNewsSectionComponent,
                 CurrencyComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
                 MetalComponent, DefaultMetalRatesComponent, MetalRatesComponent,
                 RefinancingComponent, RefinancingRateComponent, RefinancingRatesComponent,
+                ChartComponent,
                 OilComponent
             ],
             providers: [],

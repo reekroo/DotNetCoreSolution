@@ -23,7 +23,9 @@ export class BelNewsComponent implements OnInit {
     nashaNivaNews: News[];
     belsatNews: News[];
     svobodaNews: News[];
-    
+
+    interval: any;
+
     constructor(
         private onliner: OnlinerNewsService,
         private tut: TutNewsService,
@@ -31,11 +33,25 @@ export class BelNewsComponent implements OnInit {
         private nashaNiva: NashaNivaNewsService,
         private belsat: BelsatNewsService,
         private svoboda: SvobodaNewsService) {
+
     }
 
     ngOnInit() {
 
         this.getNews();
+
+        this.interval = setInterval(() => {
+
+            this.getNews();
+        }, 60000);
+    }
+
+
+    ngOnDestroy() {
+        if (this.interval) {
+
+            clearInterval(this.interval);
+        }
     }
 
     getNews() {
@@ -73,5 +89,5 @@ export class BelNewsComponent implements OnInit {
         this.nashaNiva.getNews().subscribe((data: News[]) => { this.nashaNivaNews = data.slice(0, 8); });
 
         this.belarusPartisan.getNews().subscribe((data: News[]) => { this.belarusPartisanNews = data.slice(0, 6); });
-    }
+    }    
 }

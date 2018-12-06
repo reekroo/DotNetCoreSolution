@@ -1,3 +1,16 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,12 +21,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component, Input } from '@angular/core';
-var NewsSectionComponent = /** @class */ (function () {
+import { BaseNewsComponent } from '../base/base-news';
+var NewsSectionComponent = /** @class */ (function (_super) {
+    __extends(NewsSectionComponent, _super);
     function NewsSectionComponent() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    NewsSectionComponent.prototype.getDate = function (publishedAt) {
-        return new Date(publishedAt).toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
-    };
     __decorate([
         Input(),
         __metadata("design:type", Array)
@@ -21,10 +34,11 @@ var NewsSectionComponent = /** @class */ (function () {
     NewsSectionComponent = __decorate([
         Component({
             selector: 'news-section',
+            styles: [require('./news-section.less')],
             templateUrl: './news-section.html'
         })
     ], NewsSectionComponent);
     return NewsSectionComponent;
-}());
+}(BaseNewsComponent));
 export { NewsSectionComponent };
 //# sourceMappingURL=news-section.js.map

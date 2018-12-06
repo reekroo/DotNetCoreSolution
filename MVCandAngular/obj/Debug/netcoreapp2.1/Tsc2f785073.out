@@ -70,8 +70,16 @@ D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.news.belaruspartisan.
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.news.belaruspartisan.service.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusNewsComponent\news.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusNewsComponent\news.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\base\base-news.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\base\base-news.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusNewsComponent\news-section.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusNewsComponent\news-section.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusNewsComponent\specific-news-section.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusNewsComponent\specific-news-section.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news-section.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news-section.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\tut-news.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\tut-news.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belaruspartisan-news.js
@@ -82,8 +90,6 @@ D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusPo
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belsat-news.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\svoboda-news.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\svoboda-news.js.map
-D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusNewsComponent\news-section.js
-D:\My\DotNetCore\MVCandAngular\ClientApp\app\Components\NewsComponents\belarusNewsComponent\news-section.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.bank.service.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Services\data.bank.service.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\Models\Bank\Currency.js

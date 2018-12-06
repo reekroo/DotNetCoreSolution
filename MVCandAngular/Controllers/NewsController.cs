@@ -71,15 +71,15 @@ namespace MVCandAngular.Controllers
         private IEnumerable<News> GetRssNodes(string rssLink)
         {                        
             var nodes = GetRss(rssLink).Elements().Elements().Elements().Where(e => e.Name.LocalName == "item");
-            
+
             var result = nodes.Select(x => new News()
             {
                 Title = x.Elements().First(e => e.Name.LocalName == "title").Value,
                 Url = x.Elements().First(e => e.Name.LocalName == "link").Value,
                 UrlToImage = x.Elements().Any(e => e.Name.LocalName == "thumbnail")
-                                ? x.Elements().First(e => e.Name.LocalName == "thumbnail").FirstAttribute.Value     //onliner
+                                ? x.Elements().First(e => e.Name.LocalName == "thumbnail").FirstAttribute.Value.Replace("thumbnail", "970x485")     //onliner
                                 : x.Elements().Any(e => e.Name.LocalName == "enclosure")
-                                    ? x.Elements().First(e => e.Name.LocalName == "enclosure").FirstAttribute.Value    //tut
+                                    ? x.Elements().First(e => e.Name.LocalName == "enclosure").FirstAttribute.Value
                                     : string.Empty,
                 Description = x.Elements().Any(e => e.Name.LocalName == "description")
                                 ? ParseHtmlString(x.Elements().First(e => e.Name.LocalName == "description").Value)
@@ -122,7 +122,7 @@ namespace MVCandAngular.Controllers
             {
                 result = htmlDoc.DocumentNode.SelectSingleNode("//p[2]").InnerText;
             }
-            else if (htmlDoc.DocumentNode.InnerText != null) // tut
+            else if (htmlDoc.DocumentNode.InnerText != null)
             {
                 result = htmlDoc.DocumentNode.InnerText;
             }

@@ -1,0 +1,84 @@
+﻿<style>
+    .line{
+        margin: 10px 0;
+        border-bottom: 1px solid #ddd;
+    }
+</style>
+
+<div class="row">
+    <div class="col-sm-12 news">
+        <h2>{{title}}</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 news">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <div class="row">
+                    <ng-container *ngFor="let row of news; let i = index">
+
+                        <ng-container *ngIf="i==0">
+                            <ng-container *ngFor="let n of row.items; let y = index">
+
+                                <div class="col-sm-6" *ngIf="y==0">
+                                    <article>
+                                        <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" style="width: 100%" />
+                                        <h4><a href="{{n.url}}" target="_blank">{{n.title}}</a></h4>
+                                        <p>{{n.description}}</p>
+                                    </article>
+                                </div>
+
+                            </ng-container>
+                        </ng-container>
+
+                    </ng-container>
+
+                    <div class="col-sm-6">
+
+                        <ng-container *ngFor="let row of news; let i = index">
+
+                            <ng-container *ngIf="i==0">
+                                <ng-container *ngFor="let n of row.items; let y = index">
+
+                                    <div class="col-sm-12" *ngIf="y > 0">
+                                        <article>
+                                            <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail col-sm-6" />
+                                            <h4 class="col-sm-6"><a href="{{n.url}}" target="_blank">{{n.title}}</a></h4>
+                                        </article>
+                                    </div>
+
+                                </ng-container>
+                            </ng-container>
+
+                        </ng-container>
+
+                    </div>
+                </div>
+
+                <div class="line"></div>
+                <button (click)="onClick()">Show All news</button>
+
+                <div [hidden]="!section">
+                    <ng-container *ngFor="let row of news; let i = index">
+                        <ng-container *ngIf="i>0">
+                            <div class="row">
+                                <section class="col-sm-3" *ngFor="let n of row.items; let y = index">
+                                    <article>
+                                        <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" />
+                                        <h4><a href="{{n.url}}" target="_blank">{{n.title}}</a></h4>
+                                        <p>{{n.description}}</p>
+                                    </article>
+                                </section>
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </div>
+
+            </div>                
+        </div>
+
+    </div>
+</div>

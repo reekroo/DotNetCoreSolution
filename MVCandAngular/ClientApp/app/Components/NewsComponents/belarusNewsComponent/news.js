@@ -25,7 +25,16 @@ var BelNewsComponent = /** @class */ (function () {
         this.svoboda = svoboda;
     }
     BelNewsComponent.prototype.ngOnInit = function () {
+        var _this = this;
         this.getNews();
+        this.interval = setInterval(function () {
+            _this.getNews();
+        }, 60000);
+    };
+    BelNewsComponent.prototype.ngOnDestroy = function () {
+        if (this.interval) {
+            clearInterval(this.interval);
+        }
     };
     BelNewsComponent.prototype.getNews = function () {
         var _this = this;

@@ -3,19 +3,21 @@
 import { BelarusPartisanNewsService } from '../../../Services/data.news.belaruspartisan.service';
 
 import { News } from '../../../Models/News/news';
+import { BaseNewsComponent } from '../base/base-news';
 
 @Component({
-    templateUrl: './news-clip-board-section.html',
-    styles: [require('./news-clip-board-section.less')],
+    templateUrl: './news-line-section.html',
+    styles: [require('./news-line-section.less')],
     providers: [BelarusPartisanNewsService]
 })
 
-export class BelarusPartisanNewsComponent implements OnInit {
+export class BelarusPartisanNewsComponent extends BaseNewsComponent implements OnInit {
 
     news: News[];
     title = "Belarus Partisan";
 
     constructor(private dataService: BelarusPartisanNewsService) {
+        super();
     }
 
     ngOnInit() {
@@ -26,11 +28,5 @@ export class BelarusPartisanNewsComponent implements OnInit {
     private getAllNews() {
 
         this.dataService.getNews().subscribe((data: News[]) => { this.news = data; });
-    }
-    
-    getDate(publishedAt: string) {
-
-        return new Date(publishedAt).toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
-    }
-    
+    }        
 }

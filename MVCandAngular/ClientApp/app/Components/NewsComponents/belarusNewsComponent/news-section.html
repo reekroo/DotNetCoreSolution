@@ -1,5 +1,5 @@
 ﻿
-<section *ngFor="let n of news">
+<section class="news-section" *ngFor="let n of news">
     <article>
         <header *ngIf="n.title">
             <h4>
@@ -9,7 +9,7 @@
         
         <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail"  *ngIf="n.urlToImage" style="width: 100%"/>
 
-        <p *ngIf="n.description">{{n.description}}</p>
+        <p *ngIf="n.description">{{getDiscription(n.description)}}</p>
 
         <footer *ngIf="n.publishedAt">
             <div>{{getDate(n.publishedAt)}}</div>

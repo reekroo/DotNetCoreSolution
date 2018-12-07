@@ -22,14 +22,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { TutNewsService } from '../../../Services/data.news.tut.service';
-import { BaseNewsComponent } from '../base/base-news';
+import { BasePortalNewsComponent } from '../base/base-portal-news';
 var TutNewsComponent = /** @class */ (function (_super) {
     __extends(TutNewsComponent, _super);
-    function TutNewsComponent(dataService) {
-        var _this = _super.call(this) || this;
-        _this.dataService = dataService;
-        _this.news = [];
-        _this.title = "TUT";
+    function TutNewsComponent(specificDataService) {
+        var _this = _super.call(this, specificDataService, "TUT") || this;
+        _this.specificDataService = specificDataService;
+        _this.newsRows = [];
         return _this;
     }
     TutNewsComponent.prototype.ngOnInit = function () {
@@ -37,10 +36,11 @@ var TutNewsComponent = /** @class */ (function (_super) {
     };
     TutNewsComponent.prototype.getAllNews = function () {
         var _this = this;
-        this.dataService.getNews().subscribe(function (data) {
+        this.specificDataService.getNews().subscribe(function (data) {
             var k = 4;
             for (var i = 0; i < data.length; i += k) {
-                _this.news.push({ items: data.slice(i, i + k) });
+                _this.newsRows.push({ items: data.slice(i, i + k) });
+                _this.news = _this.newsRows;
             }
         });
     };
@@ -53,6 +53,6 @@ var TutNewsComponent = /** @class */ (function (_super) {
         __metadata("design:paramtypes", [TutNewsService])
     ], TutNewsComponent);
     return TutNewsComponent;
-}(BaseNewsComponent));
+}(BasePortalNewsComponent));
 export { TutNewsComponent };
 //# sourceMappingURL=tut-news.js.map

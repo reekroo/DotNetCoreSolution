@@ -1,9 +1,11 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { INewsService } from './Interfaces/INewsServce'
+
 @Injectable()
 
-export class BelarusPartisanNewsService {
+export class BelarusPartisanNewsService implements INewsService {
 
     private url = "/api/news";
 

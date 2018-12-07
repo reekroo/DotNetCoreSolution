@@ -2,8 +2,7 @@
 
 import { BelsatNewsService } from '../../../Services/data.news.belsat.service';
 
-import { News } from '../../../Models/News/news';
-import { BaseNewsComponent } from '../base/base-news';
+import { BasePortalNewsComponent } from '../base/base-portal-news';
 
 @Component({
     templateUrl: './news-line-section.html',
@@ -11,22 +10,15 @@ import { BaseNewsComponent } from '../base/base-news';
     providers: [BelsatNewsService]
 })
 
-export class BelsatNewsComponent extends BaseNewsComponent implements OnInit {
+export class BelsatNewsComponent extends BasePortalNewsComponent implements OnInit {
 
-    news: News[];
-    title = "Belsat";
+    constructor(dataService: BelsatNewsService) {
 
-    constructor(private dataService: BelsatNewsService) {
-        super();
+        super(dataService, "Belsat");
     }
 
     ngOnInit() {
 
         this.getAllNews();
-    }
-    
-    private getAllNews() {
-
-        this.dataService.getNews().subscribe((data: News[]) => { this.news = data; });
-    }    
+    }  
 }

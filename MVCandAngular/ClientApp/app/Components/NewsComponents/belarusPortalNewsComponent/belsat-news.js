@@ -22,21 +22,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { BelsatNewsService } from '../../../Services/data.news.belsat.service';
-import { BaseNewsComponent } from '../base/base-news';
+import { BasePortalNewsComponent } from '../base/base-portal-news';
 var BelsatNewsComponent = /** @class */ (function (_super) {
     __extends(BelsatNewsComponent, _super);
     function BelsatNewsComponent(dataService) {
-        var _this = _super.call(this) || this;
-        _this.dataService = dataService;
-        _this.title = "Belsat";
-        return _this;
+        return _super.call(this, dataService, "Belsat") || this;
     }
     BelsatNewsComponent.prototype.ngOnInit = function () {
         this.getAllNews();
-    };
-    BelsatNewsComponent.prototype.getAllNews = function () {
-        var _this = this;
-        this.dataService.getNews().subscribe(function (data) { _this.news = data; });
     };
     BelsatNewsComponent = __decorate([
         Component({
@@ -47,6 +40,6 @@ var BelsatNewsComponent = /** @class */ (function (_super) {
         __metadata("design:paramtypes", [BelsatNewsService])
     ], BelsatNewsComponent);
     return BelsatNewsComponent;
-}(BaseNewsComponent));
+}(BasePortalNewsComponent));
 export { BelsatNewsComponent };
 //# sourceMappingURL=belsat-news.js.map

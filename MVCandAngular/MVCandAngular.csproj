@@ -22,6 +22,7 @@
     <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate.ts" />
     <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rates-section.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\base\base-news.ts" />
+    <None Remove="ClientApp\app\Components\NewsComponents\base\base-portal-news.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\belarusNewsComponent\news-section.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\belarusNewsComponent\specific-news-section.ts" />
     <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belaruspartisan-news.ts" />
@@ -77,6 +78,7 @@
     <None Remove="ClientApp\app\Services\data.news.tut.service.ts" />
     <None Remove="ClientApp\app\Services\data.user.address.service.ts" />
     <None Remove="ClientApp\app\Services\data.user.cart.service.ts" />
+    <None Remove="ClientApp\app\Services\Interfaces\INewsServce.ts" />
     <None Remove="ClientApp\app\user.ts" />
     <None Remove="ClientApp\app\Components\ShopComponents\userComponent\data.user.service.ts" />
     <None Remove="ClientApp\app\Components\ShopComponents\userComponent\user-cart.ts" />
@@ -103,6 +105,7 @@
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rates-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\base\base-portal-news.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\base\base-news.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\specific-news-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\news-section.ts" />
@@ -163,6 +166,7 @@
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\cartComponent\cart-product-list.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\userComponent\user-form.ts" />
     <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\userComponent\user-edit.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Services\Interfaces\INewsServce.ts" />
     <TypeScriptCompile Include="ClientApp\polyfills.ts" />
     <TypeScriptCompile Include="ClientApp\main.ts" />
     <TypeScriptCompile Include="ClientApp\app\app.module.ts" />

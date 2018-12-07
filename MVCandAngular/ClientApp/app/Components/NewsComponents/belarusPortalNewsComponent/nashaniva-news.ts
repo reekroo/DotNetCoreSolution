@@ -2,8 +2,7 @@
 
 import { NashaNivaNewsService } from '../../../Services/data.news.nashaniva.service';
 
-import { News } from '../../../Models/News/news';
-import { BaseNewsComponent } from '../base/base-news';
+import { BasePortalNewsComponent } from '../base/base-portal-news';
 
 @Component({
     templateUrl: './news-line-section.html',
@@ -11,22 +10,15 @@ import { BaseNewsComponent } from '../base/base-news';
     providers: [NashaNivaNewsService]
 })
 
-export class NashaNivaNewsComponent extends BaseNewsComponent implements OnInit {
+export class NashaNivaNewsComponent extends BasePortalNewsComponent implements OnInit {
 
-    news: News[];
-    title = "Nasha Niva";
+    constructor(dataService: NashaNivaNewsService) {
 
-    constructor(private dataService: NashaNivaNewsService) {
-        super();
+        super(dataService, "Nasha Niva");
     }
 
     ngOnInit() {
 
         this.getAllNews();
-    }
-    
-    private getAllNews() {
-
-        this.dataService.getNews().subscribe((data: News[]) => { this.news = data; });
     }
 }

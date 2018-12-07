@@ -2,8 +2,7 @@
 
 import { BelarusPartisanNewsService } from '../../../Services/data.news.belaruspartisan.service';
 
-import { News } from '../../../Models/News/news';
-import { BaseNewsComponent } from '../base/base-news';
+import { BasePortalNewsComponent } from '../base/base-portal-news';
 
 @Component({
     templateUrl: './news-line-section.html',
@@ -11,22 +10,15 @@ import { BaseNewsComponent } from '../base/base-news';
     providers: [BelarusPartisanNewsService]
 })
 
-export class BelarusPartisanNewsComponent extends BaseNewsComponent implements OnInit {
+export class BelarusPartisanNewsComponent extends BasePortalNewsComponent implements OnInit {
 
-    news: News[];
-    title = "Belarus Partisan";
+    constructor(dataService: BelarusPartisanNewsService) {
 
-    constructor(private dataService: BelarusPartisanNewsService) {
-        super();
+        super(dataService, "Belarus Partisan");
     }
 
     ngOnInit() {
 
         this.getAllNews();
-    }
-    
-    private getAllNews() {
-
-        this.dataService.getNews().subscribe((data: News[]) => { this.news = data; });
-    }        
+    }  
 }

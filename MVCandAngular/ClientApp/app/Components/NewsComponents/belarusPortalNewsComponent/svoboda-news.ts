@@ -3,7 +3,7 @@
 import { SvobodaNewsService } from '../../../Services/data.news.svoboda.service';
 
 import { News } from '../../../Models/News/news';
-import { BaseNewsComponent } from '../base/base-news';
+import { BasePortalNewsComponent } from '../base/base-portal-news';
 
 @Component({
     templateUrl: './news-clip-board-section.html',
@@ -11,13 +11,13 @@ import { BaseNewsComponent } from '../base/base-news';
     providers: [SvobodaNewsService]
 })
 
-export class SvobodaNewsComponent extends BaseNewsComponent implements OnInit {
+export class SvobodaNewsComponent extends BasePortalNewsComponent implements OnInit {
 
-    news: { items: News[]; }[] = [];
-    title = "Radio Svoboda";
+    newsRows: { items: News[]; }[] = [];
+    
+    constructor(private specificDataService: SvobodaNewsService) {
 
-    constructor(private dataService: SvobodaNewsService) {
-        super();
+        super(specificDataService, "Radio Svoboda");
     }
 
     ngOnInit() {
@@ -25,15 +25,17 @@ export class SvobodaNewsComponent extends BaseNewsComponent implements OnInit {
         this.getAllNews();
     }
     
-    private getAllNews() {
+    getAllNews() {
 
-        this.dataService.getNews().subscribe((data: News[]) => {
+        this.specificDataService.getNews().subscribe((data: News[]) => {
 
             let k = 4;
 
             for (let i = 0; i < data.length; i += k) {
 
-                this.news.push({ items: data.slice(i, i + k) });
+                this.newsRows.push({ items: data.slice(i, i + k) });
+
+                this.news = this.newsRows;
             }
         });
     }

@@ -1,5 +1,4 @@
-﻿
-class BaseNewsComponent {
+﻿class BaseNewsComponent {
     
     getDate(publishedAt: string) {
 

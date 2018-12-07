@@ -22,21 +22,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { BelarusPartisanNewsService } from '../../../Services/data.news.belaruspartisan.service';
-import { BaseNewsComponent } from '../base/base-news';
+import { BasePortalNewsComponent } from '../base/base-portal-news';
 var BelarusPartisanNewsComponent = /** @class */ (function (_super) {
     __extends(BelarusPartisanNewsComponent, _super);
     function BelarusPartisanNewsComponent(dataService) {
-        var _this = _super.call(this) || this;
-        _this.dataService = dataService;
-        _this.title = "Belarus Partisan";
-        return _this;
+        return _super.call(this, dataService, "Belarus Partisan") || this;
     }
     BelarusPartisanNewsComponent.prototype.ngOnInit = function () {
         this.getAllNews();
-    };
-    BelarusPartisanNewsComponent.prototype.getAllNews = function () {
-        var _this = this;
-        this.dataService.getNews().subscribe(function (data) { _this.news = data; });
     };
     BelarusPartisanNewsComponent = __decorate([
         Component({
@@ -47,6 +40,6 @@ var BelarusPartisanNewsComponent = /** @class */ (function (_super) {
         __metadata("design:paramtypes", [BelarusPartisanNewsService])
     ], BelarusPartisanNewsComponent);
     return BelarusPartisanNewsComponent;
-}(BaseNewsComponent));
+}(BasePortalNewsComponent));
 export { BelarusPartisanNewsComponent };
 //# sourceMappingURL=belaruspartisan-news.js.map

@@ -22,21 +22,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { NashaNivaNewsService } from '../../../Services/data.news.nashaniva.service';
-import { BaseNewsComponent } from '../base/base-news';
+import { BasePortalNewsComponent } from '../base/base-portal-news';
 var NashaNivaNewsComponent = /** @class */ (function (_super) {
     __extends(NashaNivaNewsComponent, _super);
     function NashaNivaNewsComponent(dataService) {
-        var _this = _super.call(this) || this;
-        _this.dataService = dataService;
-        _this.title = "Nasha Niva";
-        return _this;
+        return _super.call(this, dataService, "Nasha Niva") || this;
     }
     NashaNivaNewsComponent.prototype.ngOnInit = function () {
         this.getAllNews();
-    };
-    NashaNivaNewsComponent.prototype.getAllNews = function () {
-        var _this = this;
-        this.dataService.getNews().subscribe(function (data) { _this.news = data; });
     };
     NashaNivaNewsComponent = __decorate([
         Component({
@@ -47,6 +40,6 @@ var NashaNivaNewsComponent = /** @class */ (function (_super) {
         __metadata("design:paramtypes", [NashaNivaNewsService])
     ], NashaNivaNewsComponent);
     return NashaNivaNewsComponent;
-}(BaseNewsComponent));
+}(BasePortalNewsComponent));
 export { NashaNivaNewsComponent };
 //# sourceMappingURL=nashaniva-news.js.map

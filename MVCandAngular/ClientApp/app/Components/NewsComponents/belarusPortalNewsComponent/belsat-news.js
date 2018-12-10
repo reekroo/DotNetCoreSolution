@@ -28,9 +28,6 @@ var BelsatNewsComponent = /** @class */ (function (_super) {
     function BelsatNewsComponent(dataService) {
         return _super.call(this, dataService, "Belsat") || this;
     }
-    BelsatNewsComponent.prototype.ngOnInit = function () {
-        this.getAllNews();
-    };
     BelsatNewsComponent = __decorate([
         Component({
             templateUrl: './news-line-section.html',

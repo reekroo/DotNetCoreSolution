@@ -6,7 +6,7 @@ var BaseNewsComponent = /** @class */ (function () {
     };
     BaseNewsComponent.prototype.getDiscription = function (discription) {
         if (discription.length > 400) {
-            return discription.substr(1, discription.indexOf('.') + 1);
+            return discription.substr(0, discription.indexOf('.') + 1);
         }
         return discription;
     };

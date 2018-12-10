@@ -1,5 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 
+import { BaseNewsComponent } from '../base/base-news';
+
 import { NewsService } from '../../../Services/data.news.service';
 
 import { News } from '../../../Models/News/news';
@@ -11,7 +13,7 @@ import { Channel } from '../../../Models/News/channel';
     providers: [NewsService]
 })
 
-export class NewsComponent implements OnInit {
+export class NewsComponent extends BaseNewsComponent implements OnInit {
 
     news: News[];
     channels: Channel[];
@@ -19,6 +21,7 @@ export class NewsComponent implements OnInit {
     showError: boolean = false;
 
     constructor(private dataService: NewsService) {
+        super();
     }
 
     ngOnInit() {
@@ -26,12 +29,7 @@ export class NewsComponent implements OnInit {
         this.getChannels();
         this.getNews();
     }
-
-    getDate(publishedAt: string) {
-
-        return new Date(publishedAt).toLocaleString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
-    }
-
+    
     getNews() {
 
         this.dataService.getNews().subscribe((data: any) => {

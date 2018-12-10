@@ -12,31 +12,38 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 import { BaseNewsComponent } from "./base-news";
-var BasePortalNewsComponent = /** @class */ (function (_super) {
-    __extends(BasePortalNewsComponent, _super);
-    function BasePortalNewsComponent(dataService, title) {
+var BaseSpecificPortalNewsComponent = /** @class */ (function (_super) {
+    __extends(BaseSpecificPortalNewsComponent, _super);
+    function BaseSpecificPortalNewsComponent(dataService, title) {
         var _this = _super.call(this) || this;
         _this.dataService = dataService;
+        _this.column = 4;
         _this.title = title;
         return _this;
     }
-    BasePortalNewsComponent.prototype.ngOnInit = function () {
+    BaseSpecificPortalNewsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.getAllNews();
         this.interval = setInterval(function () {
             _this.getAllNews();
         }, 60000);
     };
-    BasePortalNewsComponent.prototype.ngOnDestroy = function () {
+    BaseSpecificPortalNewsComponent.prototype.ngOnDestroy = function () {
         if (this.interval) {
             clearInterval(this.interval);
         }
     };
-    BasePortalNewsComponent.prototype.getAllNews = function () {
+    BaseSpecificPortalNewsComponent.prototype.getAllNews = function () {
         var _this = this;
-        this.dataService.getNews().subscribe(function (data) { _this.news = data; });
+        this.dataService.getNews().subscribe(function (data) {
+            var newsRows = [];
+            for (var i = 0; i < data.length; i += _this.column) {
+                newsRows.push({ items: data.slice(i, i + _this.column) });
+            }
+            _this.news = newsRows;
+        });
     };
-    return BasePortalNewsComponent;
+    return BaseSpecificPortalNewsComponent;
 }(BaseNewsComponent));
-export { BasePortalNewsComponent };
-//# sourceMappingURL=base-portal-news.js.map
+export { BaseSpecificPortalNewsComponent };
+//# sourceMappingURL=base-specific-portal-news.js.map

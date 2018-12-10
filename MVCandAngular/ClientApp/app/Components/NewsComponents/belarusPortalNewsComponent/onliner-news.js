@@ -1,3 +1,16 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,47 +22,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { OnlinerNewsService } from '../../../Services/data.news.onliner.service';
-var OnlinerNewsComponent = /** @class */ (function () {
-    function OnlinerNewsComponent(dataService) {
-        this.dataService = dataService;
-        this.peopleNews = [];
-        this.techNews = [];
-        this.autoNews = [];
-        this.realtNews = [];
+import { BasePortalNewsComponent } from '../base/base-portal-news';
+var OnlinerNewsComponent = /** @class */ (function (_super) {
+    __extends(OnlinerNewsComponent, _super);
+    function OnlinerNewsComponent(specificDataService) {
+        var _this = _super.call(this, specificDataService, null) || this;
+        _this.specificDataService = specificDataService;
+        return _this;
     }
-    OnlinerNewsComponent.prototype.ngOnInit = function () {
-        this.getAllNews();
-    };
     OnlinerNewsComponent.prototype.getAllNews = function () {
         var _this = this;
-        var people$ = this.dataService.getPeopleNews();
-        var tech$ = this.dataService.getTechNews();
-        var auto$ = this.dataService.getAutoNews();
-        var realt$ = this.dataService.getRealtNews();
-        people$.subscribe(function (data) {
-            var k = 4;
-            for (var i = 0; i < data.length; i += k) {
-                _this.peopleNews.push({ items: data.slice(i, i + k) });
-            }
-        });
-        tech$.subscribe(function (data) {
-            var k = 4;
-            for (var i = 0; i < data.length; i += k) {
-                _this.techNews.push({ items: data.slice(i, i + k) });
-            }
-        });
-        auto$.subscribe(function (data) {
-            var k = 4;
-            for (var i = 0; i < data.length; i += k) {
-                _this.autoNews.push({ items: data.slice(i, i + k) });
-            }
-        });
-        realt$.subscribe(function (data) {
-            var k = 4;
-            for (var i = 0; i < data.length; i += k) {
-                _this.realtNews.push({ items: data.slice(i, i + k) });
-            }
-        });
+        var people$ = this.specificDataService.getPeopleNews();
+        var tech$ = this.specificDataService.getTechNews();
+        var auto$ = this.specificDataService.getAutoNews();
+        var realt$ = this.specificDataService.getRealtNews();
+        people$.subscribe(function (data) { _this.peopleNews = _this.parseNews(data); });
+        tech$.subscribe(function (data) { _this.techNews = _this.parseNews(data); });
+        auto$.subscribe(function (data) { _this.autoNews = _this.parseNews(data); });
+        realt$.subscribe(function (data) { _this.realtNews = _this.parseNews(data); });
+    };
+    OnlinerNewsComponent.prototype.parseNews = function (data) {
+        var k = 4;
+        var newsRows = [];
+        for (var i = 0; i < data.length; i += k) {
+            newsRows.push({ items: data.slice(i, i + k) });
+        }
+        return newsRows;
     };
     OnlinerNewsComponent = __decorate([
         Component({
@@ -59,6 +57,6 @@ var OnlinerNewsComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [OnlinerNewsService])
     ], OnlinerNewsComponent);
     return OnlinerNewsComponent;
-}());
+}(BasePortalNewsComponent));
 export { OnlinerNewsComponent };
 //# sourceMappingURL=onliner-news.js.map

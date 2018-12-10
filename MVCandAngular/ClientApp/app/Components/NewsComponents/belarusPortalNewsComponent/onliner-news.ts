@@ -2,6 +2,8 @@
 
 import { OnlinerNewsService } from '../../../Services/data.news.onliner.service';
 
+import { BasePortalNewsComponent } from '../base/base-portal-news';
+
 import { News } from '../../../Models/News/news';
 
 @Component({
@@ -9,66 +11,41 @@ import { News } from '../../../Models/News/news';
     providers: [OnlinerNewsService]
 })
 
-export class OnlinerNewsComponent implements OnInit {
+export class OnlinerNewsComponent extends BasePortalNewsComponent implements OnInit {
     
-    peopleNews: { items: News[]; } [] = [];
-    techNews: { items: News[]; } [] = [];
-    autoNews: { items: News[]; }[] = [];
-    realtNews: { items: News[]; }[] = [];
+    peopleNews: Object;
+    techNews: Object;
+    autoNews: Object;
+    realtNews: Object;
     
-    constructor(private dataService: OnlinerNewsService) {
+    constructor(private specificDataService: OnlinerNewsService) {
+
+        super(specificDataService, null);
     }
 
-    ngOnInit() {
+    getAllNews() {
+        
+        let people$ = this.specificDataService.getPeopleNews();
+        let tech$ = this.specificDataService.getTechNews();
+        let auto$ = this.specificDataService.getAutoNews();
+        let realt$ = this.specificDataService.getRealtNews();
 
-        this.getAllNews();
+        people$.subscribe((data: News[]) => { this.peopleNews = this.parseNews(data); });
+        tech$.subscribe((data: News[]) => { this.techNews = this.parseNews(data); });
+        auto$.subscribe((data: News[]) => { this.autoNews = this.parseNews(data); });
+        realt$.subscribe((data: News[]) => { this.realtNews = this.parseNews(data); });
     }
-    
-    private getAllNews() {
 
-        let people$ = this.dataService.getPeopleNews();
-        let tech$ = this.dataService.getTechNews();
-        let auto$ = this.dataService.getAutoNews();
-        let realt$ = this.dataService.getRealtNews();
+    private parseNews(data: News[]): Object {
 
-        people$.subscribe((data: News[]) => {
+        let k = 4;
+        let newsRows: { items: News[]; }[] = [];
 
-            let k = 4;
+        for (let i = 0; i < data.length; i += k) {
 
-            for (let i = 0; i < data.length; i += k) {
+            newsRows.push({ items: data.slice(i, i + k) });
+        }
 
-                this.peopleNews.push({ items: data.slice(i, i + k) });
-            }
-        });
-
-        tech$.subscribe((data: News[]) => {
-
-            let k = 4;
-
-            for (let i = 0; i < data.length; i += k) {
-
-                this.techNews.push({ items: data.slice(i, i + k) });
-            }
-        });
-
-        auto$.subscribe((data: News[]) => {
-
-            let k = 4;
-
-            for (let i = 0; i < data.length; i += k) {
-
-                this.autoNews.push({ items: data.slice(i, i + k) });
-            }
-        });
-
-        realt$.subscribe((data: News[]) => {
-
-            let k = 4;
-
-            for (let i = 0; i < data.length; i += k) {
-
-                this.realtNews.push({ items: data.slice(i, i + k) });
-            }
-        });
+        return newsRows;
     }
 }

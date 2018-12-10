@@ -14,6 +14,10 @@ var OnlinerNewsService = /** @class */ (function () {
         this.http = http;
         this.url = "/api/news";
     }
+    OnlinerNewsService.prototype.getNews = function () {
+        return this.http.get(this.url + '/onliner');
+    };
+    ;
     OnlinerNewsService.prototype.getPeopleNews = function () {
         return this.http.get(this.url + '/people');
     };

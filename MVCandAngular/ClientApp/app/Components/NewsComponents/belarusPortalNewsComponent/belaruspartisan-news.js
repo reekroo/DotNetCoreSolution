@@ -28,9 +28,6 @@ var BelarusPartisanNewsComponent = /** @class */ (function (_super) {
     function BelarusPartisanNewsComponent(dataService) {
         return _super.call(this, dataService, "Belarus Partisan") || this;
     }
-    BelarusPartisanNewsComponent.prototype.ngOnInit = function () {
-        this.getAllNews();
-    };
     BelarusPartisanNewsComponent = __decorate([
         Component({
             templateUrl: './news-line-section.html',

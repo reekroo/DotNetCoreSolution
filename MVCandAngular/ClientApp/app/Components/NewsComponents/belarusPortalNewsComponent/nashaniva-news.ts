@@ -16,9 +16,4 @@ export class NashaNivaNewsComponent extends BasePortalNewsComponent implements O
 
         super(dataService, "Nasha Niva");
     }
-
-    ngOnInit() {
-
-        this.getAllNews();
-    }
 }

@@ -1,0 +1,1 @@
+//# sourceMappingURL=IBaseNewsPinger.js.map

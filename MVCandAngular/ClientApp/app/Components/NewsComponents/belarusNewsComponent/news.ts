@@ -45,8 +45,7 @@ export class BelNewsComponent implements OnInit {
             this.getNews();
         }, 60000);
     }
-
-
+    
     ngOnDestroy() {
         if (this.interval) {
 

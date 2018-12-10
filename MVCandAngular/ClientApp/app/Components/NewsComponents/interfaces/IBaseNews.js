@@ -1,0 +1,1 @@
+//# sourceMappingURL=IBaseNews.js.map

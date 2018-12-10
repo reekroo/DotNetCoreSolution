@@ -22,28 +22,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { SvobodaNewsService } from '../../../Services/data.news.svoboda.service';
-import { BasePortalNewsComponent } from '../base/base-portal-news';
+import { BaseSpecificPortalNewsComponent } from '../base/base-specific-portal-news';
 var SvobodaNewsComponent = /** @class */ (function (_super) {
     __extends(SvobodaNewsComponent, _super);
     function SvobodaNewsComponent(specificDataService) {
-        var _this = _super.call(this, specificDataService, "Radio Svoboda") || this;
-        _this.specificDataService = specificDataService;
-        _this.newsRows = [];
-        return _this;
+        return _super.call(this, specificDataService, "Radio Svoboda") || this;
     }
-    SvobodaNewsComponent.prototype.ngOnInit = function () {
-        this.getAllNews();
-    };
-    SvobodaNewsComponent.prototype.getAllNews = function () {
-        var _this = this;
-        this.specificDataService.getNews().subscribe(function (data) {
-            var k = 4;
-            for (var i = 0; i < data.length; i += k) {
-                _this.newsRows.push({ items: data.slice(i, i + k) });
-                _this.news = _this.newsRows;
-            }
-        });
-    };
     SvobodaNewsComponent = __decorate([
         Component({
             templateUrl: './news-clip-board-section.html',
@@ -53,6 +37,6 @@ var SvobodaNewsComponent = /** @class */ (function (_super) {
         __metadata("design:paramtypes", [SvobodaNewsService])
     ], SvobodaNewsComponent);
     return SvobodaNewsComponent;
-}(BasePortalNewsComponent));
+}(BaseSpecificPortalNewsComponent));
 export { SvobodaNewsComponent };
 //# sourceMappingURL=svoboda-news.js.map

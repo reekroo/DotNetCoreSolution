@@ -3,6 +3,25 @@
         margin: 10px 0;
         border-bottom: 1px solid #ddd;
     }
+
+    .btn {
+        background-color: #ddd;
+        border-color: #ddd;
+        margin: -10px 0 10px 0;
+        border-radius: 0;
+        outline: none;
+    }
+
+    .btn:hover {
+        background-color: #808080;
+        border-color: #808080;
+    }
+
+    .btn::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
 </style>
 
 <div class="row">
@@ -59,7 +78,7 @@
                 </div>
 
                 <div class="line"></div>
-                <button (click)="onClick()">Show All news</button>
+                <button class="btn btn-primary" (click)="onClick()">Show all news</button>
 
                 <div [hidden]="!section">
                     <ng-container *ngFor="let row of news; let i = index">

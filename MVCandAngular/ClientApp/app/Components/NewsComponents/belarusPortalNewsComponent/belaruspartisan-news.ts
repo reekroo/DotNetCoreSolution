@@ -16,9 +16,4 @@ export class BelarusPartisanNewsComponent extends BasePortalNewsComponent implem
 
         super(dataService, "Belarus Partisan");
     }
-
-    ngOnInit() {
-
-        this.getAllNews();
-    }  
 }

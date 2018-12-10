@@ -28,9 +28,6 @@ var NashaNivaNewsComponent = /** @class */ (function (_super) {
     function NashaNivaNewsComponent(dataService) {
         return _super.call(this, dataService, "Nasha Niva") || this;
     }
-    NashaNivaNewsComponent.prototype.ngOnInit = function () {
-        this.getAllNews();
-    };
     NashaNivaNewsComponent = __decorate([
         Component({
             templateUrl: './news-line-section.html',

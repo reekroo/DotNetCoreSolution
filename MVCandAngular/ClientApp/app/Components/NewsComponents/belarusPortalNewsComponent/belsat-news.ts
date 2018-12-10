@@ -16,9 +16,4 @@ export class BelsatNewsComponent extends BasePortalNewsComponent implements OnIn
 
         super(dataService, "Belsat");
     }
-
-    ngOnInit() {
-
-        this.getAllNews();
-    }  
 }

@@ -34,7 +34,8 @@ var DefaultRatesComponent = /** @class */ (function () {
     DefaultRatesComponent = __decorate([
         Component({
             selector: 'default-rates-section',
-            templateUrl: './default-rates-section.html'
+            templateUrl: './default-rates-section.html',
+            providers: [BankService]
         }),
         __metadata("design:paramtypes", [BankService])
     ], DefaultRatesComponent);

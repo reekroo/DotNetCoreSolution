@@ -2,7 +2,7 @@
 
 import { Product } from '../../../Models/Shop/product';
 
-import { UserCartDataService } from '../../../Services/data.user.cart.service';
+import { UserCartDataService } from '../../../services/shop/data.user.cart.service';
 
 @Component({
     selector: "cart-list",

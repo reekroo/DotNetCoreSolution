@@ -2,7 +2,7 @@
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { DataService } from '../../../Services/data.products.service';
+import { DataService } from '../../../services/shop/data.products.service';
 
 import { Product } from '../../../Models/Shop/product';
 

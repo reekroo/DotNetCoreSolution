@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component, Input } from '@angular/core';
-import { UserCartDataService } from '../../../Services/data.user.cart.service';
+import { UserCartDataService } from '../../../services/shop/data.user.cart.service';
 var CartProductListComponent = /** @class */ (function () {
     function CartProductListComponent(dataService) {
         this.dataService = dataService;

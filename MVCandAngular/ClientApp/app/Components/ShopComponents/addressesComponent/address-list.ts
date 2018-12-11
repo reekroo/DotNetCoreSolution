@@ -3,7 +3,7 @@
 import { Address } from '../../../Models/Shop/address';
 
 
-import { UserAddressDataService } from '../../../Services/data.user.address.service';
+import { UserAddressDataService } from '../../../services/shop/data.user.address.service';
 
 @Component({
     selector: "address-list",

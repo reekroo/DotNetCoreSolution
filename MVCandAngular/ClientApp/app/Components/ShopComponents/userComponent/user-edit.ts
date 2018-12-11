@@ -2,7 +2,7 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { DataService } from '../../../Services/data.user.service';
+import { DataService } from '../../../services/shop/data.user.service';
 
 import { User } from '../../../Models/Shop/user';
 

@@ -8,7 +8,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component, Input } from '@angular/core';
-import { UserAddressDataService } from '../../../Services/data.user.address.service';
+import { UserAddressDataService } from '../../../services/shop/data.user.address.service';
 var AddressListComponent = /** @class */ (function () {
     function AddressListComponent(dataService) {
         this.dataService = dataService;

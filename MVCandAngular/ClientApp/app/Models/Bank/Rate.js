@@ -10,4 +10,4 @@ var Rate = /** @class */ (function () {
     return Rate;
 }());
 export { Rate };
-//# sourceMappingURL=Rate.js.map
+//# sourceMappingURL=rate.js.map

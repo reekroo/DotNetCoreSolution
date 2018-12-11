@@ -9,84 +9,76 @@
   <ItemGroup>
     <None Remove="ClientApp\app\app.component.ts" />
     <None Remove="ClientApp\app\app.module.ts" />
-    <None Remove="ClientApp\app\Components\BankComponents\currencyCompoment\convertor-section.ts" />
-    <None Remove="ClientApp\app\Components\BankComponents\currencyCompoment\currency.ts" />
-    <None Remove="ClientApp\app\Components\BankComponents\currencyCompoment\default-rates-section.ts" />
-    <None Remove="ClientApp\app\Components\BankComponents\currencyCompoment\month-rates-table-section.ts" />
-    <None Remove="ClientApp\app\Components\BankComponents\currencyCompoment\rate-section.ts" />
-    <None Remove="ClientApp\app\Components\BankComponents\chartComponent\chart.ts" />
-    <None Remove="ClientApp\app\Components\BankComponents\metalComponent\default-metal-section.ts" />
-    <None Remove="ClientApp\app\Components\BankComponents\metalComponent\metal-section.ts" />
-    <None Remove="ClientApp\app\Components\BankComponents\metalComponent\Metal.ts" />
-    <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate-section.ts" />
-    <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate.ts" />
-    <None Remove="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rates-section.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\base\base-news.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\base\base-portal-news.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\base\base-specific-portal-news.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\belarusNewsComponent\news-section.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\belarusNewsComponent\specific-news-section.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belaruspartisan-news.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belsat-news.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\nashaniva-news.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news-section.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\svoboda-news.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\tut-news.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\belarusNewsComponent\news.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\interfaces\IBaseNews.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\interfaces\IBaseNewsPinger.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\worldNewsComponent\belaruspartisan-news.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\worldNewsComponent\nashaniva-news.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\worldNewsComponent\news-section.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\worldNewsComponent\onliner-news.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\worldNewsComponent\tut-news.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\fullUserComponent\full-user.ts" />
-    <None Remove="ClientApp\app\Components\NewsComponents\worldNewsComponent\news.ts" />
-    <None Remove="ClientApp\app\Components\OilComponents\oilComponent\oil.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\productsComponent\product-create.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\productsComponent\product-edit.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\productsComponent\product-form.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\productsComponent\product-list.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\shopComponent\product-details.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\shopComponent\product-list.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\userComponent\address-create.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\userComponent\address-edit.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\userComponent\address-form.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\userComponent\address-list.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\userComponent\user-information.ts" />
+    <None Remove="ClientApp\app\components\bank\view-models\currency-view-model.ts" />
+    <None Remove="ClientApp\app\components\bank\view-models\ingot-view-model.ts" />
+    <None Remove="ClientApp\app\components\bank\view-models\refinancing-rate-view-model.ts" />
+    <None Remove="ClientApp\app\components\bank\view-sections\currency\convertor-section.ts" />
+    <None Remove="ClientApp\app\components\bank\view-sections\currency\currency.ts" />
+    <None Remove="ClientApp\app\components\bank\view-sections\currency\default-rates-section.ts" />
+    <None Remove="ClientApp\app\components\bank\view-sections\currency\month-rates-table-section.ts" />
+    <None Remove="ClientApp\app\components\bank\view-sections\currency\rate-section.ts" />
+    <None Remove="ClientApp\app\components\news\view-models\belarus-news-view-model.ts" />
+    <None Remove="ClientApp\app\components\news\view-models\world-news-controller.ts" />
+    <None Remove="ClientApp\app\models\bank\month-rate.ts" />
+    <None Remove="ClientApp\app\models\bank\refinancing-rate.ts" />
+    <None Remove="ClientApp\app\shared\components\chart\chart.ts" />
+    <None Remove="ClientApp\app\components\bank\view-sections\metal\default-metal-section.ts" />
+    <None Remove="ClientApp\app\components\bank\view-sections\metal\metal-section.ts" />
+    <None Remove="ClientApp\app\components\bank\view-sections\metal\Metal.ts" />
+    <None Remove="ClientApp\app\components\bank\view-sections\refinancing\refinancing-rate-section.ts" />
+    <None Remove="ClientApp\app\components\bank\view-sections\refinancing\refinancing-rate.ts" />
+    <None Remove="ClientApp\app\components\bank\view-sections\refinancing\refinancing-rates-section.ts" />
+    <None Remove="ClientApp\app\components\news\view-sections\belarus-news\news-section.ts" />
+    <None Remove="ClientApp\app\components\news\view-sections\belarus-news\specific-news-section.ts" />
+    <None Remove="ClientApp\app\components\news\view-sections\belarus-portal-news\belaruspartisan-news.ts" />
+    <None Remove="ClientApp\app\components\news\view-sections\belarus-portal-news\belsat-news.ts" />
+    <None Remove="ClientApp\app\components\news\view-sections\belarus-portal-news\nashaniva-news.ts" />
+    <None Remove="ClientApp\app\components\news\view-sections\belarus-portal-news\onliner-news-section.ts" />
+    <None Remove="ClientApp\app\components\news\view-sections\belarus-portal-news\onliner-news.ts" />
+    <None Remove="ClientApp\app\components\news\view-sections\belarus-portal-news\svoboda-news.ts" />
+    <None Remove="ClientApp\app\components\news\view-sections\belarus-portal-news\tut-news.ts" />
+    <None Remove="ClientApp\app\components\news\view-sections\belarus-news\news.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\fullUserComponent\full-user.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\productsComponent\product-create.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\productsComponent\product-edit.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\productsComponent\product-form.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\productsComponent\product-list.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\shopComponent\product-details.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\shopComponent\product-list.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\userComponent\address-create.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\userComponent\address-edit.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\userComponent\address-form.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\userComponent\address-list.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\userComponent\user-information.ts" />
     <None Remove="ClientApp\app\data.service.ts" />
-    <None Remove="ClientApp\app\Components\appComponent\app.head.ts" />
-    <None Remove="ClientApp\app\Models\address.ts" />
-    <None Remove="ClientApp\app\Models\Bank\currency.ts" />
-    <None Remove="ClientApp\app\Models\Bank\Ingot.ts" />
-    <None Remove="ClientApp\app\Models\Bank\Meta;.ts" />
-    <None Remove="ClientApp\app\Models\Bank\MonthRate.ts" />
-    <None Remove="ClientApp\app\Models\Bank\Rate.ts" />
-    <None Remove="ClientApp\app\Models\Bank\RefinancingRate.ts" />
-    <None Remove="ClientApp\app\Models\cart.ts" />
-    <None Remove="ClientApp\app\Models\channel.ts" />
-    <None Remove="ClientApp\app\Models\News.ts" />
+    <None Remove="ClientApp\app\components\app\app.head.ts" />
+    <None Remove="ClientApp\app\models\address.ts" />
+    <None Remove="ClientApp\app\models\bank\currency.ts" />
+    <None Remove="ClientApp\app\models\bank\Ingot.ts" />
+    <None Remove="ClientApp\app\models\bank\Meta;.ts" />
+    <None Remove="ClientApp\app\models\bank\Rate.ts" />
+    <None Remove="ClientApp\app\models\cart.ts" />
+    <None Remove="ClientApp\app\models\channel.ts" />
+    <None Remove="ClientApp\app\models\News.ts" />
     <None Remove="ClientApp\app\product.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\shopComponent\data.shop.service.ts" />
-    <None Remove="ClientApp\app\Services\data.bank.ingots.service.ts" />
-    <None Remove="ClientApp\app\Services\data.bank.refinancing.service.ts" />
-    <None Remove="ClientApp\app\Services\data.bank.service.ts" />
-    <None Remove="ClientApp\app\Services\data.news.belaruspartisan.service.ts" />
-    <None Remove="ClientApp\app\Services\data.news.belsat.service.ts" />
-    <None Remove="ClientApp\app\Services\data.news.nashaniva.service.ts" />
-    <None Remove="ClientApp\app\Services\data.news.onliner.service.ts" />
-    <None Remove="ClientApp\app\Services\data.news.service.ts" />
-    <None Remove="ClientApp\app\Services\data.news.svoboda.service.ts" />
-    <None Remove="ClientApp\app\Services\data.news.tut.service.ts" />
-    <None Remove="ClientApp\app\Services\data.user.address.service.ts" />
-    <None Remove="ClientApp\app\Services\data.user.cart.service.ts" />
-    <None Remove="ClientApp\app\Services\Interfaces\INewsServce.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\shopComponent\data.shop.service.ts" />
+    <None Remove="ClientApp\app\services\data.bank.ingots.service.ts" />
+    <None Remove="ClientApp\app\services\data.bank.refinancing.service.ts" />
+    <None Remove="ClientApp\app\services\data.bank.service.ts" />
+    <None Remove="ClientApp\app\services\data.news.belaruspartisan.service.ts" />
+    <None Remove="ClientApp\app\services\data.news.belsat.service.ts" />
+    <None Remove="ClientApp\app\services\data.news.nashaniva.service.ts" />
+    <None Remove="ClientApp\app\services\data.news.onliner.service.ts" />
+    <None Remove="ClientApp\app\services\data.news.service.ts" />
+    <None Remove="ClientApp\app\services\data.news.svoboda.service.ts" />
+    <None Remove="ClientApp\app\services\data.news.tut.service.ts" />
+    <None Remove="ClientApp\app\services\data.user.address.service.ts" />
+    <None Remove="ClientApp\app\services\data.user.cart.service.ts" />
     <None Remove="ClientApp\app\user.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\userComponent\data.user.service.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\userComponent\user-cart.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\userComponent\user-edit.ts" />
-    <None Remove="ClientApp\app\Components\ShopComponents\userComponent\user-form.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\userComponent\data.user.service.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\userComponent\user-cart.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\userComponent\user-edit.ts" />
+    <None Remove="ClientApp\app\components\shopComponents\userComponent\user-form.ts" />
     <None Remove="ClientApp\main.ts" />
     <None Remove="ClientApp\polyfills.ts" />
   </ItemGroup>
@@ -100,145 +92,139 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\app\Components\appComponent\app.head.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\chartComponent\chart.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\metalComponent\default-metal-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\metalComponent\metal.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\metalComponent\metal-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rates-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\base\base-specific-portal-news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\base\base-portal-news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\base\base-news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\specific-news-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\news-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belaruspartisan-news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\belsat-news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\nashaniva-news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\onliner-news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\svoboda-news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusPortalNewsComponent\tut-news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\belarusNewsComponent\news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\interfaces\IBaseNewsPinger.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\interfaces\IBaseNews.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\addressesComponent\address-form.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\addressesComponent\address-list.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\addressesComponent\address-create.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\addressesComponent\address-edit.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\currencyCompoment\convertor-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\currencyCompoment\default-rates-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\currencyCompoment\rate-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\currencyCompoment\month-rates-table-section.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\BankComponents\currencyCompoment\currency.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\fullUserComponent\full-user.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\NewsComponents\worldNewsComponent\news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\OilComponents\oilComponent\oil.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\userComponent\user-information.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\Bank\refinancingRate.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\Bank\ingot.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\Bank\metal.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\Bank\monthRate.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\Bank\rate.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\Bank\currency.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\News\channel.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\News\news.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\Shop\cart.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\Shop\address.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\Shop\user.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\productsComponent\product-list.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\productsComponent\product-edit.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\productsComponent\product-create.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\productsComponent\product-form.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.news.svoboda.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.news.belsat.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.news.nashaniva.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.news.belaruspartisan.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.news.tut.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.news.onliner.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.bank.refinancing.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.bank.ingots.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.bank.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.news.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.user.cart.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.user.address.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.products.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Models\Shop\product.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\shopComponent\product-list.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\shopComponent\product-details.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.shop.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\data.user.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\cartComponent\cart-product-list.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\userComponent\user-form.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Components\ShopComponents\userComponent\user-edit.ts" />
-    <TypeScriptCompile Include="ClientApp\app\Services\Interfaces\INewsServce.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\app\app.head.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-models\refinancing-rate-view-model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-models\ingot-view-model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-models\currency-view-model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\view-models\world-news-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\view-models\belarus-news-view-model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\components\chart\chart.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-sections\metal\default-metal-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-controllers\metal-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-sections\metal\metal-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-sections\refinancing\refinancing-rates-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-sections\refinancing\refinancing-rate-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-controllers\refinancing-rate-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\bases\news\base-specific-portal-news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\bases\news\base-portal-news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\bases\news\base-news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\view-sections\belarus-news\specific-news-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\view-sections\belarus-news\news-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\controllers\belaruspartisan-news-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\controllers\belsat-news-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\controllers\nashaniva-news-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\view-sections\belarus-portal-news\onliner-news-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\controllers\onliner-news-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\controllers\svoboda-news-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\controllers\tut-news-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\view-controllers\belarus-news-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\interfaces\news\base-news-pinger.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\interfaces\news\base-news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\addressesComponent\address-form.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\addressesComponent\address-list.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\addressesComponent\address-create.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\addressesComponent\address-edit.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-sections\currency\convertor-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-sections\currency\default-rates-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-sections\currency\rate-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-sections\currency\month-rates-table-section.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\bank\view-controllers\currency-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\fullUserComponent\full-user.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\view-controllers\world-news-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\oil\view-controllers\oil-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\userComponent\user-information.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\bank\refinancing-rate.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\bank\ingot.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\bank\metal.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\bank\month-rate.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\bank\rate.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\bank\currency.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\news\channel.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\news\news.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\shop\cart.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\shop\address.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\shop\user.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\productsComponent\product-list.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\productsComponent\product-edit.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\productsComponent\product-create.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\productsComponent\product-form.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\news\data.news.svoboda.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\news\data.news.belsat.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\news\data.news.nashaniva.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\news\data.news.belaruspartisan.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\news\data.news.tut.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\news\data.news.onliner.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\bank\data.bank.refinancing.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\bank\data.bank.ingots.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\bank\data.bank.currencies.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\news\data.news.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\shop\data.user.cart.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\shop\data.user.address.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\shop\data.products.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\shop\product.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\shopComponent\product-list.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\shopComponent\product-details.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\shop\data.shop.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\shop\data.user.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\cartComponent\cart-product-list.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\userComponent\user-form.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shopComponents\userComponent\user-edit.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\interfaces\services\news-service.ts" />
     <TypeScriptCompile Include="ClientApp\polyfills.ts" />
     <TypeScriptCompile Include="ClientApp\main.ts" />
     <TypeScriptCompile Include="ClientApp\app\app.module.ts" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="ClientApp\app\Components\BankComponents\metalComponent\default-metal-section.js.map">
-      <DependentUpon>default-metal-section.js</DependentUpon>
+    <None Update="ClientApp\app\components\bank\view-models\refinancing-rate-view-model.js.map">
+      <DependentUpon>refinancing-rate-view-model.js</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Components\BankComponents\refinancingComponent\refinancing-rate-section.js.map">
-      <DependentUpon>refinancing-rate-section.js</DependentUpon>
+    <None Update="ClientApp\app\components\news\view-models\world-news-controller.js.map">
+      <DependentUpon>world-news-controller.js</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Components\NewsComponents\interfaces\IBaseNewsPinger.js">
-      <DependentUpon>IBaseNewsPinger.ts</DependentUpon>
+    <None Update="ClientApp\app\shared\interfaces\news\base-news-pinger.js">
+      <DependentUpon>base-news-pinger.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Components\NewsComponents\interfaces\IBaseNewsPinger.js.map">
-      <DependentUpon>IBaseNewsPinger.js</DependentUpon>
-    </None>
-    <None Update="ClientApp\app\Components\ShopComponents\addressesComponent\address-form.js">
+    <None Update="ClientApp\app\components\shopComponents\addressesComponent\address-form.js">
       <DependentUpon>address-form.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Components\ShopComponents\userComponent\user-information.js">
+    <None Update="ClientApp\app\components\shopComponents\userComponent\user-information.js">
       <DependentUpon>user-information.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Models\Bank\currency.js">
+    <None Update="ClientApp\app\models\bank\Currency.js">
       <DependentUpon>currency.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Models\Bank\RefinancingRate.js">
-      <DependentUpon>refinancingRate.ts</DependentUpon>
+    <None Update="ClientApp\app\models\bank\refinancing-rate.js">
+      <DependentUpon>refinancing-rate.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Models\Shop\cart.js">
+    <None Update="ClientApp\app\models\shop\cart.js">
       <DependentUpon>cart.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Models\News\channel.js">
+    <None Update="ClientApp\app\models\news\channel.js">
       <DependentUpon>channel.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Models\Shop\product.js">
+    <None Update="ClientApp\app\models\shop\product.js">
       <DependentUpon>product.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Components\ShopComponents\shopComponent\product-list.js">
+    <None Update="ClientApp\app\components\shopComponents\shopComponent\product-list.js">
       <DependentUpon>product-list.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Models\Shop\address.js">
+    <None Update="ClientApp\app\models\shop\address.js">
       <DependentUpon>address.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Services\data - Copy.news.onliner.service.js.map">
-      <DependentUpon>data.news.onliner.service.js</DependentUpon>
-    </None>
-    <None Update="ClientApp\app\Services\data.news.belaruspartisan.service.js">
+    <None Update="ClientApp\app\services\news\data.news.belaruspartisan.service.js">
       <DependentUpon>data.news.belaruspartisan.service.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Services\data.news.belaruspartisan.service.js.map">
-      <DependentUpon>data.news.belaruspartisan.service.js</DependentUpon>
-    </None>
-    <None Update="ClientApp\app\Services\data.news.onliner.service.js">
+    <None Update="ClientApp\app\services\news\data.news.onliner.service.js">
       <DependentUpon>data.news.onliner.service.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Services\data.news.onliner.service.js.map">
-      <DependentUpon>data.news.onliner.service.js</DependentUpon>
-    </None>
-    <None Update="ClientApp\app\Services\data.user.cart.service.js">
+    <None Update="ClientApp\app\services\shop\data.user.cart.service.js">
       <DependentUpon>data.user.cart.service.ts</DependentUpon>
     </None>
-    <None Update="ClientApp\app\Services\data.user.address.service.js.map">
-      <DependentUpon>data.user.address.service.js</DependentUpon>
-    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\app\shared\bases\bank\" />
   </ItemGroup>
 
 </Project>

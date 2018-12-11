@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { UserAddressDataService } from '../../../Services/data.user.address.service';
+import { UserAddressDataService } from '../../../services/shop/data.user.address.service';
 var AddressEditComponent = /** @class */ (function () {
     function AddressEditComponent(dataService, router, activeRoute, location) {
         this.dataService = dataService;

@@ -2,9 +2,9 @@
 
 import { combineLatest } from 'rxjs';
 
-import { DataService } from '../../../Services/data.user.service';
-import { UserAddressDataService } from '../../../Services/data.user.address.service';
-import { UserCartDataService } from '../../../Services/data.user.cart.service';
+import { DataService } from '../../../services/shop/data.user.service';
+import { UserAddressDataService } from '../../../services/shop/data.user.address.service';
+import { UserCartDataService } from '../../../services/shop/data.user.cart.service';
 
 import { User } from '../../../Models/Shop/user';
 import { Address } from '../../../Models/Shop/address';

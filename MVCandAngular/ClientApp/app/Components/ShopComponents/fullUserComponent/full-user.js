@@ -9,9 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { combineLatest } from 'rxjs';
-import { DataService } from '../../../Services/data.user.service';
-import { UserAddressDataService } from '../../../Services/data.user.address.service';
-import { UserCartDataService } from '../../../Services/data.user.cart.service';
+import { DataService } from '../../../services/shop/data.user.service';
+import { UserAddressDataService } from '../../../services/shop/data.user.address.service';
+import { UserCartDataService } from '../../../services/shop/data.user.cart.service';
 var FullUserComponent = /** @class */ (function () {
     function FullUserComponent(dataService, userAddressDataService, userCartDataService) {
         this.dataService = dataService;

@@ -1,0 +1,1 @@
+//# sourceMappingURL=base-news.js.map

@@ -1,7 +1,7 @@
 ﻿export class Ingot {
     constructor(
         public Date?: string,
-        public MetalId?: number,
+        public MetalID?: number,
         public NoCertificateDollars?: number,
         public NoCertificateRubles?: number,
         public CertificateDollars?: number,

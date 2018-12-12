@@ -33,6 +33,37 @@ var MetalComponent = /** @class */ (function () {
         });
         this.getYearPeriod(id);
     };
+    MetalComponent.prototype.getChart = function (id, index) {
+        var _this = this;
+        var date = new Date();
+        var today$ = this.dataService.getPrice(id, date);
+        var oneweek$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getDate() - 7)));
+        var twoweek$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getDate() - 14)));
+        var month$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getMonth() - 1)));
+        var twomonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 2)));
+        var threemonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 3)));
+        var sixmonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 6)));
+        var ninemonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 9)));
+        var year$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 12)));
+        var twoyear$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 24)));
+        combineLatest(today$, oneweek$, twoweek$, month$, twomonth$, threemonth$, sixmonth$, ninemonth$, year$, twoyear$).subscribe(function (combinedResult) {
+            var arr = [];
+            arr.push(combinedResult[0][index]);
+            arr.push(combinedResult[1][index]);
+            arr.push(combinedResult[2][index]);
+            arr.push(combinedResult[3][index]);
+            arr.push(combinedResult[4][index]);
+            arr.push(combinedResult[5][index]);
+            arr.push(combinedResult[6][index]);
+            arr.push(combinedResult[7][index]);
+            arr.push(combinedResult[8][index]);
+            arr.push(combinedResult[9][index]);
+            var oneGramRate = arr;
+            console.log(oneGramRate);
+            console.log(combinedResult[0]);
+            _this.ingotViewModel.chartData = _this.addaptToChartData(oneGramRate);
+        });
+    };
     MetalComponent.prototype.getYearPeriod = function (id) {
         var _this = this;
         var date = new Date();
@@ -59,6 +90,8 @@ var MetalComponent = /** @class */ (function () {
             arr.push(combinedResult[8][0]);
             arr.push(combinedResult[9][0]);
             var oneGramRate = arr;
+            console.log(oneGramRate);
+            console.log(combinedResult[0]);
             _this.ingotViewModel.chartData = _this.addaptToChartData(oneGramRate);
         });
     };

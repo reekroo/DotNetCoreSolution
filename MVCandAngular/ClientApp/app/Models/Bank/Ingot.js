@@ -1,7 +1,7 @@
 var Ingot = /** @class */ (function () {
-    function Ingot(Date, MetalId, NoCertificateDollars, NoCertificateRubles, CertificateDollars, CertificateRubles, BanksDollars, BanksRubles, EntitiesDollars, EntitiesRubles, Name, Nominal) {
+    function Ingot(Date, MetalID, NoCertificateDollars, NoCertificateRubles, CertificateDollars, CertificateRubles, BanksDollars, BanksRubles, EntitiesDollars, EntitiesRubles, Name, Nominal) {
         this.Date = Date;
-        this.MetalId = MetalId;
+        this.MetalID = MetalID;
         this.NoCertificateDollars = NoCertificateDollars;
         this.NoCertificateRubles = NoCertificateRubles;
         this.CertificateDollars = CertificateDollars;

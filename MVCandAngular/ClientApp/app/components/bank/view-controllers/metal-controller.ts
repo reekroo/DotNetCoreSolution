@@ -45,6 +45,45 @@ export class MetalComponent implements OnInit {
         this.getYearPeriod(id);
     }
 
+    getChart(id: number, index:number) {
+
+        let date = new Date();
+
+        let today$ = this.dataService.getPrice(id, date);
+        let oneweek$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getDate() - 7)));
+        let twoweek$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getDate() - 14)));
+        let month$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getMonth() - 1)));
+        let twomonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 2)));
+        let threemonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 3)));
+        let sixmonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 6)));
+        let ninemonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 9)));
+        let year$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 12)));
+        let twoyear$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 24)));
+
+        combineLatest(today$, oneweek$, twoweek$, month$, twomonth$, threemonth$, sixmonth$, ninemonth$, year$, twoyear$).subscribe(combinedResult => {
+
+            let arr = [];
+
+            arr.push(combinedResult[0][index]);
+            arr.push(combinedResult[1][index]);
+            arr.push(combinedResult[2][index]);
+            arr.push(combinedResult[3][index]);
+            arr.push(combinedResult[4][index]);
+            arr.push(combinedResult[5][index]);
+            arr.push(combinedResult[6][index]);
+            arr.push(combinedResult[7][index]);
+            arr.push(combinedResult[8][index]);
+            arr.push(combinedResult[9][index]);
+
+            let oneGramRate = arr as Ingot[];
+
+            console.log(oneGramRate);
+            console.log(combinedResult[0]);
+
+            this.ingotViewModel.chartData = this.addaptToChartData(oneGramRate);
+        });
+    }
+
     private getYearPeriod(id: number) {
 
         let date = new Date();
@@ -76,6 +115,9 @@ export class MetalComponent implements OnInit {
             arr.push(combinedResult[9][0]);
 
             let oneGramRate = arr as Ingot[];
+
+            console.log(oneGramRate);
+            console.log(combinedResult[0]);
 
             this.ingotViewModel.chartData = this.addaptToChartData(oneGramRate);
         });

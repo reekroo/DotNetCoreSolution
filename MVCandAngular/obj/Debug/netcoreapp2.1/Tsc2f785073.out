@@ -20,6 +20,8 @@ D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\news\data.news.belsat.serv
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\news\data.news.belsat.service.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\news\data.news.onliner.service.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\news\data.news.onliner.service.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\news\data.news.citydog.service.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\news\data.news.citydog.service.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\news\data.news.tut.service.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\news\data.news.tut.service.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\news\data.news.svoboda.service.js
@@ -52,6 +54,8 @@ D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\news\controllers\belsat-
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\news\controllers\belsat-news-controller.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\news\controllers\svoboda-news-controller.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\news\controllers\svoboda-news-controller.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\news\controllers\citydog-news-controller.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\news\controllers\citydog-news-controller.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\news\view-sections\belarus-news\news-section.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\news\view-sections\belarus-news\news-section.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\news\view-sections\belarus-news\specific-news-section.js
@@ -120,8 +124,6 @@ D:\My\DotNetCore\MVCandAngular\ClientApp\app\models\shop\cart.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\models\shop\cart.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\models\shop\user.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\models\shop\user.js.map
-D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\news\data.news.citydog.service.js
-D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\news\data.news.citydog.service.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\shop\data.products.service.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\shop\data.products.service.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\shop\data.shop.service.js
@@ -132,8 +134,6 @@ D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\shop\data.user.cart.servic
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\shop\data.user.cart.service.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\shop\data.user.service.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\services\shop\data.user.service.js.map
-D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\news\controllers\citydog-news-controller.js
-D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\news\controllers\citydog-news-controller.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\shopComponents\addressesComponent\address-create.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\shopComponents\addressesComponent\address-create.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\shopComponents\addressesComponent\address-edit.js

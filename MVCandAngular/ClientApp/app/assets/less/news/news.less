@@ -1,60 +1,67 @@
-﻿img {
-    padding: 0
-}
+﻿@import "../bases/constants/colors.less";
 
-a {
-    cursor: pointer
-}
-
-.news-container {
-    position: relative;
-    margin-top: -20px;
-}
-
-.channels, .news {
+.static-section {
     height: 90vh;
     transition: all .3s ease-out;
     -webkit-overflow-scrolling: touch;
     overflow: scroll;
     overflow-x: hidden;
-    padding: 0;
+
+    @media all and (max-width: 768px) {
+        overflow-y: hidden;
+    }
 }
 
-.channels aside {
-    list-style: none; 
-    padding: 0; 
-    margin: 0;
-    background-color: #444;
-}
+.news-container {
+    margin: -20px 0 0 0;
 
-.channels aside {
-    padding: 0;
-    margin: 0;
-}
-
-    .channels aside section {
-        padding: 20px;
-        color: #ccc;
-        background-color: #333;
-        border-bottom: 1px solid #ccc;
-        border-left: 10px solid transparent;
-        cursor: pointer;
-        color: #9d9d9d;
-        font: bold;
+    img {
+        padding: 0
     }
 
-    .channels aside section:hover {
-        background-color: #808080;
-        color: white;
+    a {
+        cursor: pointer
     }
 
-@media all and (max-width: 768px) {
     .channels {
-        height: 30vh;
-    }
-}
+        padding: 0;
 
-.alert{
-    margin: 20px;
-    text-align:center
+        aside {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #444;
+
+            section {
+                padding: 20px;
+                color: @default-aside-text-color;
+                background-color: @default-aside-background-color;
+                border-bottom: 1px solid @default-aside-border-color;
+                border-left: 10px solid transparent;
+                cursor: pointer;
+                font: bold;
+
+                &:hover {
+                    color: @default-aside-text-color-hover;
+                    background-color: @default-aside-background-color-hover;
+                }
+            }
+        }
+
+        @media all and (max-width: 768px) {
+            height: 30vh;
+        }
+
+        .static-section();
+    }
+
+    .news {
+        padding: 0;
+        .static-section();
+    }
+
+    .alert {
+        margin: 20px;
+        text-align: center
+    }
 }

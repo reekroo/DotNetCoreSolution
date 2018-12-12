@@ -1,6 +1,7 @@
 var BelNewsViewModel = /** @class */ (function () {
-    function BelNewsViewModel(onlinerNews, tutNews, belarusPartisanNews, nashaNivaNews, belsatNews, svobodaNews) {
+    function BelNewsViewModel(onlinerNews, cityDogNews, tutNews, belarusPartisanNews, nashaNivaNews, belsatNews, svobodaNews) {
         this.onlinerNews = onlinerNews;
+        this.cityDogNews = cityDogNews;
         this.tutNews = tutNews;
         this.belarusPartisanNews = belarusPartisanNews;
         this.nashaNivaNews = nashaNivaNews;

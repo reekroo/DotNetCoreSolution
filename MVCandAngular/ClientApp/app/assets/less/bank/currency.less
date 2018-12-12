@@ -1,4 +1,6 @@
-﻿.static-section {
+﻿@import "../bases/constants/colors.less";
+
+.static-section {
     height: 90vh;
     transition: all .3s ease-out;
     -webkit-overflow-scrolling: touch;
@@ -11,7 +13,7 @@
 }
 
 .bank-container {
-    margin: -20px;
+    margin: -20px 0 0 0;
 
     img {
         padding: 0
@@ -32,16 +34,15 @@
 
             section {
                 padding: 20px;
-                color: #ccc;
-                background-color: #333;
-                border-bottom: 1px solid #ccc;
+                color: @default-aside-text-color;
+                background-color: @default-aside-background-color;
+                border-bottom: 1px solid @default-aside-border-color;
                 border-left: 10px solid transparent;
                 cursor: pointer;
-                color: #9d9d9d;
 
                 &:hover {
-                    background-color: #808080;
-                    color: white;
+                    color: @default-aside-text-color-hover;
+                    background-color: @default-aside-background-color-hover;
                 }
             }
         }

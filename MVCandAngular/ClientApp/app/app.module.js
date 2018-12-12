@@ -35,6 +35,7 @@ import { BelarusPartisanNewsComponent } from './components/news/controllers/bela
 import { NashaNivaNewsComponent } from './components/news/controllers/nashaniva-news-controller';
 import { BelsatNewsComponent } from './components/news/controllers/belsat-news-controller';
 import { SvobodaNewsComponent } from './components/news/controllers/svoboda-news-controller';
+import { CityDogNewsComponent } from './components/news/controllers/citydog-news-controller';
 import { NewsSectionComponent } from './components/news/view-sections/belarus-news/news-section';
 import { SpecificNewsSectionComponent } from './components/news/view-sections/belarus-news/specific-news-section';
 import { OnlinerNewsSectionComponent } from './components/news//view-sections/belarus-portal-news/onliner-news-section';
@@ -63,6 +64,7 @@ var appRoutes = [
     { path: 'news/world', component: NewsComponent },
     { path: 'news/belarus', component: BelNewsComponent },
     { path: 'news/onliner', component: OnlinerNewsComponent },
+    { path: 'news/citydog', component: CityDogNewsComponent },
     { path: 'news/tut', component: TutNewsComponent },
     { path: 'news/belarus-partisan', component: BelarusPartisanNewsComponent },
     { path: 'news/nasha-niva', component: NashaNivaNewsComponent },
@@ -94,7 +96,8 @@ var AppModule = /** @class */ (function () {
                 //AddressListComponent, AddressFormComponent, AddressCreateComponent, AddressEditComponent,
                 //CartProductListComponent,
                 NewsComponent, BelNewsComponent,
-                OnlinerNewsComponent, TutNewsComponent, BelarusPartisanNewsComponent, NashaNivaNewsComponent, BelsatNewsComponent, SvobodaNewsComponent,
+                OnlinerNewsComponent, TutNewsComponent, CityDogNewsComponent,
+                BelarusPartisanNewsComponent, NashaNivaNewsComponent, BelsatNewsComponent, SvobodaNewsComponent,
                 NewsSectionComponent, SpecificNewsSectionComponent, OnlinerNewsSectionComponent,
                 CurrencyComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
                 MetalComponent, DefaultMetalRatesComponent, MetalRatesComponent,

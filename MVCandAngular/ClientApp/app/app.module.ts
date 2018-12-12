@@ -39,6 +39,7 @@ import { BelarusPartisanNewsComponent } from './components/news/controllers/bela
 import { NashaNivaNewsComponent } from './components/news/controllers/nashaniva-news-controller';
 import { BelsatNewsComponent } from './components/news/controllers/belsat-news-controller';
 import { SvobodaNewsComponent } from './components/news/controllers/svoboda-news-controller';
+import { CityDogNewsComponent } from './components/news/controllers/citydog-news-controller';
 
 import { NewsSectionComponent } from './components/news/view-sections/belarus-news/news-section';
 import { SpecificNewsSectionComponent } from './components/news/view-sections/belarus-news/specific-news-section';
@@ -78,6 +79,7 @@ const appRoutes: Routes = [
     { path: 'news/world', component: NewsComponent },
     { path: 'news/belarus', component: BelNewsComponent },
     { path: 'news/onliner', component: OnlinerNewsComponent },
+    { path: 'news/citydog', component: CityDogNewsComponent },
     { path: 'news/tut', component: TutNewsComponent },
     { path: 'news/belarus-partisan', component: BelarusPartisanNewsComponent },
     { path: 'news/nasha-niva', component: NashaNivaNewsComponent },
@@ -111,12 +113,15 @@ const appRoutes: Routes = [
         //CartProductListComponent,
 
         NewsComponent, BelNewsComponent,
-        OnlinerNewsComponent, TutNewsComponent, BelarusPartisanNewsComponent, NashaNivaNewsComponent, BelsatNewsComponent, SvobodaNewsComponent,
+        OnlinerNewsComponent, TutNewsComponent, CityDogNewsComponent,
+        BelarusPartisanNewsComponent, NashaNivaNewsComponent, BelsatNewsComponent, SvobodaNewsComponent,
         NewsSectionComponent, SpecificNewsSectionComponent, OnlinerNewsSectionComponent,
+
         CurrencyComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
         MetalComponent, DefaultMetalRatesComponent, MetalRatesComponent,
         RefinancingComponent, RefinancingRateComponent, RefinancingRatesComponent,
         ChartComponent,
+
         OilComponent
     ],
     providers: [],

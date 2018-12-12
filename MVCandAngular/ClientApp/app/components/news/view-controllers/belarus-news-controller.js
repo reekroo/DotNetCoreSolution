@@ -11,19 +11,21 @@ import { Component } from '@angular/core';
 import { combineLatest } from 'rxjs';
 import { BelsatNewsService } from '../../../services/news/data.news.belsat.service';
 import { OnlinerNewsService } from '../../../services/news/data.news.onliner.service';
+import { CityDogNewsService } from '../../../services/news/data.news.citydog.service';
 import { TutNewsService } from '../../../services/news/data.news.tut.service';
 import { SvobodaNewsService } from '../../../services/news/data.news.svoboda.service';
 import { NashaNivaNewsService } from '../../../services/news/data.news.nashaniva.service';
 import { BelarusPartisanNewsService } from '../../../services/news/data.news.belaruspartisan.service';
 import { BelNewsViewModel } from '../view-models/belarus-news-view-model';
 var BelNewsComponent = /** @class */ (function () {
-    function BelNewsComponent(onliner, tut, belarusPartisan, nashaNiva, belsat, svoboda) {
+    function BelNewsComponent(onliner, tut, belarusPartisan, nashaNiva, belsat, svoboda, citydog) {
         this.onliner = onliner;
         this.tut = tut;
         this.belarusPartisan = belarusPartisan;
         this.nashaNiva = nashaNiva;
         this.belsat = belsat;
         this.svoboda = svoboda;
+        this.citydog = citydog;
         this.belNewsViewModel = new BelNewsViewModel();
     }
     BelNewsComponent.prototype.ngOnInit = function () {
@@ -41,6 +43,7 @@ var BelNewsComponent = /** @class */ (function () {
     BelNewsComponent.prototype.getNews = function () {
         var _this = this;
         this.belsat.getNews().subscribe(function (data) { _this.belNewsViewModel.belsatNews = data.slice(0, 4); });
+        this.citydog.getNews().subscribe(function (data) { _this.belNewsViewModel.cityDogNews = data.slice(0, 4); });
         var auto$ = this.onliner.getAutoNews();
         var people$ = this.onliner.getPeopleNews();
         var realt$ = this.onliner.getRealtNews();
@@ -65,14 +68,23 @@ var BelNewsComponent = /** @class */ (function () {
     BelNewsComponent = __decorate([
         Component({
             templateUrl: './belarus-news-controller.html',
-            providers: [OnlinerNewsService, TutNewsService, BelarusPartisanNewsService, NashaNivaNewsService, BelsatNewsService, SvobodaNewsService]
+            providers: [
+                OnlinerNewsService,
+                TutNewsService,
+                BelarusPartisanNewsService,
+                NashaNivaNewsService,
+                BelsatNewsService,
+                SvobodaNewsService,
+                CityDogNewsService
+            ]
         }),
         __metadata("design:paramtypes", [OnlinerNewsService,
             TutNewsService,
             BelarusPartisanNewsService,
             NashaNivaNewsService,
             BelsatNewsService,
-            SvobodaNewsService])
+            SvobodaNewsService,
+            CityDogNewsService])
     ], BelNewsComponent);
     return BelNewsComponent;
 }());

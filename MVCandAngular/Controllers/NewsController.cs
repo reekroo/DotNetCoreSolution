@@ -67,6 +67,12 @@ namespace MVCandAngular.Controllers
         {
             return new JsonResult(GetRssNodes("https://www.svoboda.org/api/z-pqpiev-qpp"));
         }
+        
+        [HttpGet("citydog")]
+        public JsonResult GetTopСitydog()
+        {
+            return new JsonResult(GetRssNodes("https://citydog.by/rss/"));
+        }
 
         private IEnumerable<News> GetRssNodes(string rssLink)
         {                        

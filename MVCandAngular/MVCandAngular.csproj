@@ -17,10 +17,12 @@
     <None Remove="ClientApp\app\components\bank\view-sections\currency\default-rates-section.ts" />
     <None Remove="ClientApp\app\components\bank\view-sections\currency\month-rates-table-section.ts" />
     <None Remove="ClientApp\app\components\bank\view-sections\currency\rate-section.ts" />
+    <None Remove="ClientApp\app\components\news\controllers\citydog-news-controller.ts" />
     <None Remove="ClientApp\app\components\news\view-models\belarus-news-view-model.ts" />
     <None Remove="ClientApp\app\components\news\view-models\world-news-controller.ts" />
     <None Remove="ClientApp\app\models\bank\month-rate.ts" />
     <None Remove="ClientApp\app\models\bank\refinancing-rate.ts" />
+    <None Remove="ClientApp\app\services\news\data.news.citydog.service.ts" />
     <None Remove="ClientApp\app\shared\components\chart\chart.ts" />
     <None Remove="ClientApp\app\components\bank\view-sections\metal\default-metal-section.ts" />
     <None Remove="ClientApp\app\components\bank\view-sections\metal\metal-section.ts" />
@@ -96,8 +98,10 @@
     <TypeScriptCompile Include="ClientApp\app\components\bank\view-models\refinancing-rate-view-model.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\bank\view-models\ingot-view-model.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\bank\view-models\currency-view-model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\news\controllers\citydog-news-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\news\view-models\world-news-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\news\view-models\belarus-news-view-model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\news\data.news.citydog.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\components\chart\chart.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\bank\view-sections\metal\default-metal-section.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\bank\view-controllers\metal-controller.ts" />

@@ -3,6 +3,7 @@ import { combineLatest } from 'rxjs';
 
 import { BelsatNewsService } from '../../../services/news/data.news.belsat.service';
 import { OnlinerNewsService } from '../../../services/news/data.news.onliner.service';
+import { CityDogNewsService } from '../../../services/news/data.news.citydog.service';
 import { TutNewsService } from '../../../services/news/data.news.tut.service';
 import { SvobodaNewsService } from '../../../services/news/data.news.svoboda.service';
 import { NashaNivaNewsService } from '../../../services/news/data.news.nashaniva.service';
@@ -13,7 +14,15 @@ import { BelNewsViewModel } from '../view-models/belarus-news-view-model';
 
 @Component({
     templateUrl: './belarus-news-controller.html',
-    providers: [OnlinerNewsService, TutNewsService, BelarusPartisanNewsService, NashaNivaNewsService, BelsatNewsService, SvobodaNewsService]
+    providers: [
+        OnlinerNewsService,
+        TutNewsService,
+        BelarusPartisanNewsService,
+        NashaNivaNewsService,
+        BelsatNewsService,
+        SvobodaNewsService,
+        CityDogNewsService
+    ]
 })
 
 export class BelNewsComponent implements OnInit {
@@ -28,7 +37,8 @@ export class BelNewsComponent implements OnInit {
         private belarusPartisan: BelarusPartisanNewsService,
         private nashaNiva: NashaNivaNewsService,
         private belsat: BelsatNewsService,
-        private svoboda: SvobodaNewsService) {
+        private svoboda: SvobodaNewsService,
+        private citydog: CityDogNewsService) {
 
     }
 
@@ -52,6 +62,8 @@ export class BelNewsComponent implements OnInit {
     getNews() {
 
         this.belsat.getNews().subscribe((data: News[]) => { this.belNewsViewModel.belsatNews = data.slice(0, 4); });
+
+        this.citydog.getNews().subscribe((data: News[]) => { this.belNewsViewModel.cityDogNews = data.slice(0, 4); });
 
         let auto$ = this.onliner.getAutoNews();
         let people$ = this.onliner.getPeopleNews();

@@ -1,10 +1,13 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { combineLatest } from 'rxjs';
 
-import { MetalBankService } from '../../../Services/bank/data.bank.ingots.service';
+import { MetalBankService } from '../../../services/bank/data.bank.ingots.service';
 
-import { Metal } from '../../../Models/Bank/Metal';
-import { Ingot } from '../../../Models/Bank/Ingot';
+import { Metal } from '../../../models/bank/metal';
+import { Ingot } from '../../../models/bank/ingot';
+
+import { IChart } from '../../../shared/interfaces/chart/chart';
+
 import { IngotViewModel } from '../view-models/ingot-view-model';
 
 @Component({
@@ -13,7 +16,7 @@ import { IngotViewModel } from '../view-models/ingot-view-model';
     providers: [MetalBankService]
 })
 
-export class MetalComponent implements OnInit {
+export class MetalComponent implements OnInit, IChart {
     
     ingotViewModel: IngotViewModel = new IngotViewModel();
 
@@ -25,105 +28,70 @@ export class MetalComponent implements OnInit {
     constructor(private dataService: MetalBankService) {
     }
 
-    getMetals() {
+    getMetals(): void {
 
-        this.dataService.getMetals().subscribe((data: Metal[]) => {
-            
-            this.ingotViewModel.metals = data;
-        });
+        this.dataService.getMetals().subscribe((data: Metal[]) => { this.ingotViewModel.metals = data; });
     }
 
-    getRate(id: number) {
+    getRate(id: number): void {
 
         this.dataService.getPrice(id, new Date()).subscribe((data: Ingot[]) => {
 
             this.ingotViewModel.ingotsRate = data;
-
             this.ingotViewModel.showDefault = false;
         });
 
-        this.getYearPeriod(id);
+        this.getChart(id, 0);
     }
 
-    getChart(id: number, index:number) {
+    getChart(id: number, index:number): void {
+
+        //this.ingotViewModel.selectedGramIndex = index;
+        //this.ingotViewModel.chartData = this.addaptToChartData(this.getYearIngotStatistics(id, index));
+
+        this.getYearIngotStatistics(id, index);
+    }
+    
+    private getYearIngotStatistics(ingotId: number, index: number): void {
 
         let date = new Date();
 
-        let today$ = this.dataService.getPrice(id, date);
-        let oneweek$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getDate() - 7)));
-        let twoweek$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getDate() - 14)));
-        let month$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getMonth() - 1)));
-        let twomonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 2)));
-        let threemonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 3)));
-        let sixmonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 6)));
-        let ninemonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 9)));
-        let year$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 12)));
-        let twoyear$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 24)));
+        let today$ = this.dataService.getPrice(ingotId, date);
+        let oneweek$ = this.dataService.getPrice(ingotId, new Date(new Date().setDate(date.getDate() - 7)));
+        let twoweek$ = this.dataService.getPrice(ingotId, new Date(new Date().setDate(date.getDate() - 14)));
+        let month$ = this.dataService.getPrice(ingotId, new Date(new Date().setDate(date.getMonth() - 1)));
+        let twomonth$ = this.dataService.getPrice(ingotId, new Date(new Date().setMonth(date.getMonth() - 2)));
+        let threemonth$ = this.dataService.getPrice(ingotId, new Date(new Date().setMonth(date.getMonth() - 3)));
+        let sixmonth$ = this.dataService.getPrice(ingotId, new Date(new Date().setMonth(date.getMonth() - 6)));
+        let ninemonth$ = this.dataService.getPrice(ingotId, new Date(new Date().setMonth(date.getMonth() - 9)));
+        let year$ = this.dataService.getPrice(ingotId, new Date(new Date().setMonth(date.getMonth() - 12)));
+        let twoyear$ = this.dataService.getPrice(ingotId, new Date(new Date().setMonth(date.getMonth() - 24)));
+ 
+        combineLatest(today$, oneweek$, twoweek$, month$, twomonth$, threemonth$, sixmonth$, ninemonth$, year$, twoyear$)
+            .subscribe(combinedResult => {
 
-        combineLatest(today$, oneweek$, twoweek$, month$, twomonth$, threemonth$, sixmonth$, ninemonth$, year$, twoyear$).subscribe(combinedResult => {
+                let arr: Ingot[] = [];
 
-            let arr = [];
+                arr.push(combinedResult[0][index]);
+                arr.push(combinedResult[1][index]);
+                arr.push(combinedResult[2][index]);
+                arr.push(combinedResult[3][index]);
+                arr.push(combinedResult[4][index]);
+                arr.push(combinedResult[5][index]);
+                arr.push(combinedResult[6][index]);
+                arr.push(combinedResult[7][index]);
+                arr.push(combinedResult[8][index]);
+                arr.push(combinedResult[9][index]);
 
-            arr.push(combinedResult[0][index]);
-            arr.push(combinedResult[1][index]);
-            arr.push(combinedResult[2][index]);
-            arr.push(combinedResult[3][index]);
-            arr.push(combinedResult[4][index]);
-            arr.push(combinedResult[5][index]);
-            arr.push(combinedResult[6][index]);
-            arr.push(combinedResult[7][index]);
-            arr.push(combinedResult[8][index]);
-            arr.push(combinedResult[9][index]);
+                //return arr as Ingot[];
 
-            let oneGramRate = arr as Ingot[];
-
-            console.log(oneGramRate);
-            console.log(combinedResult[0]);
-
-            this.ingotViewModel.chartData = this.addaptToChartData(oneGramRate);
-        });
+                this.ingotViewModel.selectedGramIndex = index;
+                this.ingotViewModel.chartData = this.addaptToChartData(arr);
+            }
+        );
     }
 
-    private getYearPeriod(id: number) {
-
-        let date = new Date();
-        
-        let today$ = this.dataService.getPrice(id, date);        
-        let oneweek$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getDate() - 7)));
-        let twoweek$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getDate() - 14)));
-        let month$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getMonth() - 1)));
-        let twomonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 2)));
-        let threemonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 3)));
-        let sixmonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 6)));
-        let ninemonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 9)));
-        let year$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 12)));
-        let twoyear$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 24)));
-
-        combineLatest(today$, oneweek$, twoweek$, month$, twomonth$, threemonth$, sixmonth$, ninemonth$, year$, twoyear$).subscribe(combinedResult => {
-
-            let arr = [];
-
-            arr.push(combinedResult[0][0]);
-            arr.push(combinedResult[1][0]);
-            arr.push(combinedResult[2][0]);
-            arr.push(combinedResult[3][0]);
-            arr.push(combinedResult[4][0]);
-            arr.push(combinedResult[5][0]);
-            arr.push(combinedResult[6][0]);
-            arr.push(combinedResult[7][0]);
-            arr.push(combinedResult[8][0]);
-            arr.push(combinedResult[9][0]);
-
-            let oneGramRate = arr as Ingot[];
-
-            console.log(oneGramRate);
-            console.log(combinedResult[0]);
-
-            this.ingotViewModel.chartData = this.addaptToChartData(oneGramRate);
-        });
-    }
-
-    private addaptToChartData(array: Ingot[]) {
+    addaptToChartData(array: Ingot[]): Object {
 
         if (!array) {
 

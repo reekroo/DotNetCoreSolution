@@ -1,7 +1,9 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { combineLatest } from 'rxjs';
 
-import { BankService } from '../../../Services/bank/data.bank.currencies.service';
+import { BankService } from '../../../services/bank/data.bank.currencies.service';
+
+import { IChart } from '../../../shared/interfaces/chart/chart';
 
 import { Currency } from '../../../models/bank/currency';
 import { Rate } from '../../../models/bank/rate';
@@ -15,13 +17,12 @@ import { CurrencyViewModel } from '../view-models/currency-view-model';
     providers: [BankService]
 })
 
-export class CurrencyComponent implements OnInit {
+export class CurrencyComponent implements OnInit, IChart {
 
     private validCurrncies = [
         323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 290,
         291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321,
-        286, 232, 191, 184, 170, 145, 143, 130, 119, 74, 72, 68, 27, 23]
-    ;
+        286, 232, 191, 184, 170, 145, 143, 130, 119, 74, 72, 68, 27, 23];
 
     currencyView: CurrencyViewModel = new CurrencyViewModel();
 
@@ -33,15 +34,13 @@ export class CurrencyComponent implements OnInit {
     constructor(private dataService: BankService) {
     }
 
-    getCurrencies() {
+    getCurrencies(): void {
 
         this.dataService.getCurrencies().subscribe((data: any) => {
 
             if (data) {                
 
-                let found = (data as Currency[]).filter(r => this.validCurrncies.indexOf(r.Cur_ID) >= 0);
-
-                this.currencyView.currencies = found;
+                this.currencyView.currencies = (data as Currency[]).filter(r => this.validCurrncies.indexOf(r.Cur_ID) >= 0);
             } else {
 
                 this.currencyView.currencies = [];
@@ -49,7 +48,7 @@ export class CurrencyComponent implements OnInit {
         });
     }
 
-    getRate(id: number) {
+    getRate(id: number): void {
 
         let date = new Date();
         let yesterday = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + (date.getDate() - 1);
@@ -92,7 +91,7 @@ export class CurrencyComponent implements OnInit {
         this.currencyView.showDefaultSection = false;
     }
 
-    private addaptToChartData(array: Rate[]) {
+    addaptToChartData(array: Rate[]): Object {
 
         if (!array) {
 

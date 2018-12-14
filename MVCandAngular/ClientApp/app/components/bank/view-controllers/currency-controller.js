@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { combineLatest } from 'rxjs';
-import { BankService } from '../../../Services/bank/data.bank.currencies.service';
+import { BankService } from '../../../services/bank/data.bank.currencies.service';
 import { CurrencyViewModel } from '../view-models/currency-view-model';
 var CurrencyComponent = /** @class */ (function () {
     function CurrencyComponent(dataService) {
@@ -28,8 +28,7 @@ var CurrencyComponent = /** @class */ (function () {
         var _this = this;
         this.dataService.getCurrencies().subscribe(function (data) {
             if (data) {
-                var found = data.filter(function (r) { return _this.validCurrncies.indexOf(r.Cur_ID) >= 0; });
-                _this.currencyView.currencies = found;
+                _this.currencyView.currencies = data.filter(function (r) { return _this.validCurrncies.indexOf(r.Cur_ID) >= 0; });
             }
             else {
                 _this.currencyView.currencies = [];

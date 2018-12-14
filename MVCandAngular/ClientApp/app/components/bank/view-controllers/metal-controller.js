@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component } from '@angular/core';
 import { combineLatest } from 'rxjs';
-import { MetalBankService } from '../../../Services/bank/data.bank.ingots.service';
+import { MetalBankService } from '../../../services/bank/data.bank.ingots.service';
 import { IngotViewModel } from '../view-models/ingot-view-model';
 var MetalComponent = /** @class */ (function () {
     function MetalComponent(dataService) {
@@ -21,9 +21,7 @@ var MetalComponent = /** @class */ (function () {
     };
     MetalComponent.prototype.getMetals = function () {
         var _this = this;
-        this.dataService.getMetals().subscribe(function (data) {
-            _this.ingotViewModel.metals = data;
-        });
+        this.dataService.getMetals().subscribe(function (data) { _this.ingotViewModel.metals = data; });
     };
     MetalComponent.prototype.getRate = function (id) {
         var _this = this;
@@ -31,22 +29,28 @@ var MetalComponent = /** @class */ (function () {
             _this.ingotViewModel.ingotsRate = data;
             _this.ingotViewModel.showDefault = false;
         });
-        this.getYearPeriod(id);
+        this.getChart(id, 0);
     };
     MetalComponent.prototype.getChart = function (id, index) {
+        //this.ingotViewModel.selectedGramIndex = index;
+        //this.ingotViewModel.chartData = this.addaptToChartData(this.getYearIngotStatistics(id, index));
+        this.getYearIngotStatistics(id, index);
+    };
+    MetalComponent.prototype.getYearIngotStatistics = function (ingotId, index) {
         var _this = this;
         var date = new Date();
-        var today$ = this.dataService.getPrice(id, date);
-        var oneweek$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getDate() - 7)));
-        var twoweek$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getDate() - 14)));
-        var month$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getMonth() - 1)));
-        var twomonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 2)));
-        var threemonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 3)));
-        var sixmonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 6)));
-        var ninemonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 9)));
-        var year$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 12)));
-        var twoyear$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 24)));
-        combineLatest(today$, oneweek$, twoweek$, month$, twomonth$, threemonth$, sixmonth$, ninemonth$, year$, twoyear$).subscribe(function (combinedResult) {
+        var today$ = this.dataService.getPrice(ingotId, date);
+        var oneweek$ = this.dataService.getPrice(ingotId, new Date(new Date().setDate(date.getDate() - 7)));
+        var twoweek$ = this.dataService.getPrice(ingotId, new Date(new Date().setDate(date.getDate() - 14)));
+        var month$ = this.dataService.getPrice(ingotId, new Date(new Date().setDate(date.getMonth() - 1)));
+        var twomonth$ = this.dataService.getPrice(ingotId, new Date(new Date().setMonth(date.getMonth() - 2)));
+        var threemonth$ = this.dataService.getPrice(ingotId, new Date(new Date().setMonth(date.getMonth() - 3)));
+        var sixmonth$ = this.dataService.getPrice(ingotId, new Date(new Date().setMonth(date.getMonth() - 6)));
+        var ninemonth$ = this.dataService.getPrice(ingotId, new Date(new Date().setMonth(date.getMonth() - 9)));
+        var year$ = this.dataService.getPrice(ingotId, new Date(new Date().setMonth(date.getMonth() - 12)));
+        var twoyear$ = this.dataService.getPrice(ingotId, new Date(new Date().setMonth(date.getMonth() - 24)));
+        combineLatest(today$, oneweek$, twoweek$, month$, twomonth$, threemonth$, sixmonth$, ninemonth$, year$, twoyear$)
+            .subscribe(function (combinedResult) {
             var arr = [];
             arr.push(combinedResult[0][index]);
             arr.push(combinedResult[1][index]);
@@ -58,41 +62,9 @@ var MetalComponent = /** @class */ (function () {
             arr.push(combinedResult[7][index]);
             arr.push(combinedResult[8][index]);
             arr.push(combinedResult[9][index]);
-            var oneGramRate = arr;
-            console.log(oneGramRate);
-            console.log(combinedResult[0]);
-            _this.ingotViewModel.chartData = _this.addaptToChartData(oneGramRate);
-        });
-    };
-    MetalComponent.prototype.getYearPeriod = function (id) {
-        var _this = this;
-        var date = new Date();
-        var today$ = this.dataService.getPrice(id, date);
-        var oneweek$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getDate() - 7)));
-        var twoweek$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getDate() - 14)));
-        var month$ = this.dataService.getPrice(id, new Date(new Date().setDate(date.getMonth() - 1)));
-        var twomonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 2)));
-        var threemonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 3)));
-        var sixmonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 6)));
-        var ninemonth$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 9)));
-        var year$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 12)));
-        var twoyear$ = this.dataService.getPrice(id, new Date(new Date().setMonth(date.getMonth() - 24)));
-        combineLatest(today$, oneweek$, twoweek$, month$, twomonth$, threemonth$, sixmonth$, ninemonth$, year$, twoyear$).subscribe(function (combinedResult) {
-            var arr = [];
-            arr.push(combinedResult[0][0]);
-            arr.push(combinedResult[1][0]);
-            arr.push(combinedResult[2][0]);
-            arr.push(combinedResult[3][0]);
-            arr.push(combinedResult[4][0]);
-            arr.push(combinedResult[5][0]);
-            arr.push(combinedResult[6][0]);
-            arr.push(combinedResult[7][0]);
-            arr.push(combinedResult[8][0]);
-            arr.push(combinedResult[9][0]);
-            var oneGramRate = arr;
-            console.log(oneGramRate);
-            console.log(combinedResult[0]);
-            _this.ingotViewModel.chartData = _this.addaptToChartData(oneGramRate);
+            //return arr as Ingot[];
+            _this.ingotViewModel.selectedGramIndex = index;
+            _this.ingotViewModel.chartData = _this.addaptToChartData(arr);
         });
     };
     MetalComponent.prototype.addaptToChartData = function (array) {

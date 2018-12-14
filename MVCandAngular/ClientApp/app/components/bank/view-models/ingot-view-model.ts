@@ -8,8 +8,10 @@ export class IngotViewModel {
         public metals?: Metal[],
         public ingotsRate?: Ingot[],
         public chartData?: Object,
-        public showDefault?: boolean
+        public showDefault?: boolean,
+        public selectedGramIndex?: number
     ) {
         this.showDefault = true;
+        this.selectedGramIndex = 0;
     }
 }

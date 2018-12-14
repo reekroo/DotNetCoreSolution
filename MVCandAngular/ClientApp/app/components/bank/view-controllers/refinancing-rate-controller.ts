@@ -3,6 +3,9 @@
 import { RefinancingRateBankService } from '../../../services/bank/data.bank.refinancing.service';
 
 import { RefinancingRate } from '../../../models/bank/refinancing-rate';
+
+import { IChart } from '../../../shared/interfaces/chart/chart';
+
 import { RefinancingRateViewModel } from '../view-models/refinancing-rate-view-model';
 
 
@@ -11,7 +14,7 @@ import { RefinancingRateViewModel } from '../view-models/refinancing-rate-view-m
     providers: [RefinancingRateBankService]
 })
 
-export class RefinancingComponent implements OnInit {
+export class RefinancingComponent implements OnInit, IChart {
 
     refinancingRateViewModel: RefinancingRateViewModel = new RefinancingRateViewModel();
         
@@ -24,7 +27,7 @@ export class RefinancingComponent implements OnInit {
     constructor(private dataService: RefinancingRateBankService) {
     }
 
-    private getTodayRate() {
+    private getTodayRate(): void {
 
         this.dataService.getRefinancingRate(new Date()).subscribe((data) => {
             
@@ -34,7 +37,7 @@ export class RefinancingComponent implements OnInit {
         });
     }
     
-    private getRates() {
+    private getRates(): void {
 
         this.dataService.getDunamicRefinancingRate().subscribe((data: RefinancingRate[]) => {
 
@@ -43,7 +46,7 @@ export class RefinancingComponent implements OnInit {
         });
     }
 
-    private addaptToChartData(array: RefinancingRate[]) {
+    addaptToChartData(array: RefinancingRate[]): Object {
 
         if (!array) {
 

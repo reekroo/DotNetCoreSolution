@@ -51,6 +51,7 @@ import { MetalRatesComponent } from './components/bank/view-sections/metal/metal
 import { RefinancingRateComponent } from './components/bank/view-sections/refinancing/refinancing-rate-section';
 import { RefinancingRatesComponent } from './components/bank/view-sections/refinancing/refinancing-rates-section';
 import { OilComponent } from './components/oil/view-controllers/oil-controller';
+import { NaturalGasComponent } from './components/natural-gas/view-controllers/natural-gas-controller';
 var appRoutes = [
     //{ path: 'shop', component: ShopProductListComponent },
     //{ path: 'shop/:id', component: ShopProductDetailsComponent },
@@ -74,6 +75,7 @@ var appRoutes = [
     { path: 'bank/ingots', component: MetalComponent },
     { path: 'bank/refinancing-rates', component: RefinancingComponent },
     { path: 'oil', component: OilComponent },
+    { path: 'gas', component: NaturalGasComponent },
     { path: '**', redirectTo: '/' }
 ];
 var AppModule = /** @class */ (function () {
@@ -103,7 +105,7 @@ var AppModule = /** @class */ (function () {
                 MetalComponent, DefaultMetalRatesComponent, MetalRatesComponent,
                 RefinancingComponent, RefinancingRateComponent, RefinancingRatesComponent,
                 ChartComponent,
-                OilComponent
+                OilComponent, NaturalGasComponent
             ],
             providers: [],
             bootstrap: [AppComponent]

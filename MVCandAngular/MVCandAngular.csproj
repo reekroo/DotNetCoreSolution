@@ -17,6 +17,7 @@
     <None Remove="ClientApp\app\components\bank\view-sections\currency\default-rates-section.ts" />
     <None Remove="ClientApp\app\components\bank\view-sections\currency\month-rates-table-section.ts" />
     <None Remove="ClientApp\app\components\bank\view-sections\currency\rate-section.ts" />
+    <None Remove="ClientApp\app\components\natural-gas\view-controllers\natural-gas-controller.ts" />
     <None Remove="ClientApp\app\components\news\controllers\citydog-news-controller.ts" />
     <None Remove="ClientApp\app\components\news\view-models\belarus-news-view-model.ts" />
     <None Remove="ClientApp\app\components\news\view-models\world-news-controller.ts" />
@@ -76,6 +77,7 @@
     <None Remove="ClientApp\app\services\data.news.tut.service.ts" />
     <None Remove="ClientApp\app\services\data.user.address.service.ts" />
     <None Remove="ClientApp\app\services\data.user.cart.service.ts" />
+    <None Remove="ClientApp\app\shared\interfaces\chart\chart.ts" />
     <None Remove="ClientApp\app\user.ts" />
     <None Remove="ClientApp\app\components\shopComponents\userComponent\data.user.service.ts" />
     <None Remove="ClientApp\app\components\shopComponents\userComponent\user-cart.ts" />
@@ -101,6 +103,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\news\controllers\citydog-news-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\news\view-models\world-news-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\news\view-models\belarus-news-view-model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\natural-gas\view-controllers\natural-gas-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\news\data.news.citydog.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\components\chart\chart.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\bank\view-sections\metal\default-metal-section.ts" />
@@ -122,6 +125,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\news\controllers\svoboda-news-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\news\controllers\tut-news-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\news\view-controllers\belarus-news-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\interfaces\chart\chart.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\interfaces\news\base-news-pinger.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\interfaces\news\base-news.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\shopComponents\addressesComponent\address-form.ts" />

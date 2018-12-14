@@ -60,7 +60,8 @@ import { MetalRatesComponent } from './components/bank/view-sections/metal/metal
 import { RefinancingRateComponent } from './components/bank/view-sections/refinancing/refinancing-rate-section';
 import { RefinancingRatesComponent } from './components/bank/view-sections/refinancing/refinancing-rates-section';
 
-import { OilComponent } from './components/oil/view-controllers/oil-controller'
+import { OilComponent } from './components/oil/view-controllers/oil-controller';
+import { NaturalGasComponent } from './components/natural-gas/view-controllers/natural-gas-controller'
 
 const appRoutes: Routes = [
 
@@ -91,6 +92,7 @@ const appRoutes: Routes = [
     { path: 'bank/refinancing-rates', component: RefinancingComponent },
 
     { path: 'oil', component: OilComponent },
+    { path: 'gas', component: NaturalGasComponent },
 
     { path: '**', redirectTo: '/' }
 ];
@@ -122,7 +124,7 @@ const appRoutes: Routes = [
         RefinancingComponent, RefinancingRateComponent, RefinancingRatesComponent,
         ChartComponent,
 
-        OilComponent
+        OilComponent, NaturalGasComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

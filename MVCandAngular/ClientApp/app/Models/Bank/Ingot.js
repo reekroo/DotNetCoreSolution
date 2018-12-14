@@ -19,4 +19,4 @@ var Ingot = /** @class */ (function () {
     return Ingot;
 }());
 export { Ingot };
-//# sourceMappingURL=Ingot.js.map
+//# sourceMappingURL=ingot.js.map

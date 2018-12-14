@@ -8,4 +8,4 @@ var Metal = /** @class */ (function () {
     return Metal;
 }());
 export { Metal };
-//# sourceMappingURL=Metal.js.map
+//# sourceMappingURL=metal.js.map

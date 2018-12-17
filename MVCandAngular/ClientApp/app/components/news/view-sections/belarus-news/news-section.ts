@@ -6,8 +6,8 @@ import { News } from '../../../../models/news/news';
 
 @Component({
     selector: 'news-section',
-    styles: [require('../../../../assets/less/news/news-section.less')],
-    templateUrl: './news-section.html'
+    templateUrl: './news-section.html',
+    styles: [require('../../../../assets/less/news/news-section.less')]
 })
 
 export class NewsSectionComponent extends BaseNewsComponent {

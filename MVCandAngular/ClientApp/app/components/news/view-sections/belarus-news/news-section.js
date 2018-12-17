@@ -34,8 +34,8 @@ var NewsSectionComponent = /** @class */ (function (_super) {
     NewsSectionComponent = __decorate([
         Component({
             selector: 'news-section',
-            styles: [require('../../../../assets/less/news/news-section.less')],
-            templateUrl: './news-section.html'
+            templateUrl: './news-section.html',
+            styles: [require('../../../../assets/less/news/news-section.less')]
         })
     ], NewsSectionComponent);
     return NewsSectionComponent;

@@ -30,8 +30,8 @@ var TutNewsComponent = /** @class */ (function (_super) {
     }
     TutNewsComponent = __decorate([
         Component({
-            templateUrl: '../views/news-clip-board.html',
-            styles: [require('../../../assets/less/news/news-clip-board-section.less')],
+            templateUrl: '../views/news-block.html',
+            styles: [require('../../../assets/less/news/news-block-section.less')],
             providers: [TutNewsService]
         }),
         __metadata("design:paramtypes", [TutNewsService])

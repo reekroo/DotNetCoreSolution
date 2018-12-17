@@ -5,8 +5,8 @@ import { SvobodaNewsService } from '../../../services/news/data.news.svoboda.ser
 import { BaseSpecificPortalNewsComponent } from '../../../shared/bases/news/base-specific-portal-news';
 
 @Component({
-    templateUrl: '../views/news-clip-board.html',
-    styles: [require('../../../assets/less/news/news-clip-board-section.less')],
+    templateUrl: '../views/news-block.html',
+    styles: [require('../../../assets/less/news/news-block-section.less')],
     providers: [SvobodaNewsService]
 })
 

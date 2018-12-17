@@ -33,6 +33,40 @@
                     </div>
                 </div>
             </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4>weather</h4>
+                    <table class="table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Wind speed</td>
+                                <td>{{homeViewModel.weather.wind.speed}}m/s</td>
+                            </tr>
+                            <--<tr>
+                                <td>Cloudiness</td>
+                                <td>{{homeViewModel.weather.weather[0].description}}</td>
+                            </tr>-->
+                            <tr>
+                                <td>Pressure</td>
+                                <td>{{homeViewModel.weather.main.pressure}}hpa</td>
+                            </tr>
+                            <tr>
+                                <td>Humidity</td>
+                                <td>{{homeViewModel.weather.main.humidity}}%</td>
+                            </tr>
+                            <tr>
+                                <td>Sunrise</td>
+                                <td>{{dateFormatter(homeViewModel.weather.sys.sunrise)}}</td>
+                            </tr>
+                            <tr>
+                                <td>Sunset</td>
+                                <td>{{dateFormatter(homeViewModel.weather.sys.sunset)}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 

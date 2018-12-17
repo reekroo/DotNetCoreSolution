@@ -15,22 +15,29 @@ import { TutNewsService } from '../../../services/news/data.news.tut.service';
 import { OnlinerNewsService } from '../../../services/news/data.news.onliner.service';
 import { CityDogNewsService } from '../../../services/news/data.news.citydog.service';
 import { SvobodaNewsService } from '../../../services/news/data.news.svoboda.service';
+import { WeatherService } from '../../../services/weather/data.weather.service';
 import { RefinancingRate } from '../../../models/bank/refinancing-rate';
+import { CityWeather } from '../../../models/weather/city-weather';
 import { HomeViewModel } from '../view-models/home-view-model';
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(bank, refinancingRate, tut, onliner, citydog, svoboda) {
+    function HomeComponent(bank, refinancingRate, tut, onliner, citydog, svoboda, weather) {
         this.bank = bank;
         this.refinancingRate = refinancingRate;
         this.tut = tut;
         this.onliner = onliner;
         this.citydog = citydog;
         this.svoboda = svoboda;
+        this.weather = weather;
         this.homeViewModel = new HomeViewModel();
     }
     HomeComponent.prototype.ngOnInit = function () {
-        this.getCurrentCurrencyRates();
         this.getRefinancingRate();
+        this.getWeather();
+        this.getCurrentCurrencyRates();
         this.getLastNews();
+    };
+    HomeComponent.prototype.dateFormatter = function (time) {
+        return (new Date(time).toLocaleDateString());
     };
     HomeComponent.prototype.getCurrentCurrencyRates = function () {
         var _this = this;
@@ -53,6 +60,11 @@ var HomeComponent = /** @class */ (function () {
             _this.homeViewModel.refinancingRate.Date = new Date(_this.homeViewModel.refinancingRate.Date).toLocaleDateString();
         });
     };
+    HomeComponent.prototype.getWeather = function () {
+        var _this = this;
+        this.homeViewModel.weather = new CityWeather();
+        this.weather.getWeather("Minsk", "by").subscribe(function (data) { _this.homeViewModel.weather = data; console.log(data); });
+    };
     HomeComponent.prototype.getLastNews = function () {
         var _this = this;
         this.homeViewModel.lastBelNews = [];
@@ -66,7 +78,8 @@ var HomeComponent = /** @class */ (function () {
             templateUrl: './home-controller.html',
             providers: [
                 BankService, RefinancingRateBankService,
-                TutNewsService, OnlinerNewsService, CityDogNewsService, SvobodaNewsService
+                TutNewsService, OnlinerNewsService, CityDogNewsService, SvobodaNewsService,
+                WeatherService
             ]
         }),
         __metadata("design:paramtypes", [BankService,
@@ -74,7 +87,8 @@ var HomeComponent = /** @class */ (function () {
             TutNewsService,
             OnlinerNewsService,
             CityDogNewsService,
-            SvobodaNewsService])
+            SvobodaNewsService,
+            WeatherService])
     ], HomeComponent);
     return HomeComponent;
 }());

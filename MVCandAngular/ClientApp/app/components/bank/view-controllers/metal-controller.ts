@@ -12,7 +12,7 @@ import { IngotViewModel } from '../view-models/ingot-view-model';
 
 @Component({
     templateUrl: './metal-controller.html',
-    styles: [require('../../../assets/less/bank/metal.less')],
+    styles: [require('../../../assets/less/bank/ingots.less')],
     providers: [MetalBankService]
 })
 

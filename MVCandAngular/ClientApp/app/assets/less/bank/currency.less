@@ -1,16 +1,7 @@
 ﻿@import "../bases/constants/colors.less";
+@import "../bases/constants/media-width.less";
 
-.static-section {
-    height: 90vh;
-    transition: all .3s ease-out;
-    -webkit-overflow-scrolling: touch;
-    overflow: scroll;
-    overflow-x: hidden;
-
-    @media all and (max-width: 768px) {
-        overflow-y: hidden;
-    }
-}
+@import "../bases/mixins/static-grid-section.less";
 
 .bank-container {
     margin: -20px 0 0 0;
@@ -30,7 +21,6 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            background-color: #444;
 
             section {
                 padding: 20px;
@@ -47,7 +37,7 @@
             }
         }
 
-        @media all and (max-width: 768px) {
+        @media all and (max-width: @default-small-width) {
             height: 30vh;
         }
 
@@ -61,7 +51,7 @@
             margin: 10px 0 0 0;
         }
 
-        @media all and (max-width: 768px) {
+        @media all and (max-width: @default-small-width) {
             padding: 40px;
         }
 

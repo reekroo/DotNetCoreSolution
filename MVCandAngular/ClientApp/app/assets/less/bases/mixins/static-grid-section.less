@@ -1,0 +1,13 @@
+﻿@import "../constants/media-width.less";
+
+.static-section {
+    height: 90vh;
+    transition: all .3s ease-out;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+    overflow-x: hidden;
+
+    @media all and (max-width: @default-small-width) {
+        overflow-y: hidden;
+    }
+}

@@ -4,9 +4,9 @@ import { Rate } from '../../../../models/bank/rate';
 import { MonthRate } from '../../../../models/bank/month-rate';
 
 @Component({
+    selector: 'month-rates-table-section',
     templateUrl: './month-rates-table-section.html',
-    styles: [require('../../../../assets/less/bank/month-rates-table-section.less')],
-    selector: 'month-rates-table-section'
+    styles: [require('../../../../assets/less/bank/currency-rate-colorising.less')]
 })
 
 export class MonthRateTableComponent  {

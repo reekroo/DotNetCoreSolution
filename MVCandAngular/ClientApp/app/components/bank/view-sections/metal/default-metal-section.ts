@@ -7,7 +7,7 @@ import { Ingot } from '../../../../models/bank/ingot';
 
 @Component({
     selector: 'default-metal-section',
-    styles: [require('../../../../assets/less/bank/default-metal-section.less')],
+    styles: [require('../../../../assets/less/bank/default-ingot-section.less')],
     templateUrl: './default-metal-section.html',
     providers: [MetalBankService]    
 })

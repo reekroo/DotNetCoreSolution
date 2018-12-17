@@ -108,7 +108,7 @@ var MetalComponent = /** @class */ (function () {
     MetalComponent = __decorate([
         Component({
             templateUrl: './metal-controller.html',
-            styles: [require('../../../assets/less/bank/metal.less')],
+            styles: [require('../../../assets/less/bank/ingots.less')],
             providers: [MetalBankService]
         }),
         __metadata("design:paramtypes", [MetalBankService])

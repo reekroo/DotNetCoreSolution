@@ -37,9 +37,9 @@ var MonthRateTableComponent = /** @class */ (function () {
     ], MonthRateTableComponent.prototype, "rates", void 0);
     MonthRateTableComponent = __decorate([
         Component({
+            selector: 'month-rates-table-section',
             templateUrl: './month-rates-table-section.html',
-            styles: [require('../../../../assets/less/bank/month-rates-table-section.less')],
-            selector: 'month-rates-table-section'
+            styles: [require('../../../../assets/less/bank/currency-rate-colorising.less')]
         })
     ], MonthRateTableComponent);
     return MonthRateTableComponent;

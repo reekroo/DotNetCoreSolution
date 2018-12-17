@@ -44,7 +44,8 @@ var OnlinerNewsSectionComponent = /** @class */ (function (_super) {
     OnlinerNewsSectionComponent = __decorate([
         Component({
             selector: 'onliner-news-section',
-            templateUrl: './onliner-news-section.html'
+            templateUrl: './onliner-news-section.html',
+            styleUrls: ['../../../../assets/less/news/news-onliner-section.less']
         })
     ], OnlinerNewsSectionComponent);
     return OnlinerNewsSectionComponent;

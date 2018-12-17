@@ -1,29 +1,4 @@
-﻿<style>
-    .line{
-        margin: 10px 0;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .btn {
-        background-color: #ddd;
-        border-color: #ddd;
-        margin: -10px 0 10px 0;
-        border-radius: 0;
-        outline: none;
-    }
-
-    .btn:hover {
-        background-color: #808080;
-        border-color: #808080;
-    }
-
-    .btn::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-</style>
-
+﻿
 <div class="row">
     <div class="col-sm-12 news">
         <h2>{{title}}</h2>
@@ -44,7 +19,7 @@
 
                                 <div class="col-sm-6" *ngIf="y==0">
                                     <article>
-                                        <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" style="width: 100%" />
+                                        <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" />
                                         <h4><a href="{{n.url}}" target="_blank">{{n.title}}</a></h4>
                                         <p>{{n.description}}</p>
                                     </article>

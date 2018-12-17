@@ -6,7 +6,8 @@ import { News } from '../../../../models/news/news';
 
 @Component({
     selector: 'onliner-news-section',
-    templateUrl: './onliner-news-section.html'
+    templateUrl: './onliner-news-section.html',
+    styleUrls: ['../../../../assets/less/news/news-onliner-section.less']
 })
 
 export class OnlinerNewsSectionComponent extends BaseNewsComponent {

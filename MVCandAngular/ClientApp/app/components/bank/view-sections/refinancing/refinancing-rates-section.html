@@ -1,5 +1,7 @@
 ﻿<ul class="list">
-    <cdk-virtual-scroll-viewport style="height: 420px" itemSize="60">
+    <cdk-virtual-scroll-viewport 
+        style="height: 420px" 
+        itemSize="60">
         <ng-container *cdkVirtualFor="let r of refinancingRates">
             <li class="list-item">
                 <div>{{r?.Date}}</div>

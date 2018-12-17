@@ -15,7 +15,7 @@
                     </h4>
                 </header>
 
-                <img src="{{item.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" *ngIf="item.urlToImage" style="width: 100%" />
+                <img src="{{item.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" *ngIf="item.urlToImage" />
 
                 <p *ngIf="item.description">{{getDiscription(item.description)}}</p>
 

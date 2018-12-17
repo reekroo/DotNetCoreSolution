@@ -1,0 +1,25 @@
+﻿@import "../bases/constants/colors.less";
+
+.line {
+    margin: 10px 0;
+    border-bottom: 1px solid @default-grey-collor;
+}
+
+.btn {
+    background-color: @default-grey-collor;
+    border-color: @default-grey-collor;
+    margin: -10px 0 10px 0;
+    border-radius: 0;
+    outline: none;
+
+    &:hover {
+        background-color: @default-aside-background-color-hover;
+        border-color: @default-aside-background-color-hover;
+    }
+
+    &::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}

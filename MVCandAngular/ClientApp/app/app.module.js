@@ -27,6 +27,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 //import { AddressEditComponent } from './Components/ShopComponents/addressesComponent/address-edit';
 //import { CartProductListComponent } from './Components/ShopComponents/cartComponent/cart-product-list';
 import { ChartComponent } from './shared/components/chart/chart';
+import { HomeComponent } from './components/home/view-controllers/home-controller';
 import { NewsComponent } from './components/news/view-controllers/world-news-controller';
 import { BelNewsComponent } from './components/news/view-controllers/belarus-news-controller';
 import { OnlinerNewsComponent } from './components/news/controllers/onliner-news-controller';
@@ -62,6 +63,9 @@ var appRoutes = [
     //{ path: 'user/edit/:id', component: UserEditComponent },
     //{ path: 'user/address/create', component: AddressCreateComponent },
     //{ path: 'user/address/edit/:id', component: AddressEditComponent },
+    { path: 'home', component: HomeComponent },
+    { path: 'index', component: HomeComponent },
+    { path: '', component: HomeComponent },
     { path: 'news/world', component: NewsComponent },
     { path: 'news/belarus', component: BelNewsComponent },
     { path: 'news/onliner', component: OnlinerNewsComponent },
@@ -97,6 +101,7 @@ var AppModule = /** @class */ (function () {
                 //FullUserComponent, UserFormComponent, UserInfoComponent, UserEditComponent,
                 //AddressListComponent, AddressFormComponent, AddressCreateComponent, AddressEditComponent,
                 //CartProductListComponent,
+                HomeComponent,
                 NewsComponent, BelNewsComponent,
                 OnlinerNewsComponent, TutNewsComponent, CityDogNewsComponent,
                 BelarusPartisanNewsComponent, NashaNivaNewsComponent, BelsatNewsComponent, SvobodaNewsComponent,

@@ -30,6 +30,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { ChartComponent } from './shared/components/chart/chart';
 
+import { HomeComponent } from './components/home/view-controllers/home-controller';
+
 import { NewsComponent } from './components/news/view-controllers/world-news-controller';
 import { BelNewsComponent } from './components/news/view-controllers/belarus-news-controller';
 
@@ -77,6 +79,10 @@ const appRoutes: Routes = [
     //{ path: 'user/address/create', component: AddressCreateComponent },
     //{ path: 'user/address/edit/:id', component: AddressEditComponent },
 
+    { path: 'home', component: HomeComponent },
+    { path: 'index', component: HomeComponent },
+    { path: '', component: HomeComponent },
+
     { path: 'news/world', component: NewsComponent },
     { path: 'news/belarus', component: BelNewsComponent },
     { path: 'news/onliner', component: OnlinerNewsComponent },
@@ -113,6 +119,8 @@ const appRoutes: Routes = [
         //FullUserComponent, UserFormComponent, UserInfoComponent, UserEditComponent,
         //AddressListComponent, AddressFormComponent, AddressCreateComponent, AddressEditComponent,
         //CartProductListComponent,
+
+        HomeComponent,
 
         NewsComponent, BelNewsComponent,
         OnlinerNewsComponent, TutNewsComponent, CityDogNewsComponent,

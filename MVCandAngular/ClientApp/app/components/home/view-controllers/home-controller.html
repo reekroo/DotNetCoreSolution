@@ -1,0 +1,41 @@
+﻿<style>
+    h2{
+        margin-top: 0px;
+    }
+</style>
+
+<div class="bank-container container">
+
+    <div class="row" style="border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 10px">
+        <div class="col-sm-4 currencies" *ngFor="let rate of homeViewModel.currentRates">
+            {{rate.Cur_Abbreviation}} // {{rate.Cur_OfficialRate}}
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-9">
+            <h2>Last news</h2>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <specific-news-section [news]="homeViewModel.lastBelNews"></specific-news-section>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4>refinancing rate</h4>
+                    <div>
+                        {{homeViewModel.refinancingRate.Value}}%
+                        <small> ({{homeViewModel.refinancingRate.Date}})</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+    </div>
+</div>

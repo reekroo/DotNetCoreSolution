@@ -10,50 +10,15 @@
 
         <div class="col-sm-4">
             <div class="panel panel-default">
-                <div class="panel-body">
-                    <h4>weather</h4>
-                    <div>
-                        <h2>
-                            <img src="https://openweathermap.org/img/w/{{getIcon(weatherViewModel.weather.weather)}}.png" />
-                            {{getTemp(weatherViewModel.weather.main.temp)}}℃
-                        </h2>
-                    </div>
-                    <table class="table table-striped">
-                        <tbody>
-                            <tr>
-                                <td>Wind speed</td>
-                                <td>{{weatherViewModel.weather.wind.speed}}m/s</td>
-                            </tr>
-                            <tr>
-                                <td>Cloudiness</td>
-                                <td>{{getDescription(weatherViewModel.weather.weather)}}</td>
-                            </tr>
-                            <tr>
-                                <td>Pressure</td>
-                                <td>{{weatherViewModel.weather.main.pressure}}hpa</td>
-                            </tr>
-                            <tr>
-                                <td>Humidity</td>
-                                <td>{{weatherViewModel.weather.main.humidity}}%</td>
-                            </tr>
-                            <tr>
-                                <td>Sunrise</td>
-                                <td>{{getTime(weatherViewModel.weather.sys.sunrise)}}</td>
-                            </tr>
-                            <tr>
-                                <td>Sunset</td>
-                                <td>{{getTime(weatherViewModel.weather.sys.sunset)}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
 
+                <weather-section [weather]="weatherViewModel.weather"></weather-section>
+            </div>
         </div>
 
         <div class="col-sm-8">            
             <div class="panel panel-default">
                 <div class="panel-body">
+
                     <chart-form [inputData]="chart"></chart-form>
                 </div>
             </div>
@@ -67,29 +32,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
 
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <td>Date</td>
-                                <td>Time</td>
-                                <td>Tempetature</td>
-                                <td>Humidity</td>
-                                <td>Pressure</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let f of weatherViewModel.forecast.list">
-                                <td><b>{{getDate(f.dt)}}</b></td>
-                                <td><b>{{getTime(f.dt)}}</b></td>
-                                <td>
-                                    <img src="https://openweathermap.org/img/w/{{getIcon(f.weather)}}.png" />
-                                    {{getTemp(f.main.temp)}}℃
-                                </td>
-                                <td>{{f.main.humidity}}%</td>
-                                <td>{{f.main.pressure}}hpa</td>                                
-                            </tr>
-                        </tbody>
-                    </table>
+                    <forecast-table-section [forecast]="weatherViewModel.forecast"></forecast-table-section>
                 </div>
             </div>
         </div>

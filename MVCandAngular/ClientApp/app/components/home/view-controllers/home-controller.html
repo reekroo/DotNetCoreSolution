@@ -39,41 +39,8 @@
 
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h4>weather</h4>
-                    <div>
-                        <h2>
-                            <img src="https://openweathermap.org/img/w/{{getIcon(homeViewModel.weather.weather)}}.png" />
-                            {{getTemp(homeViewModel.weather.main.temp)}}℃
-                        </h2>
-                    </div>
-                    <table class="table table-striped">
-                        <tbody>
-                            <tr>
-                                <td>Wind speed</td>
-                                <td>{{homeViewModel.weather.wind.speed}}m/s</td>
-                            </tr>
-                            <tr>
-                                <td>Cloudiness</td>
-                                <td>{{getDescription(homeViewModel.weather.weather)}}</td>
-                            </tr>
-                            <tr>
-                                <td>Pressure</td>
-                                <td>{{homeViewModel.weather.main.pressure}}hpa</td>
-                            </tr>
-                            <tr>
-                                <td>Humidity</td>
-                                <td>{{homeViewModel.weather.main.humidity}}%</td>
-                            </tr>
-                            <tr>
-                                <td>Sunrise</td>
-                                <td>{{dateFormatter(homeViewModel.weather.sys.sunrise)}}</td>
-                            </tr>
-                            <tr>
-                                <td>Sunset</td>
-                                <td>{{dateFormatter(homeViewModel.weather.sys.sunset)}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+                    <weather-section [weather]="homeViewModel.weather"></weather-section>
                 </div>
             </div>
         </div>

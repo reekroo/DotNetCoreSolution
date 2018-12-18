@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from "@angular/core";
 
-import { CityWeather, Weather } from "../../../models/weather/city-weather";
+import { CityWeather } from "../../../models/weather/city-weather";
 import { CityForecast } from "../../../models/weather/city-forecast";
 import { WeatherViewModel } from "../view-models/weather-view-model";
 
@@ -35,26 +35,7 @@ export class WeatherComponent implements OnInit, IChart {
 
         return (new Date(unixUtcTime * 1000).toLocaleDateString());
     }
-
-
-    public getDescription(array: Weather[]): string {
-
-        if (array.length < 1) {
-            return '';
-        }
-
-        return array[0].description;
-    }
-
-    public getIcon(array: Weather[]): string {
-
-        if (array.length < 1) {
-            return '';
-        }
-
-        return array[0].icon;
-    }
-
+    
     public getTemp(temp: number): number {
 
         return Number((temp - 273).toFixed(2));
@@ -63,18 +44,13 @@ export class WeatherComponent implements OnInit, IChart {
 
     private getWeather() {
         
-        this.weather.getWeather("Minsk", "by").subscribe((data: CityWeather) => {
-
-            this.weatherViewModel.weather = data;
-        });
+        this.weather.getWeather("Minsk", "by").subscribe((data: CityWeather) => { this.weatherViewModel.weather = data; });
     }
 
     private getForecast() {
         this.weather.getForecast("Minsk", "by").subscribe((data: CityForecast) => {
 
             this.weatherViewModel.forecast = data;
-            console.log(this.weatherViewModel.forecast);
-
             this.chart = this.addaptToChartData(this.weatherViewModel.forecast.list);
         });
     }

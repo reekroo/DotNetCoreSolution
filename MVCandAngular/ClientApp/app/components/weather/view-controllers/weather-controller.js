@@ -25,32 +25,17 @@ var WeatherComponent = /** @class */ (function () {
     WeatherComponent.prototype.getDate = function (unixUtcTime) {
         return (new Date(unixUtcTime * 1000).toLocaleDateString());
     };
-    WeatherComponent.prototype.getDescription = function (array) {
-        if (array.length < 1) {
-            return '';
-        }
-        return array[0].description;
-    };
-    WeatherComponent.prototype.getIcon = function (array) {
-        if (array.length < 1) {
-            return '';
-        }
-        return array[0].icon;
-    };
     WeatherComponent.prototype.getTemp = function (temp) {
         return Number((temp - 273).toFixed(2));
     };
     WeatherComponent.prototype.getWeather = function () {
         var _this = this;
-        this.weather.getWeather("Minsk", "by").subscribe(function (data) {
-            _this.weatherViewModel.weather = data;
-        });
+        this.weather.getWeather("Minsk", "by").subscribe(function (data) { _this.weatherViewModel.weather = data; });
     };
     WeatherComponent.prototype.getForecast = function () {
         var _this = this;
         this.weather.getForecast("Minsk", "by").subscribe(function (data) {
             _this.weatherViewModel.forecast = data;
-            console.log(_this.weatherViewModel.forecast);
             _this.chart = _this.addaptToChartData(_this.weatherViewModel.forecast.list);
         });
     };

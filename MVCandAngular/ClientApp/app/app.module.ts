@@ -66,6 +66,8 @@ import { OilComponent } from './components/oil/view-controllers/oil-controller';
 import { NaturalGasComponent } from './components/natural-gas/view-controllers/natural-gas-controller';
 
 import { WeatherComponent } from './components/weather/view-controllers/weather-controller';
+import { ForecastTableSectionComponent } from './components/weather/views-sections/forecast-table-section';
+import { WeatherSectionComponent } from './components/weather/views-sections/weather-section';
 
 const appRoutes: Routes = [
 
@@ -138,7 +140,8 @@ const appRoutes: Routes = [
 
         OilComponent, NaturalGasComponent,
 
-        WeatherComponent
+        WeatherComponent,
+        ForecastTableSectionComponent, WeatherSectionComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

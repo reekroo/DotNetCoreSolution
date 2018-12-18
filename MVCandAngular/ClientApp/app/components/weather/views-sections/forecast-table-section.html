@@ -1,0 +1,23 @@
+﻿<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Tempetature</td>
+            <td>Humidity</td>
+            <td>Pressure</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let f of forecast.list">
+            <td><b>{{getDate(f.dt)}}</b></td>
+            <td><b>{{getTime(f.dt)}}</b></td>
+            <td>
+                <img src="https://openweathermap.org/img/w/{{getIcon(f.weather)}}.png" />
+                {{getTemp(f.main.temp)}}℃
+            </td>
+            <td>{{f.main.humidity}}%</td>
+            <td>{{f.main.pressure}}hpa</td>
+        </tr>
+    </tbody>
+</table>

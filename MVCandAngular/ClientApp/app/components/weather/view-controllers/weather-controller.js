@@ -19,9 +19,6 @@ var WeatherComponent = /** @class */ (function () {
         this.getWeather();
         this.getForecast();
     };
-    WeatherComponent.prototype.getTime = function (unixUtcTime) {
-        return (new Date(unixUtcTime * 1000).toLocaleTimeString());
-    };
     WeatherComponent.prototype.getDate = function (unixUtcTime) {
         return (new Date(unixUtcTime * 1000).toLocaleDateString());
     };

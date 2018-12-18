@@ -1,3 +1,16 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9,30 +22,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Component, Input } from "@angular/core";
 import { CityForecast } from "../../../models/weather/city-forecast";
-var ForecastTableSectionComponent = /** @class */ (function () {
+import { BaseWeatherComponent } from "../../../shared/bases/weather/base-weather";
+var ForecastTableSectionComponent = /** @class */ (function (_super) {
+    __extends(ForecastTableSectionComponent, _super);
     function ForecastTableSectionComponent() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    ForecastTableSectionComponent.prototype.getTime = function (unixUtcTime) {
-        return (new Date(unixUtcTime * 1000).toLocaleTimeString());
-    };
-    ForecastTableSectionComponent.prototype.getDate = function (unixUtcTime) {
-        return (new Date(unixUtcTime * 1000).toLocaleDateString());
-    };
-    ForecastTableSectionComponent.prototype.getDescription = function (array) {
-        if (array.length < 1) {
-            return '';
-        }
-        return array[0].description;
-    };
-    ForecastTableSectionComponent.prototype.getIcon = function (array) {
-        if (array.length < 1) {
-            return '';
-        }
-        return array[0].icon;
-    };
-    ForecastTableSectionComponent.prototype.getTemp = function (temp) {
-        return Number((temp - 273).toFixed(2));
-    };
     __decorate([
         Input(),
         __metadata("design:type", CityForecast)
@@ -42,10 +37,9 @@ var ForecastTableSectionComponent = /** @class */ (function () {
             selector: 'forecast-table-section',
             templateUrl: './forecast-table-section.html',
             providers: []
-        }),
-        __metadata("design:paramtypes", [])
+        })
     ], ForecastTableSectionComponent);
     return ForecastTableSectionComponent;
-}());
+}(BaseWeatherComponent));
 export { ForecastTableSectionComponent };
 //# sourceMappingURL=forecast-table-section.js.map

@@ -26,11 +26,6 @@ export class WeatherComponent implements OnInit, IChart {
     constructor(private weather: WeatherService) { }
 
 
-    public getTime(unixUtcTime: number): string {
-
-        return (new Date(unixUtcTime * 1000).toLocaleTimeString());
-    }
-
     public getDate(unixUtcTime: number): string {
 
         return (new Date(unixUtcTime * 1000).toLocaleDateString());

@@ -1,6 +1,8 @@
 ﻿import { Component, Input } from "@angular/core";
 
-import { Weather, CityWeather } from "../../../models/weather/city-weather";
+import { CityWeather } from "../../../models/weather/city-weather";
+
+import { BaseWeatherComponent } from "../../../shared/bases/weather/base-weather";
 
 @Component({
     selector: 'weather-section',
@@ -8,43 +10,7 @@ import { Weather, CityWeather } from "../../../models/weather/city-weather";
     providers: []
 })
 
-export class WeatherSectionComponent {
+export class WeatherSectionComponent extends BaseWeatherComponent {
 
-    @Input() weather: CityWeather;
-
-    constructor() { }
-
-    public getTime(unixUtcTime: number): string {
-
-        return (new Date(unixUtcTime * 1000).toLocaleTimeString());
-    }
-
-    public getDate(unixUtcTime: number): string {
-
-        return (new Date(unixUtcTime * 1000).toLocaleDateString());
-    }
-
-    public getDescription(array: Weather[]): string {
-
-        if (array.length < 1) {
-            return '';
-        }
-
-        return array[0].description;
-    }
-
-    public getIcon(array: Weather[]): string {
-
-        if (array.length < 1) {
-            return '';
-        }
-
-        return array[0].icon;
-    }
-
-    public getTemp(temp: number): number {
-
-        return Number((temp - 273).toFixed(2));
-    }
-
+    @Input() weather: CityWeather;       
 }

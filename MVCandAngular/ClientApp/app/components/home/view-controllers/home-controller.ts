@@ -51,35 +51,7 @@ export class HomeComponent implements OnInit {
         private svoboda: SvobodaNewsService,
         private weather: WeatherService
     ) { }
-
-    public dateFormatter(unixUtcTime:number):string {
         
-        return (new Date(unixUtcTime * 1000).toLocaleTimeString());
-    }
-
-    public getDescription(array: Weather[]): string {
-
-        if (array.length < 1) {
-            return '';
-        }
-
-        return array[0].description;
-    }
-    
-    public getIcon(array: Weather[]): string {
-
-        if (array.length < 1) {
-            return '';
-        }
-
-        return array[0].icon;
-    }
-
-    public getTemp(temp: number): number {
-
-        return Number((temp - 273).toFixed(2));
-    }
-
     private getCurrentCurrencyRates() {
 
         var usd$ = this.bank.getRate(145);

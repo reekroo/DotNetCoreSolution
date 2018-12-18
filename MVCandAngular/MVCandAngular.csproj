@@ -23,8 +23,11 @@
     <None Remove="ClientApp\app\components\news\controllers\citydog-news-controller.ts" />
     <None Remove="ClientApp\app\components\news\view-models\belarus-news-view-model.ts" />
     <None Remove="ClientApp\app\components\news\view-models\world-news-controller.ts" />
+    <None Remove="ClientApp\app\components\weather\view-controllers\weather-controller.ts" />
+    <None Remove="ClientApp\app\components\weather\view-models\weather-view-model.ts" />
     <None Remove="ClientApp\app\models\bank\month-rate.ts" />
     <None Remove="ClientApp\app\models\bank\refinancing-rate.ts" />
+    <None Remove="ClientApp\app\models\weather\city-forecast.ts" />
     <None Remove="ClientApp\app\models\weather\city-weather.ts" />
     <None Remove="ClientApp\app\services\news\data.news.citydog.service.ts" />
     <None Remove="ClientApp\app\services\weather\data.weather.service.ts" />
@@ -110,6 +113,9 @@
     <TypeScriptCompile Include="ClientApp\app\components\news\view-models\world-news-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\news\view-models\belarus-news-view-model.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\natural-gas\view-controllers\natural-gas-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\weather\view-controllers\weather-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\weather\view-models\weather-view-model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\weather\city-forecast.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\weather\city-weather.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\news\data.news.citydog.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\weather\data.weather.service.ts" />
@@ -197,6 +203,9 @@
     </None>
     <None Update="ClientApp\app\components\news\view-models\world-news-controller.js.map">
       <DependentUpon>world-news-controller.js</DependentUpon>
+    </None>
+    <None Update="ClientApp\app\models\weather\city-weather - Copy.js">
+      <DependentUpon>city-weather.ts</DependentUpon>
     </None>
     <None Update="ClientApp\app\models\weather\city-weather.js">
       <DependentUpon>city-weather.ts</DependentUpon>

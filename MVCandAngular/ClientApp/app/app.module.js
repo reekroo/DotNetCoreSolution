@@ -53,6 +53,7 @@ import { RefinancingRateComponent } from './components/bank/view-sections/refina
 import { RefinancingRatesComponent } from './components/bank/view-sections/refinancing/refinancing-rates-section';
 import { OilComponent } from './components/oil/view-controllers/oil-controller';
 import { NaturalGasComponent } from './components/natural-gas/view-controllers/natural-gas-controller';
+import { WeatherComponent } from './components/weather/view-controllers/weather-controller';
 var appRoutes = [
     //{ path: 'shop', component: ShopProductListComponent },
     //{ path: 'shop/:id', component: ShopProductDetailsComponent },
@@ -80,6 +81,7 @@ var appRoutes = [
     { path: 'bank/refinancing-rates', component: RefinancingComponent },
     { path: 'oil', component: OilComponent },
     { path: 'gas', component: NaturalGasComponent },
+    { path: 'weather', component: WeatherComponent },
     { path: '**', redirectTo: '/' }
 ];
 var AppModule = /** @class */ (function () {
@@ -110,7 +112,8 @@ var AppModule = /** @class */ (function () {
                 MetalComponent, DefaultMetalRatesComponent, MetalRatesComponent,
                 RefinancingComponent, RefinancingRateComponent, RefinancingRatesComponent,
                 ChartComponent,
-                OilComponent, NaturalGasComponent
+                OilComponent, NaturalGasComponent,
+                WeatherComponent
             ],
             providers: [],
             bootstrap: [AppComponent]

@@ -11,13 +11,17 @@
         public sys?: Sys,
         public id?: number,
         public name?: string,
-        public cod?: number
+        public cod?: number,
+        public snow?: Object,
+        public rain?: Object,
+        public dt_txt?: string
     ) {
         this.coord = new Coord();
         this.wind = new Wind();
         this.clouds = new Clouds();
         this.main = new Main();
         this.sys = new Sys();
+        this.weather = [];
     }
 }
 

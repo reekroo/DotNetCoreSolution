@@ -28,6 +28,8 @@ D:\My\DotNetCore\MVCandAngular\ClientApp\app\models\weather\city-weather.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\models\weather\city-weather.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\home\view-models\home-view-model.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\home\view-models\home-view-model.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\models\weather\city-forecast.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\models\weather\city-forecast.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\home\view-controllers\home-controller.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\home\view-controllers\home-controller.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\shared\bases\news\base-news.js
@@ -122,6 +124,10 @@ D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\oil\view-controllers\oil
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\oil\view-controllers\oil-controller.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\natural-gas\view-controllers\natural-gas-controller.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\natural-gas\view-controllers\natural-gas-controller.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\weather\view-models\weather-view-model.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\weather\view-models\weather-view-model.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\weather\view-controllers\weather-controller.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\weather\view-controllers\weather-controller.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\app.module.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\app.module.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\main.js

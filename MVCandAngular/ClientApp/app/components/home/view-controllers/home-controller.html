@@ -6,15 +6,18 @@
 
 <div class="bank-container container">
 
-    <div class="row" style="border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 10px">
+    <div class="row" 
+         style="border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-bottom: 20px">
         <div class="col-sm-4 currencies" *ngFor="let rate of homeViewModel.currentRates">
-            {{rate.Cur_Abbreviation}} // {{rate.Cur_OfficialRate}}
+            <h2>{{rate.Cur_Abbreviation}} 
+                <small>{{rate.Cur_OfficialRate}}</small>
+            </h2>
         </div>
     </div>
 
     <div class="row">
 
-        <div class="col-sm-9">
+        <div class="col-sm-8">
             <h2>Last news</h2>
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -23,7 +26,7 @@
             </div>
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h4>refinancing rate</h4>
@@ -37,16 +40,22 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h4>weather</h4>
+                    <div>
+                        <h2>
+                            <img src="https://openweathermap.org/img/w/{{getIcon(homeViewModel.weather.weather)}}.png" />
+                            {{getTemp(homeViewModel.weather.main.temp)}}℃
+                        </h2>
+                    </div>
                     <table class="table table-striped">
                         <tbody>
                             <tr>
                                 <td>Wind speed</td>
                                 <td>{{homeViewModel.weather.wind.speed}}m/s</td>
                             </tr>
-                            <--<tr>
+                            <tr>
                                 <td>Cloudiness</td>
-                                <td>{{homeViewModel.weather.weather[0].description}}</td>
-                            </tr>-->
+                                <td>{{getDescription(homeViewModel.weather.weather)}}</td>
+                            </tr>
                             <tr>
                                 <td>Pressure</td>
                                 <td>{{homeViewModel.weather.main.pressure}}hpa</td>

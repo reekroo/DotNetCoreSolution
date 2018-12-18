@@ -15,8 +15,10 @@ import { Rate } from '../../../models/bank/rate';
 import { RefinancingRate } from '../../../models/bank/refinancing-rate';
 import { News } from '../../../models/news/news';
 import { CityWeather } from '../../../models/weather/city-weather';
+import { Weather } from '../../../models/weather/city-weather';
 
 import { HomeViewModel } from '../view-models/home-view-model';
+import { CityForecast } from '../../../models/weather/city-forecast';
 
 
 @Component({
@@ -50,9 +52,32 @@ export class HomeComponent implements OnInit {
         private weather: WeatherService
     ) { }
 
-    public dateFormatter(time:any):string {
+    public dateFormatter(unixUtcTime:number):string {
+        
+        return (new Date(unixUtcTime * 1000).toLocaleTimeString());
+    }
 
-        return(new Date(time).toLocaleDateString());
+    public getDescription(array: Weather[]): string {
+
+        if (array.length < 1) {
+            return '';
+        }
+
+        return array[0].description;
+    }
+    
+    public getIcon(array: Weather[]): string {
+
+        if (array.length < 1) {
+            return '';
+        }
+
+        return array[0].icon;
+    }
+
+    public getTemp(temp: number): number {
+
+        return Number((temp - 273).toFixed(2));
     }
 
     private getCurrentCurrencyRates() {
@@ -88,7 +113,8 @@ export class HomeComponent implements OnInit {
 
         this.homeViewModel.weather = new CityWeather();
 
-        this.weather.getWeather("Minsk", "by").subscribe((data) => { this.homeViewModel.weather = data; console.log(data); });
+        this.weather.getWeather("Minsk", "by").subscribe((data: CityWeather) => { this.homeViewModel.weather = data; });
+        this.weather.getForecast("Minsk", "by").subscribe((data: CityForecast) => { console.log(data); });
     }
 
     private getLastNews() {

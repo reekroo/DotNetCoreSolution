@@ -17,6 +17,9 @@ var WeatherService = /** @class */ (function () {
     WeatherService.prototype.getWeather = function (city, countryCode) {
         return this.http.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "," + countryCode + "&appid=bfff0720b491083abffe6d560e8c5e5f");
     };
+    WeatherService.prototype.getForecast = function (city, countryCode) {
+        return this.http.get("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "," + countryCode + "&appid=bfff0720b491083abffe6d560e8c5e5f");
+    };
     WeatherService = __decorate([
         Injectable(),
         __metadata("design:paramtypes", [HttpClient])
@@ -24,6 +27,4 @@ var WeatherService = /** @class */ (function () {
     return WeatherService;
 }());
 export { WeatherService };
-//icon
-//https://openweathermap.org/img/w/
 //# sourceMappingURL=data.weather.service.js.map

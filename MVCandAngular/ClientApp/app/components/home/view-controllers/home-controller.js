@@ -36,8 +36,23 @@ var HomeComponent = /** @class */ (function () {
         this.getCurrentCurrencyRates();
         this.getLastNews();
     };
-    HomeComponent.prototype.dateFormatter = function (time) {
-        return (new Date(time).toLocaleDateString());
+    HomeComponent.prototype.dateFormatter = function (unixUtcTime) {
+        return (new Date(unixUtcTime * 1000).toLocaleTimeString());
+    };
+    HomeComponent.prototype.getDescription = function (array) {
+        if (array.length < 1) {
+            return '';
+        }
+        return array[0].description;
+    };
+    HomeComponent.prototype.getIcon = function (array) {
+        if (array.length < 1) {
+            return '';
+        }
+        return array[0].icon;
+    };
+    HomeComponent.prototype.getTemp = function (temp) {
+        return Number((temp - 273).toFixed(2));
     };
     HomeComponent.prototype.getCurrentCurrencyRates = function () {
         var _this = this;
@@ -63,7 +78,8 @@ var HomeComponent = /** @class */ (function () {
     HomeComponent.prototype.getWeather = function () {
         var _this = this;
         this.homeViewModel.weather = new CityWeather();
-        this.weather.getWeather("Minsk", "by").subscribe(function (data) { _this.homeViewModel.weather = data; console.log(data); });
+        this.weather.getWeather("Minsk", "by").subscribe(function (data) { _this.homeViewModel.weather = data; });
+        this.weather.getForecast("Minsk", "by").subscribe(function (data) { console.log(data); });
     };
     HomeComponent.prototype.getLastNews = function () {
         var _this = this;

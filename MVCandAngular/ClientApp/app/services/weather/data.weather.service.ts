@@ -13,7 +13,9 @@ export class WeatherService {
 
         return this.http.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "," + countryCode + "&appid=bfff0720b491083abffe6d560e8c5e5f");
     }
-}
 
-//icon
-//https://openweathermap.org/img/w/
+    getForecast(city: string, countryCode: string) {
+
+        return this.http.get("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "," + countryCode + "&appid=bfff0720b491083abffe6d560e8c5e5f");
+    }
+}

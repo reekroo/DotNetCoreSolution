@@ -17,8 +17,14 @@ var WeatherService = /** @class */ (function () {
     WeatherService.prototype.getWeather = function (city, countryCode) {
         return this.http.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "," + countryCode + "&appid=bfff0720b491083abffe6d560e8c5e5f");
     };
+    WeatherService.prototype.getWeatherByGeolocation = function (lat, lon) {
+        return this.http.get("https://api.openweathermap.org/data/2.5/find?lat=" + lat + "&lon=" + lon + "&cnt=1&appid=bfff0720b491083abffe6d560e8c5e5f");
+    };
     WeatherService.prototype.getForecast = function (city, countryCode) {
         return this.http.get("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "," + countryCode + "&appid=bfff0720b491083abffe6d560e8c5e5f");
+    };
+    WeatherService.prototype.getForecastByGeolocation = function (lat, lon) {
+        return this.http.get("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=bfff0720b491083abffe6d560e8c5e5f");
     };
     WeatherService = __decorate([
         Injectable(),

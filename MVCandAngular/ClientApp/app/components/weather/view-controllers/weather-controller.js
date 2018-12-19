@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from "@angular/core";
 import { WeatherViewModel } from "../view-models/weather-view-model";
 import { WeatherService } from '../../../services/weather/data.weather.service';
+import { GeolocationService } from "../../../shared/bases/weather/geolocation";
 var WeatherComponent = /** @class */ (function () {
     function WeatherComponent(weather) {
         this.weather = weather;
@@ -28,6 +29,7 @@ var WeatherComponent = /** @class */ (function () {
     WeatherComponent.prototype.getWeather = function () {
         var _this = this;
         this.weather.getWeather("Minsk", "by").subscribe(function (data) { _this.weatherViewModel.weather = data; });
+        //this.weather.getWeatherByGeolocation(this.location.pos.latitude, this.location.pos.longitude).subscribe((data: any) => { console.log(data); this.weatherViewModel.weather = data.list[0] as CityWeather; });
     };
     WeatherComponent.prototype.getForecast = function () {
         var _this = this;
@@ -63,7 +65,7 @@ var WeatherComponent = /** @class */ (function () {
     WeatherComponent = __decorate([
         Component({
             templateUrl: './weather-controller.html',
-            providers: [WeatherService]
+            providers: [WeatherService, GeolocationService]
         }),
         __metadata("design:paramtypes", [WeatherService])
     ], WeatherComponent);

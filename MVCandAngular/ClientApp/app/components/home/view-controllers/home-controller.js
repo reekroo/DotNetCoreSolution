@@ -61,7 +61,6 @@ var HomeComponent = /** @class */ (function () {
         var _this = this;
         this.homeViewModel.weather = new CityWeather();
         this.weather.getWeather("Minsk", "by").subscribe(function (data) { _this.homeViewModel.weather = data; });
-        this.weather.getForecast("Minsk", "by").subscribe(function (data) { console.log(data); });
     };
     HomeComponent.prototype.getLastNews = function () {
         var _this = this;

@@ -86,7 +86,6 @@ export class HomeComponent implements OnInit {
         this.homeViewModel.weather = new CityWeather();
 
         this.weather.getWeather("Minsk", "by").subscribe((data: CityWeather) => { this.homeViewModel.weather = data; });
-        this.weather.getForecast("Minsk", "by").subscribe((data: CityForecast) => { console.log(data); });
     }
 
     private getLastNews() {

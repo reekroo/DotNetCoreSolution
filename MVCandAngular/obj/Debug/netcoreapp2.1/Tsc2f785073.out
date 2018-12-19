@@ -126,8 +126,12 @@ D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\natural-gas\view-control
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\natural-gas\view-controllers\natural-gas-controller.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\weather\view-models\weather-view-model.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\weather\view-models\weather-view-model.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\shared\bases\weather\geolocation.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\shared\bases\weather\geolocation.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\weather\view-controllers\weather-controller.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\weather\view-controllers\weather-controller.js.map
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\shared\bases\weather\base-weather.js
+D:\My\DotNetCore\MVCandAngular\ClientApp\app\shared\bases\weather\base-weather.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\weather\views-sections\forecast-table-section.js
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\weather\views-sections\forecast-table-section.js.map
 D:\My\DotNetCore\MVCandAngular\ClientApp\app\components\weather\views-sections\weather-section.js

@@ -6,10 +6,13 @@ import { WeatherViewModel } from "../view-models/weather-view-model";
 
 import { WeatherService } from '../../../services/weather/data.weather.service';
 import { IChart } from "../../../shared/interfaces/chart/chart";
+import { GeolocationService } from "../../../shared/bases/weather/geolocation";
+
+
 
 @Component({
     templateUrl: './weather-controller.html',
-    providers: [WeatherService]
+    providers: [WeatherService, GeolocationService]
 })
 
 export class WeatherComponent implements OnInit, IChart {
@@ -17,13 +20,14 @@ export class WeatherComponent implements OnInit, IChart {
     weatherViewModel: WeatherViewModel = new WeatherViewModel();
 
     chart: Object;
-
+    
     ngOnInit() {
         this.getWeather();
         this.getForecast();
     }
 
-    constructor(private weather: WeatherService) { }
+    constructor(private weather: WeatherService) {
+    }
 
 
     public getDate(unixUtcTime: number): string {
@@ -38,8 +42,10 @@ export class WeatherComponent implements OnInit, IChart {
 
 
     private getWeather() {
-        
+
         this.weather.getWeather("Minsk", "by").subscribe((data: CityWeather) => { this.weatherViewModel.weather = data; });
+
+        //this.weather.getWeatherByGeolocation(this.location.pos.latitude, this.location.pos.longitude).subscribe((data: any) => { console.log(data); this.weatherViewModel.weather = data.list[0] as CityWeather; });
     }
 
     private getForecast() {

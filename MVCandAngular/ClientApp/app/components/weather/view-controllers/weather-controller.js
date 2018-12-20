@@ -10,15 +10,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component } from "@angular/core";
 import { WeatherViewModel } from "../view-models/weather-view-model";
 import { WeatherService } from '../../../services/weather/data.weather.service';
-import { GeolocationService } from "../../../shared/bases/weather/geolocation";
 var WeatherComponent = /** @class */ (function () {
     function WeatherComponent(weather) {
         this.weather = weather;
         this.weatherViewModel = new WeatherViewModel();
     }
     WeatherComponent.prototype.ngOnInit = function () {
-        this.getWeather();
-        this.getForecast();
+        var _this = this;
+        if (window.navigator && window.navigator.geolocation) {
+            window.navigator.geolocation.getCurrentPosition(function (position) {
+                console.log(position.coords);
+                console.log(position.coords.latitude);
+                console.log(position.coords.longitude);
+                _this.weather.getWeatherByGeolocation(position.coords.latitude, position.coords.longitude).subscribe(function (data) {
+                    console.log(data);
+                    _this.weatherViewModel.weather = data;
+                });
+                _this.weather.getForecastByGeolocation(position.coords.latitude, position.coords.longitude).subscribe(function (data) {
+                    console.log(data);
+                    _this.weatherViewModel.forecast = data;
+                    _this.chart = _this.addaptToChartData(_this.weatherViewModel.forecast.list);
+                });
+            }, function (error) {
+                switch (error.code) {
+                    case 1:
+                        console.log('Permission Denied');
+                        break;
+                    case 2:
+                        console.log('Position Unavailable');
+                        break;
+                    case 3:
+                        console.log('Timeout');
+                        break;
+                }
+                _this.getWeather();
+                _this.getForecast();
+            });
+        }
+        ;
     };
     WeatherComponent.prototype.getDate = function (unixUtcTime) {
         return (new Date(unixUtcTime * 1000).toLocaleDateString());
@@ -29,7 +58,6 @@ var WeatherComponent = /** @class */ (function () {
     WeatherComponent.prototype.getWeather = function () {
         var _this = this;
         this.weather.getWeather("Minsk", "by").subscribe(function (data) { _this.weatherViewModel.weather = data; });
-        //this.weather.getWeatherByGeolocation(this.location.pos.latitude, this.location.pos.longitude).subscribe((data: any) => { console.log(data); this.weatherViewModel.weather = data.list[0] as CityWeather; });
     };
     WeatherComponent.prototype.getForecast = function () {
         var _this = this;
@@ -65,7 +93,7 @@ var WeatherComponent = /** @class */ (function () {
     WeatherComponent = __decorate([
         Component({
             templateUrl: './weather-controller.html',
-            providers: [WeatherService, GeolocationService]
+            providers: [WeatherService]
         }),
         __metadata("design:paramtypes", [WeatherService])
     ], WeatherComponent);

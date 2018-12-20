@@ -15,11 +15,8 @@ import { Rate } from '../../../models/bank/rate';
 import { RefinancingRate } from '../../../models/bank/refinancing-rate';
 import { News } from '../../../models/news/news';
 import { CityWeather } from '../../../models/weather/city-weather';
-import { Weather } from '../../../models/weather/city-weather';
 
 import { HomeViewModel } from '../view-models/home-view-model';
-import { CityForecast } from '../../../models/weather/city-forecast';
-
 
 @Component({
     templateUrl: './home-controller.html',
@@ -37,9 +34,35 @@ export class HomeComponent implements OnInit {
     ngOnInit() {
 
         this.getRefinancingRate();
-        this.getWeather();
         this.getCurrentCurrencyRates();
         this.getLastNews();
+
+        if (window.navigator && window.navigator.geolocation) {
+            window.navigator.geolocation.getCurrentPosition(
+                position => {
+
+                    this.weather.getWeatherByGeolocation(position.coords.latitude, position.coords.longitude)
+                        .subscribe((data: CityWeather) => {
+                            this.homeViewModel.weather = data;
+                    });
+                },
+                error => {
+                    switch (error.code) {
+                        case 1:
+                            console.log('Permission Denied');
+                            break;
+                        case 2:
+                            console.log('Position Unavailable');
+                            break;
+                        case 3:
+                            console.log('Timeout');
+                            break;
+                    }
+
+                    this.getWeather();
+                }
+            );
+        };
     }
 
     constructor(
@@ -72,8 +95,6 @@ export class HomeComponent implements OnInit {
 
     private getRefinancingRate() {
 
-        this.homeViewModel.refinancingRate = new RefinancingRate();
-
         this.refinancingRate.getRefinancingRate(new Date()).subscribe((data: RefinancingRate[]) => {
             
             this.homeViewModel.refinancingRate = data[0];
@@ -83,14 +104,10 @@ export class HomeComponent implements OnInit {
 
     private getWeather() {
 
-        this.homeViewModel.weather = new CityWeather();
-
         this.weather.getWeather("Minsk", "by").subscribe((data: CityWeather) => { this.homeViewModel.weather = data; });
     }
 
     private getLastNews() {
-
-        this.homeViewModel.lastBelNews = [];
 
         this.tut.getNews().subscribe((data: News[]) => { this.homeViewModel.lastBelNews.push(data[0]); });
         this.onliner.getTechNews().subscribe((data: News[]) => { this.homeViewModel.lastBelNews.push(data[0]); });

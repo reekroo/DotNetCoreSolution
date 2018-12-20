@@ -34,7 +34,6 @@
     <None Remove="ClientApp\app\services\news\data.news.citydog.service.ts" />
     <None Remove="ClientApp\app\services\weather\data.weather.service.ts" />
     <None Remove="ClientApp\app\shared\bases\weather\base-weather.ts" />
-    <None Remove="ClientApp\app\shared\bases\weather\geolocation.ts" />
     <None Remove="ClientApp\app\shared\components\chart\chart.ts" />
     <None Remove="ClientApp\app\components\bank\view-sections\metal\default-metal-section.ts" />
     <None Remove="ClientApp\app\components\bank\view-sections\metal\metal-section.ts" />
@@ -125,7 +124,6 @@
     <TypeScriptCompile Include="ClientApp\app\models\weather\city-weather.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\news\data.news.citydog.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\weather\data.weather.service.ts" />
-    <TypeScriptCompile Include="ClientApp\app\shared\bases\weather\geolocation.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\bases\weather\base-weather.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\components\chart\chart.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\bank\view-sections\metal\default-metal-section.ts" />

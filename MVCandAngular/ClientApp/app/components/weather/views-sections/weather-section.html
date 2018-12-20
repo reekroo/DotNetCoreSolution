@@ -1,11 +1,13 @@
 ﻿
-<h4>weather</h4>
+<h4>weather in {{weather.name}}</h4>
+
 <div>
     <h2>
         <img src="https://openweathermap.org/img/w/{{getIcon(weather.weather)}}.png" />
         {{getTemp(weather.main.temp)}}℃
     </h2>
 </div>
+
 <table class="table table-striped">
     <tbody>
         <tr>

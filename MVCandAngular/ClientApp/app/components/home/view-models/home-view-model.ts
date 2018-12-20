@@ -10,5 +10,10 @@ export class HomeViewModel {
         public currentRates?: Rate[],
         public refinancingRate?: RefinancingRate,
         public weather?: CityWeather
-    ) { }
+    ) {
+        this.lastBelNews = [];
+        this.currentRates = [];
+        this.refinancingRate = new RefinancingRate();
+        this.weather = new CityWeather();
+    }
 }

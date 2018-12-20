@@ -6,13 +6,10 @@ import { WeatherViewModel } from "../view-models/weather-view-model";
 
 import { WeatherService } from '../../../services/weather/data.weather.service';
 import { IChart } from "../../../shared/interfaces/chart/chart";
-import { GeolocationService } from "../../../shared/bases/weather/geolocation";
-
-
 
 @Component({
     templateUrl: './weather-controller.html',
-    providers: [WeatherService, GeolocationService]
+    providers: [WeatherService]
 })
 
 export class WeatherComponent implements OnInit, IChart {
@@ -22,8 +19,43 @@ export class WeatherComponent implements OnInit, IChart {
     chart: Object;
     
     ngOnInit() {
-        this.getWeather();
-        this.getForecast();
+
+        if (window.navigator && window.navigator.geolocation) {
+            window.navigator.geolocation.getCurrentPosition(
+                position => {
+
+                    console.log(position.coords);
+                    console.log(position.coords.latitude);
+                    console.log(position.coords.longitude);
+
+                    this.weather.getWeatherByGeolocation(position.coords.latitude, position.coords.longitude).subscribe((data: CityWeather) => {
+                        console.log(data);
+                        this.weatherViewModel.weather = data;
+                    });
+                    this.weather.getForecastByGeolocation(position.coords.latitude, position.coords.longitude).subscribe((data: CityForecast) => {
+                        console.log(data);
+                        this.weatherViewModel.forecast = data;
+                        this.chart = this.addaptToChartData(this.weatherViewModel.forecast.list);
+                    });
+                },
+                error => {
+                    switch (error.code) {
+                        case 1:
+                            console.log('Permission Denied');
+                            break;
+                        case 2:
+                            console.log('Position Unavailable');
+                            break;
+                        case 3:
+                            console.log('Timeout');
+                            break;
+                    }
+
+                    this.getWeather();
+                    this.getForecast();
+                }
+            );
+        };
     }
 
     constructor(private weather: WeatherService) {
@@ -44,11 +76,10 @@ export class WeatherComponent implements OnInit, IChart {
     private getWeather() {
 
         this.weather.getWeather("Minsk", "by").subscribe((data: CityWeather) => { this.weatherViewModel.weather = data; });
-
-        //this.weather.getWeatherByGeolocation(this.location.pos.latitude, this.location.pos.longitude).subscribe((data: any) => { console.log(data); this.weatherViewModel.weather = data.list[0] as CityWeather; });
-    }
+     }
 
     private getForecast() {
+
         this.weather.getForecast("Minsk", "by").subscribe((data: CityForecast) => {
 
             this.weatherViewModel.forecast = data;

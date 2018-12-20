@@ -38,8 +38,6 @@ export class DefaultRatesComponent implements OnInit {
             arr.push(combinedResult[2]);
 
             this.defaultRates = arr as Rate[];
-
-            console.log(this.defaultRates);
         });
     }
 }

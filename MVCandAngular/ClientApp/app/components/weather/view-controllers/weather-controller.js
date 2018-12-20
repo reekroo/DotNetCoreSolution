@@ -19,15 +19,10 @@ var WeatherComponent = /** @class */ (function () {
         var _this = this;
         if (window.navigator && window.navigator.geolocation) {
             window.navigator.geolocation.getCurrentPosition(function (position) {
-                console.log(position.coords);
-                console.log(position.coords.latitude);
-                console.log(position.coords.longitude);
                 _this.weather.getWeatherByGeolocation(position.coords.latitude, position.coords.longitude).subscribe(function (data) {
-                    console.log(data);
                     _this.weatherViewModel.weather = data;
                 });
                 _this.weather.getForecastByGeolocation(position.coords.latitude, position.coords.longitude).subscribe(function (data) {
-                    console.log(data);
                     _this.weatherViewModel.forecast = data;
                     _this.chart = _this.addaptToChartData(_this.weatherViewModel.forecast.list);
                 });

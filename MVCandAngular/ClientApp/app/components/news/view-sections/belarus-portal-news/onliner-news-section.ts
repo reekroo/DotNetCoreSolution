@@ -16,8 +16,14 @@ export class OnlinerNewsSectionComponent extends BaseNewsComponent {
     @Input() news: { items: News[]; }[] = [];
 
     section: boolean = false;
+    textBtn: string = "Show more news";
 
     onClick() {
         this.section = !this.section;
+        this.textBtn = this.section ? "Hide" : "Show more news"; 
+    }
+
+    scroll(el: any) {
+        el.scrollIntoView();
     }
 }

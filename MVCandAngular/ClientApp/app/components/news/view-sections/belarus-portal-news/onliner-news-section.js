@@ -28,10 +28,15 @@ var OnlinerNewsSectionComponent = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.news = [];
         _this.section = false;
+        _this.textBtn = "Show more news";
         return _this;
     }
     OnlinerNewsSectionComponent.prototype.onClick = function () {
         this.section = !this.section;
+        this.textBtn = this.section ? "Hide" : "Show more news";
+    };
+    OnlinerNewsSectionComponent.prototype.scroll = function (el) {
+        el.scrollIntoView();
     };
     __decorate([
         Input(),

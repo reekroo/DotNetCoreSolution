@@ -45,10 +45,6 @@ export class DefaultMetalRatesComponent implements OnInit {
             arr[2].Name = "Platinum";
 
             this.defaultMetalRates = arr as Ingot[];
-
-            console.log(this.defaultMetalRates);
         });
-
     }
-
 }

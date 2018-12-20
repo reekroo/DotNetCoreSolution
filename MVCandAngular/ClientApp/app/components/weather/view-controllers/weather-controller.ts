@@ -24,16 +24,10 @@ export class WeatherComponent implements OnInit, IChart {
             window.navigator.geolocation.getCurrentPosition(
                 position => {
 
-                    console.log(position.coords);
-                    console.log(position.coords.latitude);
-                    console.log(position.coords.longitude);
-
                     this.weather.getWeatherByGeolocation(position.coords.latitude, position.coords.longitude).subscribe((data: CityWeather) => {
-                        console.log(data);
                         this.weatherViewModel.weather = data;
                     });
                     this.weather.getForecastByGeolocation(position.coords.latitude, position.coords.longitude).subscribe((data: CityForecast) => {
-                        console.log(data);
                         this.weatherViewModel.forecast = data;
                         this.chart = this.addaptToChartData(this.weatherViewModel.forecast.list);
                     });

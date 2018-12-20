@@ -28,7 +28,6 @@ var DefaultRatesComponent = /** @class */ (function () {
             arr.push(combinedResult[1]);
             arr.push(combinedResult[2]);
             _this.defaultRates = arr;
-            console.log(_this.defaultRates);
         });
     };
     DefaultRatesComponent = __decorate([

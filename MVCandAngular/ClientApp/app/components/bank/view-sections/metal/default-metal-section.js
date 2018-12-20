@@ -32,7 +32,6 @@ var DefaultMetalRatesComponent = /** @class */ (function () {
             arr[1].Name = "Silver";
             arr[2].Name = "Platinum";
             _this.defaultMetalRates = arr;
-            console.log(_this.defaultMetalRates);
         });
     };
     DefaultMetalRatesComponent = __decorate([

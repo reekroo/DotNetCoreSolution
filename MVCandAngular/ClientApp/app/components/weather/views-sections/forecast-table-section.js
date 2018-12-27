@@ -28,6 +28,17 @@ var ForecastTableSectionComponent = /** @class */ (function (_super) {
     function ForecastTableSectionComponent() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    ForecastTableSectionComponent.prototype.getCollection = function (obj) {
+        var result = new Array();
+        for (var i = 0; i < obj.list.length; i++) {
+            if ((i == 0) || (i > 0 && this.getDate(obj.list[i - 1].dt) != this.getDate(obj.list[i].dt))) {
+                result.push(new Ar(obj.list[i].dt, []));
+            }
+            result[result.length - 1].list.push(obj.list[i]);
+        }
+        console.log(result);
+        return result;
+    };
     __decorate([
         Input(),
         __metadata("design:type", CityForecast)
@@ -42,4 +53,11 @@ var ForecastTableSectionComponent = /** @class */ (function (_super) {
     return ForecastTableSectionComponent;
 }(BaseWeatherComponent));
 export { ForecastTableSectionComponent };
+var Ar = /** @class */ (function () {
+    function Ar(date, list) {
+        this.date = date;
+        this.list = list;
+    }
+    return Ar;
+}());
 //# sourceMappingURL=forecast-table-section.js.map

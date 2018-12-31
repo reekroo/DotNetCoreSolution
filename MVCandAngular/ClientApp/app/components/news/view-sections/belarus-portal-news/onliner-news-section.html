@@ -21,7 +21,7 @@
                                     <article>
                                         <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" />
                                         <h4><a href="{{n.url}}" target="_blank">{{n.title}}</a></h4>
-                                        <p>{{n.description}}</p>
+                                        <p [innerHTML]="n.description"></p>
                                     </article>
                                 </div>
 
@@ -65,7 +65,7 @@
                                     <article>
                                         <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" />
                                         <h4><a href="{{n.url}}" target="_blank">{{n.title}}</a></h4>
-                                        <p>{{n.description}}</p>
+                                        <p [innerHTML]="n.description"></p>
                                     </article>
                                 </section>
                             </div>

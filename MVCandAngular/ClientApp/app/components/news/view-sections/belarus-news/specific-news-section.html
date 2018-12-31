@@ -15,8 +15,8 @@
                  *ngIf="n.urlToImage" />
 
             <p [ngClass]="n.urlToImage ? 'col-sm-9' : ''" 
-               *ngIf="n.description">
-                {{n.description}}
+               *ngIf="n.description"
+                [innerHTML]="n.description">
             </p>
 
         </div>

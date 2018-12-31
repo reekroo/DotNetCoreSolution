@@ -17,7 +17,7 @@
 
                 <img src="{{item.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" *ngIf="item.urlToImage" />
 
-                <p *ngIf="item.description">{{getDiscription(item.description)}}</p>
+                <p *ngIf="item.description" [innerHTML]="getDiscription(item.description)"></p>
 
                 <footer *ngIf="item.publishedAt">
                     <div>{{getDate(item.publishedAt)}}</div>

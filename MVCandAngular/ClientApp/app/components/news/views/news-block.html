@@ -10,12 +10,12 @@
         <section class="col-sm-3" *ngFor="let item of row.items">
             <article>
                 <header *ngIf="item.title">
-                    <h4>
+                    <h6>
                         <a href="{{item.url}}" target="_blank">{{item.title}}</a>
-                    </h4>
+                    </h6>
                 </header>
 
-                <img src="{{item.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail" *ngIf="item.urlToImage" />
+                <img src="{{item.urlToImage}}" alt="(no image)" class="img-fluid" *ngIf="item.urlToImage" />
 
                 <p *ngIf="item.description">{{getDiscription(item.description)}}</p>
 

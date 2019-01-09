@@ -7,23 +7,18 @@
     </div>
 
     <div class="row">
-        <section class="news-section" *ngFor="let n of news">
+        <section class="news-section col-sm-12" *ngFor="let n of news">
             <article>
                 <header *ngIf="n.title">
-                    <h4>
+                    <h6>
                         <a href="{{n.url}}" target="_blank">{{n.title}}</a>
-                    </h4>
+                    </h6>
                 </header>
 
                 <div class="clearfix">
+                    <img src="{{n.urlToImage}}" alt="(no image)" class="rounded float-left img-fluid" *ngIf="n.urlToImage" />
 
-                    <img src="{{n.urlToImage}}" alt="(no image)"
-                         class="img-fluid img-thumbnail"
-                         [ngClass]="n.urlToImage ? 'col-sm-2' : ''"
-                         *ngIf="n.urlToImage" />
-
-                    <p [ngClass]="n.urlToImage ? 'col-sm-10' : ''" *ngIf="n.description">{{n.description}}</p>
-
+                    <p *ngIf="n.description">{{n.description}}</p>
                 </div>
 
                 <footer *ngIf="n.publishedAt">
@@ -32,4 +27,5 @@
             </article>
         </section>
     </div>
+
 </div>

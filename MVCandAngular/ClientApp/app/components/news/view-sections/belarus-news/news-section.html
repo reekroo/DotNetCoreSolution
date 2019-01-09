@@ -2,12 +2,12 @@
 <section class="news-section" *ngFor="let n of news">
     <article>
         <header *ngIf="n.title">
-            <h4>
+            <h6>
                 <a href="{{n.url}}" target="_blank">{{n.title}}</a>
-            </h4>
+            </h6>
         </header>
         
-        <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid img-thumbnail"  *ngIf="n.urlToImage" />
+        <img src="{{n.urlToImage}}" alt="(no image)" class="img-fluid"  *ngIf="n.urlToImage" />
 
         <p *ngIf="n.description">{{getDiscription(n.description)}}</p>
 

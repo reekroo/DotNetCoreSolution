@@ -1,80 +1,57 @@
-﻿<div class='main-nav'>
-    <div class='navbar navbar-inverse navbar-default'>
-
-        <div class='navbar-header'>
-            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' [attr.aria-expanded]='isExpanded' (click)='toggle()'>
-                <span class='sr-only'>Toggle navigation</span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-                <span class='icon-bar'></span>
-            </button>
-            <a class='navbar-brand' [routerLink]='["/"]'>This Is Portal</a>
-        </div>
-
-        <div class='clearfix'></div>
-
-        <div class='navbar-collapse collapse'>
-            <ul class='nav navbar-nav'>
-                <li>
-                    <a href="/"><span class='glyphicon glyphicon-home'></span> Home</a>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                        <span class='glyphicon glyphicon-list'></span>
-                        Top News
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/news/world">World news</a></li>
-                        <li><a href="/news/belarus">Belarus news</a></li>
-                        <li class="divider"></li>
-                        <li><a href="/news/tut">TUT news</a></li>
-                        <li><a href="/news/onliner">Onliner news</a></li>
-                        <li><a href="/news/citydog">City dog news</a></li>
-                        <li class="divider"></li>
-                        <li><a href="/news/belsat">Belsat news</a></li>
-                        <li><a href="/news/belarus-partisan">Belarus partisan news</a></li>
-                        <li><a href="/news/nasha-niva">Nasha niva news</a></li>
-                        <li><a href="/news/svoboda">Radio svoboda news</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                        <span class='glyphicon glyphicon-piggy-bank'></span>
-                        National Bank RB
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/bank/currencies">Currencies</a></li>
-                        <li><a href="/bank/ingots">Ingots</a></li>
-                        <li><a href="/bank/refinancing-rates">Refinancing rates</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
-                        <span class='glyphicon glyphicon-fire'></span>
-                        Commodities
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/oil">Oil</a></li>
-                        <li><a href="/gas">Natural gas</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="/weather"><span class='glyphicon glyphicon-cloud'></span> Weather</a>
-                </li>
-                @*<li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Training <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="/products"><span class='glyphicon glyphicon-hdd'></span> Products</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="/shop"><span class='glyphicon glyphicon-shopping-cart'></span> Shop</a></li>
-                <li><a href="/user"><span class='glyphicon glyphicon-user'></span> My</a></li>
-            </ul>
-        </li>*@
-            </ul>
-        </div>
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    <a class="navbar-brand" [routerLink]='["/"]'>This Is Portal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/"><span class='glyphicon glyphicon-home'></span> Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='glyphicon glyphicon-list'></span> Top News
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/news/world">World news</a>
+                    <a class="dropdown-item" href="/news/belarus">Belarus news</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/news/tut">TUT news</a>
+                    <a class="dropdown-item" href="/news/onliner">Onliner news</a>
+                    <a class="dropdown-item" href="/news/citydog">City dog news</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/news/belsat">Belsat news</a>
+                    <a class="dropdown-item" href="/news/belarus-partisan">Belarus partisan news</a>
+                    <a class="dropdown-item" href="/news/nasha-niva">Nasha niva news</a>
+                    <a class="dropdown-item" href="/news/svoboda">Radio svoboda news</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='glyphicon glyphicon-piggy-bank'></span> National Bank RB
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/bank/currencies">Currencies</a>
+                    <a class="dropdown-item" href="/bank/ingots">Ingots</a>
+                    <a class="dropdown-item" href="/bank/refinancing-rates">Refinancing rates</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class='glyphicon glyphicon-fire'></span> Commodities
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/oil">Oil</a>
+                    <a class="dropdown-item" href="/gas">Natural gas</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/weather"><span class='glyphicon glyphicon-cloud'></span> Weather</a>
+            </li>
+        </ul>
     </div>
-</div>
+</nav>

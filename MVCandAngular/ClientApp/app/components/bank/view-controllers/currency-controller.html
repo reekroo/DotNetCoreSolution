@@ -14,19 +14,21 @@
         <div class="col-sm-9 rate">
 
             <div class="row" *ngIf="currencyView.rate">
-                <h2>Rate <small>({{currencyView.rate.Date}})</small></h2>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <rate-section [rate]="currencyView.rate" [isUpper]="currencyView.isUpper" [delta]="currencyView.delta"></rate-section>
+                <div class="col-sm-12">
+                    <h2>Rate <small>({{currencyView.rate.Date}})</small></h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <rate-section [rate]="currencyView.rate" [isUpper]="currencyView.isUpper" [delta]="currencyView.delta"></rate-section>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="row" *ngIf="currencyView.rates && currencyView.rates.length > 0">
-                <h2>Last year statistic</h2>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="col-sm-12">
+                <div class="col-sm-12">
+                    <h2>Last year statistic</h2>
+                    <div class="card">
+                        <div class="card-body">
                             <chart-form [inputData]="currencyView.chartData"></chart-form>
                         </div>
                     </div>
@@ -34,19 +36,21 @@
             </div>
 
             <div class="row" *ngIf="currencyView.rate">
-                <h2>Convertor</h2>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <convertor-section [rate]="currencyView.rate"></convertor-section>
+                <div class="col-sm-12">
+                    <h2>Convertor</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <convertor-section [rate]="currencyView.rate"></convertor-section>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="row" *ngIf="currencyView.monthRates && currencyView.monthRates.length > 0">
-                <h2>Dinamic of last month</h2>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="col-sm-12">
+                <div class="col-sm-12">    
+                    <h2>Dinamic of last month</h2>
+                    <div class="card">
+                        <div class="card-body">
                             <month-rates-table-section [rates]="currencyView.monthRates"></month-rates-table-section>
                         </div>
                     </div>

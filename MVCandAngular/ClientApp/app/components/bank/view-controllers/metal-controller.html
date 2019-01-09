@@ -13,8 +13,8 @@
     <div class="row" *ngIf="ingotViewModel.ingotsRate && ingotViewModel.ingotsRate.length > 0">
         <div class="col-sm-12">
             <h2>Current rate</h2>
-            <div class="panel panel-default">
-                <div class="panel-body">
+            <div class="card">
+                <div class="card-body">
                     <metal-section [metalRates]="ingotViewModel.ingotsRate"></metal-section>
                 </div>
             </div>
@@ -30,13 +30,13 @@
                 <button class="btn btn-light" type="button"
                         *ngFor="let ingot of ingotViewModel.ingotsRate;let myIndex = index"
                         (click)="getChart(ingot.MetalID, myIndex)"
-                        [class.active]="ingotViewModel.selectedGramIndex === myIndex" >
+                        [class.active]="ingotViewModel.selectedGramIndex === myIndex">
                     {{ingot.Nominal}}
                 </button>
             </div>
 
-            <div class="panel panel-default">
-                <div class="panel-body">
+            <div class="card">
+                <div class="card-body">
                     <chart-form [inputData]="ingotViewModel.chartData"></chart-form>
                 </div>
             </div>

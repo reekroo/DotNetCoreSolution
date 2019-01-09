@@ -14,6 +14,11 @@ var MonthRateTableComponent = /** @class */ (function () {
     }
     MonthRateTableComponent.prototype.ngOnChanges = function () {
         if (this.rates) {
+            this.rates = this.rates.sort(function (a, b) {
+                var c = new Date(a.Date);
+                var d = new Date(b.Date);
+                return c > d ? -1 : c < d ? 1 : 0;
+            });
             var data = [];
             for (var i = 1; i < this.rates.length; i++) {
                 var rate = new MonthRate();
@@ -24,11 +29,7 @@ var MonthRateTableComponent = /** @class */ (function () {
                 rate.Delta = Number((rate.Delta).toFixed(5));
                 data.push(rate);
             }
-            this.monthRates = data.sort(function (a, b) {
-                var c = new Date(a.Date);
-                var d = new Date(b.Date);
-                return c > d ? -1 : c < d ? 1 : 0;
-            });
+            this.monthRates = data;
         }
     };
     __decorate([

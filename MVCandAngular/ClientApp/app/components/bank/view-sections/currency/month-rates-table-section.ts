@@ -19,6 +19,12 @@ export class MonthRateTableComponent  {
 
         if (this.rates) {
 
+            this.rates = this.rates.sort(function (a, b) {
+                var c = new Date(a.Date);
+                var d = new Date(b.Date);
+                return c > d ? -1 : c < d ? 1 : 0;
+            });
+
             let data = [];
 
             for (var i = 1; i < this.rates.length; i++) {
@@ -35,11 +41,7 @@ export class MonthRateTableComponent  {
                 data.push(rate);
             }
 
-            this.monthRates = data.sort(function (a, b) {
-                var c = new Date(a.Date);
-                var d = new Date(b.Date);
-                return c > d ? -1 : c < d ? 1 : 0;
-            }) as MonthRate[];
+            this.monthRates = data;
         }
     }
 }

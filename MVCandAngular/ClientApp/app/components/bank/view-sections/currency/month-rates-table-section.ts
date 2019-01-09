@@ -27,20 +27,20 @@ export class MonthRateTableComponent  {
 
             let data = [];
 
-            for (var i = 1; i < this.rates.length; i++) {
+            for (var i = 0; i < this.rates.length - 1; i++) {
 
                 let rate = new MonthRate();
 
                 rate.Date = new Date(this.rates[i].Date).toLocaleDateString();
                 rate.Cur_Scale = this.rates[i].Cur_Scale;
                 rate.Cur_OfficialRate = this.rates[i].Cur_OfficialRate;
-                rate.Delta = this.rates[i].Cur_OfficialRate - this.rates[i - 1].Cur_OfficialRate;
+                rate.Delta = this.rates[i].Cur_OfficialRate - this.rates[i + 1].Cur_OfficialRate;
 
                 rate.Delta = Number((rate.Delta).toFixed(5));
 
                 data.push(rate);
             }
-
+            
             this.monthRates = data;
         }
     }

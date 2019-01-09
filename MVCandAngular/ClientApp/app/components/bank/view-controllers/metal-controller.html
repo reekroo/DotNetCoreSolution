@@ -1,14 +1,8 @@
 ﻿<div class="bank-container container-fluid">
 
-    <div class="row metal-navigation">
-        <div class='navbar-collapse collapse'>
-            <ul class='nav navbar-nav'>
-                <li *ngFor="let metal of ingotViewModel.metals">
-                    <a><span id="{{metal.Id}}" (click)="getRate(metal.Id)">{{metal.NameEng}}</span></a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <nav class="nav">
+        <a class="nav-link" *ngFor="let metal of ingotViewModel.metals"><span id="{{metal.Id}}" (click)="getRate(metal.Id)">{{metal.NameEng}}</span></a>
+    </nav>
 
     <div class="row" *ngIf="ingotViewModel.ingotsRate && ingotViewModel.ingotsRate.length > 0">
         <div class="col-sm-12">

@@ -3,8 +3,8 @@
 
         <div class="col-sm-3 currencies">
 
-            <aside *ngFor="let currency of currencyView.currencies">
-                <section id="{{currency.Cur_ID}}" (click)="getRate(currency.Cur_ID)">
+            <aside>
+                <section id="{{currency.Cur_ID}}" (click)="getRate(currency.Cur_ID)"  *ngFor="let currency of currencyView.currencies">
                     <span>{{currency.Cur_Abbreviation}}</span> - {{currency.Cur_QuotName_Eng}}
                 </section>
             </aside>

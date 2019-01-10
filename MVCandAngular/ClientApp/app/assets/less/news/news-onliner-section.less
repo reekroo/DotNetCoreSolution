@@ -1,4 +1,5 @@
 ﻿@import "../bases/constants/colors.less";
+@import "../bases/constants/media-width.less";
 
 .line {
     margin: 10px 0;
@@ -26,4 +27,22 @@
 
 .btn-up{
     float:right;
+}
+
+.news {
+
+    .right-top-news {
+
+        img {
+            width: 35%;
+            max-width: 35%;
+            margin: 0 10px 20px 0;
+
+            @media all and (max-width: @default-medium-width) {
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+            }
+        }
+    }
 }

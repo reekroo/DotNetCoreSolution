@@ -9,17 +9,17 @@
     <div class="row">
 
         <div class="col-sm-4">
-            <div class="panel panel-default">
-                <div class="panel-body">
+            <div class="card">
+                <div class="card-body">
 
                     <weather-section [weather]="weatherViewModel.weather"></weather-section>
                 </div>
             </div>
         </div>
 
-        <div class="col-sm-8">            
-            <div class="panel panel-default">
-                <div class="panel-body">
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-body">
 
                     <chart-form [inputData]="chart"></chart-form>
                 </div>
@@ -31,8 +31,8 @@
     <div class="row">
         <div class="col-sm-12">
 
-            <div class="panel panel-default">
-                <div class="panel-body">
+            <div class="card">
+                <div class="card-body">
 
                     <forecast-table-section [forecast]="weatherViewModel.forecast"></forecast-table-section>
                 </div>

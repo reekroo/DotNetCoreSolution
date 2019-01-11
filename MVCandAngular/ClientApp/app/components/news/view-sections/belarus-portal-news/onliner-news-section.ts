@@ -24,6 +24,10 @@ export class OnlinerNewsSectionComponent extends BaseNewsComponent {
     }
 
     scroll(el: any) {
-        el.scrollIntoView();
+        //el.scrollIntoView();
+        setTimeout(() => {
+            //behavior: 'smooth', block: 'start', inline: 'end'
+            el.scrollIntoView({ behavior: 'smooth'});
+        });
     }
 }

@@ -36,7 +36,11 @@ var OnlinerNewsSectionComponent = /** @class */ (function (_super) {
         this.textBtn = this.section ? "Hide" : "Show more news";
     };
     OnlinerNewsSectionComponent.prototype.scroll = function (el) {
-        el.scrollIntoView();
+        //el.scrollIntoView();
+        setTimeout(function () {
+            //behavior: 'smooth', block: 'start', inline: 'end'
+            el.scrollIntoView({ behavior: 'smooth' });
+        });
     };
     __decorate([
         Input(),

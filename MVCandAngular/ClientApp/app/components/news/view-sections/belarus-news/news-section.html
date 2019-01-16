@@ -3,7 +3,7 @@
     <article>
         <header *ngIf="n.title">
             <h6>
-                <a href="{{n.url}}" target="_blank">{{n.title}}</a>
+                <a href="{{n.url}}" target="_blank" [innerHTML]="n.title"></a>
             </h6>
         </header>
         

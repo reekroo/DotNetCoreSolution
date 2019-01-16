@@ -11,7 +11,7 @@
             <article>
                 <header *ngIf="item.title">
                     <h6>
-                        <a href="{{item.url}}" target="_blank">{{item.title}}</a>
+                        <a href="{{item.url}}" target="_blank" [innerHTML]="item.title"></a>
                     </h6>
                 </header>
 

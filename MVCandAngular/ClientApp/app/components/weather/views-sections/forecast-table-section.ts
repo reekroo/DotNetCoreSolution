@@ -28,7 +28,6 @@ export class ForecastTableSectionComponent extends BaseWeatherComponent {
             result[result.length - 1].list.push(obj.list[i]);            
         }
 
-        console.log(result);
         return result;
     }
 }

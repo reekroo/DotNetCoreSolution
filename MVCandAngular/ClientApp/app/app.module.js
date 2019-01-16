@@ -55,6 +55,7 @@ import { OilComponent } from './components/oil/view-controllers/oil-controller';
 import { NaturalGasComponent } from './components/natural-gas/view-controllers/natural-gas-controller';
 import { WeatherComponent } from './components/weather/view-controllers/weather-controller';
 import { ForecastTableSectionComponent } from './components/weather/views-sections/forecast-table-section';
+import { ForecastAccordionSectionComponent } from './components/weather/views-sections/forecast-accordion-section';
 import { WeatherSectionComponent } from './components/weather/views-sections/weather-section';
 var appRoutes = [
     //{ path: 'shop', component: ShopProductListComponent },
@@ -116,7 +117,7 @@ var AppModule = /** @class */ (function () {
                 ChartComponent,
                 OilComponent, NaturalGasComponent,
                 WeatherComponent,
-                ForecastTableSectionComponent, WeatherSectionComponent
+                ForecastAccordionSectionComponent, ForecastTableSectionComponent, WeatherSectionComponent
             ],
             providers: [],
             bootstrap: [AppComponent]

@@ -34,6 +34,8 @@
             <div class="card">
                 <div class="card-body">
 
+                    <forecast-accordion-section [forecast]="weatherViewModel.forecast"></forecast-accordion-section>
+
                     <forecast-table-section [forecast]="weatherViewModel.forecast"></forecast-table-section>
                 </div>
             </div>

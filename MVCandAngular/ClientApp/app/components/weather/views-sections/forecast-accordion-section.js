@@ -23,40 +23,40 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { Component, Input } from "@angular/core";
 import { CityForecast } from "../../../models/weather/city-forecast";
 import { BaseWeatherComponent } from "../../../shared/bases/weather/base-weather";
-var ForecastTableSectionComponent = /** @class */ (function (_super) {
-    __extends(ForecastTableSectionComponent, _super);
-    function ForecastTableSectionComponent() {
+var ForecastAccordionSectionComponent = /** @class */ (function (_super) {
+    __extends(ForecastAccordionSectionComponent, _super);
+    function ForecastAccordionSectionComponent() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    ForecastTableSectionComponent.prototype.getCollection = function (obj) {
-        var result = new Array();
-        for (var i = 0; i < obj.list.length; i++) {
-            if ((i == 0) || (i > 0 && this.getDate(obj.list[i - 1].dt) != this.getDate(obj.list[i].dt))) {
-                result.push(new Ar(obj.list[i].dt, []));
+    ForecastAccordionSectionComponent.prototype.getCollection = function (forecast) {
+        var customForecast = {};
+        for (var i = 0; i < forecast.list.length - 1; i++) {
+            if (i == 0 || this.getDate(forecast.list[i].dt) != this.getDate(forecast.list[i + 1].dt)) {
+                customForecast[this.getDate(forecast.list[i].dt)] = new Array();
             }
-            result[result.length - 1].list.push(obj.list[i]);
         }
-        return result;
+        //for (var i = 0; i < forecast.list.length; i++) {
+        //    for (const key in customForecast) {
+        //        if (key == this.getDate(forecast.list[i].dt)) {
+        //            customForecast[key].push(forecast.list[i]);
+        //        }
+        //    }
+        //}
+        console.log(customForecast);
+        return customForecast;
     };
     __decorate([
         Input(),
         __metadata("design:type", CityForecast)
-    ], ForecastTableSectionComponent.prototype, "forecast", void 0);
-    ForecastTableSectionComponent = __decorate([
+    ], ForecastAccordionSectionComponent.prototype, "forecast", void 0);
+    ForecastAccordionSectionComponent = __decorate([
         Component({
-            selector: 'forecast-table-section',
-            templateUrl: './forecast-table-section.html',
+            selector: 'forecast-accordion-section',
+            templateUrl: './forecast-accordion-section.html',
             providers: []
         })
-    ], ForecastTableSectionComponent);
-    return ForecastTableSectionComponent;
+    ], ForecastAccordionSectionComponent);
+    return ForecastAccordionSectionComponent;
 }(BaseWeatherComponent));
-export { ForecastTableSectionComponent };
-var Ar = /** @class */ (function () {
-    function Ar(date, list) {
-        this.date = date;
-        this.list = list;
-    }
-    return Ar;
-}());
-//# sourceMappingURL=forecast-table-section.js.map
+export { ForecastAccordionSectionComponent };
+//# sourceMappingURL=forecast-accordion-section.js.map

@@ -5,88 +5,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 import { AppComponent } from './components/app/app.head';
-import { ScrollingModule } from '@angular/cdk/scrolling';
-//import { ProductsFormComponent } from './Components/ShopComponents/productsComponent/product-form';
-//import { ProductListComponent } from './Components/ShopComponents/productsComponent/product-list';
-//import { ProductsEditComponent } from './Components/ShopComponents/productsComponent/product-edit';
-//import { ProductsCreateComponent } from './Components/ShopComponents/productsComponent/product-create';
-//import { ShopProductListComponent } from './Components/ShopComponents/shopComponent/product-list';
-//import { ShopProductDetailsComponent } from './Components/ShopComponents/shopComponent/product-details';
-//import { FullUserComponent } from './Components/ShopComponents/fullUserComponent/full-user';
-//import { UserInfoComponent } from './Components/ShopComponents/userComponent/user-information';
-//import { UserFormComponent } from './Components/ShopComponents/userComponent/user-form';
-//import { UserEditComponent } from './Components/ShopComponents/userComponent/user-edit';
-//import { AddressListComponent } from './Components/ShopComponents/addressesComponent/address-list';
-//import { AddressFormComponent } from './Components/ShopComponents/addressesComponent/address-form';
-//import { AddressCreateComponent } from './Components/ShopComponents/addressesComponent/address-create';
-//import { AddressEditComponent } from './Components/ShopComponents/addressesComponent/address-edit';
-//import { CartProductListComponent } from './Components/ShopComponents/cartComponent/cart-product-list';
-import { ChartComponent } from './shared/components/chart/chart';
-import { HomeComponent } from './components/home/view-controllers/home-controller';
-import { NewsComponent } from './components/news/view-controllers/world-news-controller';
-import { BelNewsComponent } from './components/news/view-controllers/belarus-news-controller';
-import { OnlinerNewsComponent } from './components/news/controllers/onliner-news-controller';
-import { TutNewsComponent } from './components/news/controllers/tut-news-controller';
-import { BelarusPartisanNewsComponent } from './components/news/controllers/belaruspartisan-news-controller';
-import { NashaNivaNewsComponent } from './components/news/controllers/nashaniva-news-controller';
-import { BelsatNewsComponent } from './components/news/controllers/belsat-news-controller';
-import { SvobodaNewsComponent } from './components/news/controllers/svoboda-news-controller';
-import { CityDogNewsComponent } from './components/news/controllers/citydog-news-controller';
-import { NewsSectionComponent } from './components/news/view-sections/belarus-news/news-section';
-import { SpecificNewsSectionComponent } from './components/news/view-sections/belarus-news/specific-news-section';
-import { OnlinerNewsSectionComponent } from './components/news//view-sections/belarus-portal-news/onliner-news-section';
-import { CurrencyComponent } from './components/bank/view-controllers/currency-controller';
-import { MetalComponent } from './components/bank/view-controllers/metal-controller';
-import { RefinancingComponent } from './components/bank/view-controllers/refinancing-rate-controller';
-import { MonthRateTableComponent } from './components/bank/view-sections/currency/month-rates-table-section';
-import { RateSectionComponent } from './components/bank/view-sections/currency/rate-section';
-import { ConvertorSectionComponent } from './components/bank/view-sections/currency/convertor-section';
-import { DefaultRatesComponent } from './components/bank/view-sections/currency/default-rates-section';
-import { DefaultMetalRatesComponent } from './components/bank/view-sections/metal/default-metal-section';
-import { MetalRatesComponent } from './components/bank/view-sections/metal/metal-section';
-import { RefinancingRateComponent } from './components/bank/view-sections/refinancing/refinancing-rate-section';
-import { RefinancingRatesComponent } from './components/bank/view-sections/refinancing/refinancing-rates-section';
-import { OilComponent } from './components/oil/view-controllers/oil-controller';
-import { NaturalGasComponent } from './components/natural-gas/view-controllers/natural-gas-controller';
-import { WeatherComponent } from './components/weather/view-controllers/weather-controller';
-import { ForecastTableSectionComponent } from './components/weather/views-sections/forecast-table-section';
-import { ForecastAccordionSectionComponent } from './components/weather/views-sections/forecast-accordion-section';
-import { WeatherSectionComponent } from './components/weather/views-sections/weather-section';
-var appRoutes = [
-    //{ path: 'shop', component: ShopProductListComponent },
-    //{ path: 'shop/:id', component: ShopProductDetailsComponent },
-    //{ path: 'products', component: ProductListComponent },
-    //{ path: 'products/create', component: ProductsCreateComponent },
-    //{ path: 'products/edit/:id', component: ProductsEditComponent },
-    //{ path: 'user', component: FullUserComponent },
-    //{ path: 'user/edit/:id', component: UserEditComponent },
-    //{ path: 'user/address/create', component: AddressCreateComponent },
-    //{ path: 'user/address/edit/:id', component: AddressEditComponent },
-    { path: 'home', component: HomeComponent },
-    { path: 'index', component: HomeComponent },
-    { path: '', component: HomeComponent },
-    { path: 'news/world', component: NewsComponent },
-    { path: 'news/belarus', component: BelNewsComponent },
-    { path: 'news/onliner', component: OnlinerNewsComponent },
-    { path: 'news/citydog', component: CityDogNewsComponent },
-    { path: 'news/tut', component: TutNewsComponent },
-    { path: 'news/belarus-partisan', component: BelarusPartisanNewsComponent },
-    { path: 'news/nasha-niva', component: NashaNivaNewsComponent },
-    { path: 'news/belsat', component: BelsatNewsComponent },
-    { path: 'news/svoboda', component: SvobodaNewsComponent },
-    { path: 'bank/currencies', component: CurrencyComponent },
-    { path: 'bank/ingots', component: MetalComponent },
-    { path: 'bank/refinancing-rates', component: RefinancingComponent },
-    { path: 'oil', component: OilComponent },
-    { path: 'gas', component: NaturalGasComponent },
-    { path: 'weather', component: WeatherComponent },
-    { path: '**', redirectTo: '/' }
-];
+import { AppRoutingModule } from './app-routing.module';
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -96,28 +19,10 @@ var AppModule = /** @class */ (function () {
                 BrowserModule,
                 FormsModule,
                 HttpClientModule,
-                RouterModule.forRoot(appRoutes),
-                ScrollingModule
+                AppRoutingModule
             ],
             declarations: [
-                AppComponent,
-                //ProductListComponent, ProductsEditComponent, ProductsFormComponent, ProductsCreateComponent,
-                //ShopProductDetailsComponent, ShopProductListComponent,
-                //FullUserComponent, UserFormComponent, UserInfoComponent, UserEditComponent,
-                //AddressListComponent, AddressFormComponent, AddressCreateComponent, AddressEditComponent,
-                //CartProductListComponent,
-                HomeComponent,
-                NewsComponent, BelNewsComponent,
-                OnlinerNewsComponent, TutNewsComponent, CityDogNewsComponent,
-                BelarusPartisanNewsComponent, NashaNivaNewsComponent, BelsatNewsComponent, SvobodaNewsComponent,
-                NewsSectionComponent, SpecificNewsSectionComponent, OnlinerNewsSectionComponent,
-                CurrencyComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,
-                MetalComponent, DefaultMetalRatesComponent, MetalRatesComponent,
-                RefinancingComponent, RefinancingRateComponent, RefinancingRatesComponent,
-                ChartComponent,
-                OilComponent, NaturalGasComponent,
-                WeatherComponent,
-                ForecastAccordionSectionComponent, ForecastTableSectionComponent, WeatherSectionComponent
+                AppComponent
             ],
             providers: [],
             bootstrap: [AppComponent]

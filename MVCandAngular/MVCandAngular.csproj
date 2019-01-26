@@ -7,8 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\app-routing.module.ts" />
     <None Remove="ClientApp\app\app.component.ts" />
     <None Remove="ClientApp\app\app.module.ts" />
+    <None Remove="ClientApp\app\Components\bank\bank.module.ts" />
     <None Remove="ClientApp\app\components\bank\view-models\currency-view-model.ts" />
     <None Remove="ClientApp\app\components\bank\view-models\ingot-view-model.ts" />
     <None Remove="ClientApp\app\components\bank\view-models\refinancing-rate-view-model.ts" />
@@ -17,10 +19,13 @@
     <None Remove="ClientApp\app\components\bank\view-sections\currency\default-rates-section.ts" />
     <None Remove="ClientApp\app\components\bank\view-sections\currency\month-rates-table-section.ts" />
     <None Remove="ClientApp\app\components\bank\view-sections\currency\rate-section.ts" />
+    <None Remove="ClientApp\app\Components\home\home.module.ts" />
     <None Remove="ClientApp\app\components\home\view-controllers\home-controller.ts" />
     <None Remove="ClientApp\app\components\home\view-models\home-view-model.ts" />
-    <None Remove="ClientApp\app\components\natural-gas\view-controllers\natural-gas-controller.ts" />
+    <None Remove="ClientApp\app\Components\natural-resources\natural.resources.module.ts" />
+    <None Remove="ClientApp\app\Components\natural-resources\view-controllers\natural-gas-controller.ts" />
     <None Remove="ClientApp\app\components\news\controllers\citydog-news-controller.ts" />
+    <None Remove="ClientApp\app\Components\news\news.module.ts" />
     <None Remove="ClientApp\app\components\news\view-models\belarus-news-view-model.ts" />
     <None Remove="ClientApp\app\components\news\view-models\world-news-controller.ts" />
     <None Remove="ClientApp\app\components\weather\view-controllers\weather-controller.ts" />
@@ -28,6 +33,7 @@
     <None Remove="ClientApp\app\components\weather\views-sections\forecast-accordion-section.ts" />
     <None Remove="ClientApp\app\components\weather\views-sections\forecast-table-section.ts" />
     <None Remove="ClientApp\app\components\weather\views-sections\weather-section.ts" />
+    <None Remove="ClientApp\app\Components\weather\weather.module.ts" />
     <None Remove="ClientApp\app\models\bank\month-rate.ts" />
     <None Remove="ClientApp\app\models\bank\refinancing-rate.ts" />
     <None Remove="ClientApp\app\models\weather\city-forecast.ts" />
@@ -107,16 +113,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\app-routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\app\app.head.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\bank\bank.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\bank\view-models\refinancing-rate-view-model.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\bank\view-models\ingot-view-model.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\bank\view-models\currency-view-model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\home\home.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\home\view-controllers\home-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\home\view-models\home-view-model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\natural-resources\natural.resources.module.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\news\news.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\news\controllers\citydog-news-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\news\view-models\world-news-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\news\view-models\belarus-news-view-model.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\natural-gas\view-controllers\natural-gas-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\natural-resources\view-controllers\natural-gas-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\weather\weather.module.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\weather\view-controllers\weather-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\weather\view-models\weather-view-model.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\weather\views-sections\forecast-accordion-section.ts" />
@@ -161,7 +173,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\bank\view-controllers\currency-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\shopComponents\fullUserComponent\full-user.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\news\view-controllers\world-news-controller.ts" />
-    <TypeScriptCompile Include="ClientApp\app\components\oil\view-controllers\oil-controller.ts" />
+    <TypeScriptCompile Include="ClientApp\app\Components\natural-resources\view-controllers\oil-controller.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\shopComponents\userComponent\user-information.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\bank\refinancing-rate.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\bank\ingot.ts" />

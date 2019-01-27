@@ -21,39 +21,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component, Input } from "@angular/core";
-import { CityForecast } from "../../../models/weather/city-forecast";
 import { BaseWeatherComponent } from "../../../shared/bases/weather/base-weather";
 var ForecastAccordionSectionComponent = /** @class */ (function (_super) {
     __extends(ForecastAccordionSectionComponent, _super);
     function ForecastAccordionSectionComponent() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    ForecastAccordionSectionComponent.prototype.getCollection = function (forecast) {
-        var customForecast = {};
-        for (var i = 0; i < forecast.list.length - 1; i++) {
-            if (i == 0 || this.getDate(forecast.list[i].dt) != this.getDate(forecast.list[i + 1].dt)) {
-                customForecast[this.getDate(forecast.list[i].dt)] = new Array();
-            }
-        }
-        //for (var i = 0; i < forecast.list.length; i++) {
-        //    for (const key in customForecast) {
-        //        if (key == this.getDate(forecast.list[i].dt)) {
-        //            customForecast[key].push(forecast.list[i]);
-        //        }
-        //    }
-        //}
-        console.log(customForecast);
-        return customForecast;
-    };
     __decorate([
         Input(),
-        __metadata("design:type", CityForecast)
+        __metadata("design:type", Array)
     ], ForecastAccordionSectionComponent.prototype, "forecast", void 0);
     ForecastAccordionSectionComponent = __decorate([
         Component({
             selector: 'forecast-accordion-section',
-            templateUrl: './forecast-accordion-section.html',
-            providers: []
+            templateUrl: './forecast-accordion-section.html'
         })
     ], ForecastAccordionSectionComponent);
     return ForecastAccordionSectionComponent;

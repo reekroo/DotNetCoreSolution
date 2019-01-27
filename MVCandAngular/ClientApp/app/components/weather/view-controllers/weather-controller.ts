@@ -17,6 +17,7 @@ export class WeatherComponent implements OnInit, IChart {
     weatherViewModel: WeatherViewModel = new WeatherViewModel();
 
     chart: Object;
+    forecast: any[];
     
     ngOnInit() {
 
@@ -30,6 +31,7 @@ export class WeatherComponent implements OnInit, IChart {
                     this.weather.getForecastByGeolocation(position.coords.latitude, position.coords.longitude).subscribe((data: CityForecast) => {
                         this.weatherViewModel.forecast = data;
                         this.chart = this.addaptToChartData(this.weatherViewModel.forecast.list);
+                        this.forecast = this.getCollection(data);
                     });
                 },
                 error => {
@@ -77,9 +79,12 @@ export class WeatherComponent implements OnInit, IChart {
         this.weather.getForecast("Minsk", "by").subscribe((data: CityForecast) => {
 
             this.weatherViewModel.forecast = data;
+
             this.chart = this.addaptToChartData(this.weatherViewModel.forecast.list);
+            this.forecast = this.getCollection(data);
         });
     }
+
     
     addaptToChartData(array:CityWeather[]): Object {
 
@@ -111,5 +116,27 @@ export class WeatherComponent implements OnInit, IChart {
         }
 
         return result;
+    }
+    
+    getCollection(forecast: CityForecast): any[] {
+
+        let customForecast: any[] = [];
+        let temp: any[] = [];
+
+        for (var i = 0; i < forecast.list.length - 1; i++) {
+
+            temp.push(forecast.list[i]);
+
+            if (this.getDate(temp[temp.length - 1].dt) != this.getDate(forecast.list[i + 1].dt)) {
+
+                customForecast.push(temp);
+                temp = [];
+            }
+        }
+
+        temp.push(forecast.list[forecast.list.length - 1]);
+        customForecast.push(temp);
+
+        return customForecast;
     }
 }

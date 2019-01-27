@@ -25,6 +25,7 @@ var WeatherComponent = /** @class */ (function () {
                 _this.weather.getForecastByGeolocation(position.coords.latitude, position.coords.longitude).subscribe(function (data) {
                     _this.weatherViewModel.forecast = data;
                     _this.chart = _this.addaptToChartData(_this.weatherViewModel.forecast.list);
+                    _this.forecast = _this.getCollection(data);
                 });
             }, function (error) {
                 switch (error.code) {
@@ -59,6 +60,7 @@ var WeatherComponent = /** @class */ (function () {
         this.weather.getForecast("Minsk", "by").subscribe(function (data) {
             _this.weatherViewModel.forecast = data;
             _this.chart = _this.addaptToChartData(_this.weatherViewModel.forecast.list);
+            _this.forecast = _this.getCollection(data);
         });
     };
     WeatherComponent.prototype.addaptToChartData = function (array) {
@@ -84,6 +86,20 @@ var WeatherComponent = /** @class */ (function () {
             ]
         };
         return result;
+    };
+    WeatherComponent.prototype.getCollection = function (forecast) {
+        var customForecast = [];
+        var temp = [];
+        for (var i = 0; i < forecast.list.length - 1; i++) {
+            temp.push(forecast.list[i]);
+            if (this.getDate(temp[temp.length - 1].dt) != this.getDate(forecast.list[i + 1].dt)) {
+                customForecast.push(temp);
+                temp = [];
+            }
+        }
+        temp.push(forecast.list[forecast.list.length - 1]);
+        customForecast.push(temp);
+        return customForecast;
     };
     WeatherComponent = __decorate([
         Component({

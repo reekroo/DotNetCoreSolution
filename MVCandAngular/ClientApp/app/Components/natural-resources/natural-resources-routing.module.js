@@ -4,27 +4,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NaturalResourcesRoutingModule } from './natural-resources-routing.module';
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
 import { OilComponent } from './view-controllers/oil-controller';
 import { NaturalGasComponent } from './view-controllers/natural-gas-controller';
-var NaturalResourcesModule = /** @class */ (function () {
-    function NaturalResourcesModule() {
+var appRoutes = [
+    { path: 'oil', component: OilComponent },
+    { path: 'gas', component: NaturalGasComponent }
+];
+var NaturalResourcesRoutingModule = /** @class */ (function () {
+    function NaturalResourcesRoutingModule() {
     }
-    NaturalResourcesModule = __decorate([
+    NaturalResourcesRoutingModule = __decorate([
         NgModule({
-            imports: [
-                CommonModule,
-                NaturalResourcesRoutingModule
-            ],
-            declarations: [
-                OilComponent,
-                NaturalGasComponent
-            ]
+            imports: [RouterModule.forChild(appRoutes)],
+            exports: [RouterModule]
         })
-    ], NaturalResourcesModule);
-    return NaturalResourcesModule;
+    ], NaturalResourcesRoutingModule);
+    return NaturalResourcesRoutingModule;
 }());
-export { NaturalResourcesModule };
-//# sourceMappingURL=natural.resources.module.js.map
+export { NaturalResourcesRoutingModule };
+//# sourceMappingURL=natural-resources-routing.module.js.map

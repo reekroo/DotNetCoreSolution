@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { WeatherRoutingModule } from './weather-routing.module';
 import { WeatherComponent } from './view-controllers/weather-controller';
 import { ForecastTableSectionComponent } from './views-sections/forecast-table-section';
 import { ForecastAccordionSectionComponent } from './views-sections/forecast-accordion-section';
@@ -24,7 +24,7 @@ var WeatherModule = /** @class */ (function () {
             imports: [
                 CommonModule,
                 FormsModule,
-                RouterModule.forChild(appRoutes)
+                WeatherRoutingModule
             ],
             declarations: [
                 WeatherComponent,

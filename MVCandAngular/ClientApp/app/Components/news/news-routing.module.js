@@ -4,9 +4,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NewsRoutingModule } from './news-routing.module';
+import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
 import { NewsComponent } from './view-controllers/world-news-controller';
 import { BelNewsComponent } from './view-controllers/belarus-news-controller';
 import { OnlinerNewsComponent } from './controllers/onliner-news-controller';
@@ -16,27 +15,27 @@ import { NashaNivaNewsComponent } from './controllers/nashaniva-news-controller'
 import { BelsatNewsComponent } from './controllers/belsat-news-controller';
 import { SvobodaNewsComponent } from './controllers/svoboda-news-controller';
 import { CityDogNewsComponent } from './controllers/citydog-news-controller';
-import { NewsSectionComponent } from './view-sections/belarus-news/news-section';
-import { SpecificNewsSectionComponent } from './view-sections/belarus-news/specific-news-section';
-import { OnlinerNewsSectionComponent } from './view-sections/belarus-portal-news/onliner-news-section';
-var NewsModule = /** @class */ (function () {
-    function NewsModule() {
+var appRoutes = [
+    { path: 'world', component: NewsComponent },
+    { path: 'belarus', component: BelNewsComponent },
+    { path: 'onliner', component: OnlinerNewsComponent },
+    { path: 'citydog', component: CityDogNewsComponent },
+    { path: 'tut', component: TutNewsComponent },
+    { path: 'belarus-partisan', component: BelarusPartisanNewsComponent },
+    { path: 'nasha-niva', component: NashaNivaNewsComponent },
+    { path: 'belsat', component: BelsatNewsComponent },
+    { path: 'svoboda', component: SvobodaNewsComponent }
+];
+var NewsRoutingModule = /** @class */ (function () {
+    function NewsRoutingModule() {
     }
-    NewsModule = __decorate([
+    NewsRoutingModule = __decorate([
         NgModule({
-            imports: [
-                CommonModule,
-                NewsRoutingModule
-            ],
-            declarations: [
-                NewsComponent, BelNewsComponent,
-                OnlinerNewsComponent, TutNewsComponent, CityDogNewsComponent,
-                BelarusPartisanNewsComponent, NashaNivaNewsComponent, BelsatNewsComponent, SvobodaNewsComponent,
-                NewsSectionComponent, SpecificNewsSectionComponent, OnlinerNewsSectionComponent
-            ]
+            imports: [RouterModule.forChild(appRoutes)],
+            exports: [RouterModule]
         })
-    ], NewsModule);
-    return NewsModule;
+    ], NewsRoutingModule);
+    return NewsRoutingModule;
 }());
-export { NewsModule };
-//# sourceMappingURL=news.module.js.map
+export { NewsRoutingModule };
+//# sourceMappingURL=news-routing.module.js.map

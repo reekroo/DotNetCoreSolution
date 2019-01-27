@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
+import { BankRoutingModule } from './bank-routing.module';
+
 import { CurrencyComponent } from './view-controllers/currency-controller';
 import { MetalComponent } from './view-controllers/metal-controller';
 import { RefinancingComponent } from './view-controllers/refinancing-rate-controller';
@@ -21,19 +23,12 @@ import { RefinancingRatesComponent } from './view-sections/refinancing/refinanci
 
 import { ChartComponent } from '../../shared/components/chart/chart';
 
-const appRoutes: Routes = [
-
-    { path: 'currencies', component: CurrencyComponent },
-    { path: 'ingots', component: MetalComponent },
-    { path: 'refinancing-rates', component: RefinancingComponent }
-];
-
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         ScrollingModule,
-        RouterModule.forChild(appRoutes)
+        BankRoutingModule
     ],
     declarations: [
         

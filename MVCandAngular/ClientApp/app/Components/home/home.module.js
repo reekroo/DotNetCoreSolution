@@ -6,13 +6,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './view-controllers/home-controller';
 import { WeatherSectionComponent } from '../../components/weather/views-sections/weather-section';
 import { SpecificNewsSectionComponent } from '../../components/news/view-sections/belarus-news/specific-news-section';
-var appRoutes = [
-    { path: '', component: HomeComponent }
-];
 var HomeModule = /** @class */ (function () {
     function HomeModule() {
     }
@@ -20,7 +17,7 @@ var HomeModule = /** @class */ (function () {
         NgModule({
             imports: [
                 CommonModule,
-                RouterModule.forChild(appRoutes)
+                HomeRoutingModule
             ],
             declarations: [
                 HomeComponent,

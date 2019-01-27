@@ -2,6 +2,8 @@
 import { CommonModule } from '@angular/common'; 
 import { Routes, RouterModule } from '@angular/router';
 
+import { NewsRoutingModule } from './news-routing.module';
+
 import { NewsComponent } from './view-controllers/world-news-controller';
 import { BelNewsComponent } from './view-controllers/belarus-news-controller';
 
@@ -17,23 +19,10 @@ import { NewsSectionComponent } from './view-sections/belarus-news/news-section'
 import { SpecificNewsSectionComponent } from './view-sections/belarus-news/specific-news-section';
 import { OnlinerNewsSectionComponent } from './view-sections/belarus-portal-news/onliner-news-section';
 
-const appRoutes: Routes = [
-
-    { path: 'world', component: NewsComponent },
-    { path: 'belarus', component: BelNewsComponent },
-    { path: 'onliner', component: OnlinerNewsComponent },
-    { path: 'citydog', component: CityDogNewsComponent },
-    { path: 'tut', component: TutNewsComponent },
-    { path: 'belarus-partisan', component: BelarusPartisanNewsComponent },
-    { path: 'nasha-niva', component: NashaNivaNewsComponent },
-    { path: 'belsat', component: BelsatNewsComponent },
-    { path: 'svoboda', component: SvobodaNewsComponent }    
-];
-
 @NgModule({
     imports: [
         CommonModule,
-        RouterModule.forChild(appRoutes)
+        NewsRoutingModule
     ],
     declarations: [
 

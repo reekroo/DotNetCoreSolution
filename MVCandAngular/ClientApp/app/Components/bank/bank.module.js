@@ -7,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { BankRoutingModule } from './bank-routing.module';
 import { CurrencyComponent } from './view-controllers/currency-controller';
 import { MetalComponent } from './view-controllers/metal-controller';
 import { RefinancingComponent } from './view-controllers/refinancing-rate-controller';
@@ -21,11 +21,6 @@ import { MetalRatesComponent } from './view-sections/metal/metal-section';
 import { RefinancingRateComponent } from './view-sections/refinancing/refinancing-rate-section';
 import { RefinancingRatesComponent } from './view-sections/refinancing/refinancing-rates-section';
 import { ChartComponent } from '../../shared/components/chart/chart';
-var appRoutes = [
-    { path: 'currencies', component: CurrencyComponent },
-    { path: 'ingots', component: MetalComponent },
-    { path: 'refinancing-rates', component: RefinancingComponent }
-];
 var BankModule = /** @class */ (function () {
     function BankModule() {
     }
@@ -35,7 +30,7 @@ var BankModule = /** @class */ (function () {
                 CommonModule,
                 FormsModule,
                 ScrollingModule,
-                RouterModule.forChild(appRoutes)
+                BankRoutingModule
             ],
             declarations: [
                 CurrencyComponent, MonthRateTableComponent, RateSectionComponent, ConvertorSectionComponent, DefaultRatesComponent,

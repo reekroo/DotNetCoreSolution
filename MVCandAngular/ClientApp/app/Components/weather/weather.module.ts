@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
+import { WeatherRoutingModule } from './weather-routing.module';
+
 import { WeatherComponent } from './view-controllers/weather-controller';
 import { ForecastTableSectionComponent } from './views-sections/forecast-table-section';
 import { ForecastAccordionSectionComponent } from './views-sections/forecast-accordion-section';
@@ -19,7 +21,7 @@ const appRoutes: Routes = [
     imports: [
         CommonModule,
         FormsModule,
-        RouterModule.forChild(appRoutes)
+        WeatherRoutingModule
     ],
     declarations: [
         WeatherComponent,

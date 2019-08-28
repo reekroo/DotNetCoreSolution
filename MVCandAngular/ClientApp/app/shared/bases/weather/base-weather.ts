@@ -1,6 +1,14 @@
 ﻿import { Weather } from "../../../models/weather/city-weather";
+import { Days } from "../../../shared/bases/enums/Days";
 
 class BaseWeatherComponent {
+    
+    public getDay(unixUtcTime: number): string {
+
+        let currentDate = new Date(unixUtcTime * 1000);
+
+        return Days[currentDate.getDay()];
+    }
 
     public getTime(unixUtcTime: number): string {
 

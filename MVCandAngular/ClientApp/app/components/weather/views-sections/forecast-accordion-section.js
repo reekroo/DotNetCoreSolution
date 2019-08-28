@@ -34,7 +34,8 @@ var ForecastAccordionSectionComponent = /** @class */ (function (_super) {
     ForecastAccordionSectionComponent = __decorate([
         Component({
             selector: 'forecast-accordion-section',
-            templateUrl: './forecast-accordion-section.html'
+            templateUrl: './forecast-accordion-section.html',
+            styles: [require('../../../assets/less/weater/forecast-accordion-section.less')],
         })
     ], ForecastAccordionSectionComponent);
     return ForecastAccordionSectionComponent;

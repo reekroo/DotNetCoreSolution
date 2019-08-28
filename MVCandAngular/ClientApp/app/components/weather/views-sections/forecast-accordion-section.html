@@ -8,7 +8,8 @@
                         [attr.data-target]="'#collapse' + i"
                         [attr.aria-controls]="'collapse' + i"
                         [attr.aria-expanded]="i == 0 ? 'true' : 'false'">
-                    {{getDate(item[0].dt)}} - {{getDay(item[0].dt)}}
+                    <span>{{getDate(item[0].dt)}} - {{getDay(item[0].dt)}} - </span>
+                    <img src="https://openweathermap.org/img/w/{{getIcon(item[0].weather)}}.png" />
                 </button>
             </h5>
         </div>
